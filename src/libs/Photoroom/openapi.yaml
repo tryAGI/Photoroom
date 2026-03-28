@@ -13,15 +13,16 @@
   },
   "security": [
     {
-      "BearerAuth": []
+      "x-api-key": []
     }
   ],
   "components": {
     "securitySchemes": {
-      "BearerAuth": {
-        "type": "http",
-        "scheme": "bearer",
-        "description": "Get your API Key here: https://app.photoroom.com/api-dashboard"
+      "x-api-key": {
+        "type": "apiKey",
+        "name": "x-api-key",
+        "in": "header",
+        "description": "Get you API Key [here](https://app.photoroom.com/api-dashboard)"
       }
     },
     "schemas": {
@@ -2858,10 +2859,5 @@
         }
       }
     }
-  },
-  "servers": [
-    {
-      "url": "https://image-api.photoroom.com"
-    }
-  ]
+  }
 }
