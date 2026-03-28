@@ -1,0 +1,51 @@
+
+#nullable enable
+
+namespace Photoroom
+{
+    /// <summary>
+    /// Default Value: never
+    /// </summary>
+    public enum EditImageGetKeepExistingAlphaChannel
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        Auto,
+        /// <summary>
+        /// 
+        /// </summary>
+        Never,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class EditImageGetKeepExistingAlphaChannelExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this EditImageGetKeepExistingAlphaChannel value)
+        {
+            return value switch
+            {
+                EditImageGetKeepExistingAlphaChannel.Auto => "auto",
+                EditImageGetKeepExistingAlphaChannel.Never => "never",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static EditImageGetKeepExistingAlphaChannel? ToEnum(string value)
+        {
+            return value switch
+            {
+                "auto" => EditImageGetKeepExistingAlphaChannel.Auto,
+                "never" => EditImageGetKeepExistingAlphaChannel.Never,
+                _ => null,
+            };
+        }
+    }
+}
