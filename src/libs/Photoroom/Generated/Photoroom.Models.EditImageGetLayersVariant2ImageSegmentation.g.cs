@@ -37,14 +37,14 @@ namespace Photoroom
         /// <summary>
         /// Initializes a new instance of the <see cref="EditImageGetLayersVariant2ImageSegmentation" /> class.
         /// </summary>
+        /// <param name="prompt">
+        /// A textual description of what the segmentation should keep.
+        /// </param>
         /// <param name="mode">
         /// Controls whether or not the salient object should be kept or ignored by the segmentation model.
         /// </param>
         /// <param name="negativePrompt">
         /// A textual description of what the segmentation should remove.
-        /// </param>
-        /// <param name="prompt">
-        /// A textual description of what the segmentation should keep.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -54,9 +54,9 @@ namespace Photoroom
             global::Photoroom.EditImageGetLayersVariant2ImageSegmentationMode? mode,
             string? negativePrompt)
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Mode = mode;
             this.NegativePrompt = negativePrompt;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
         }
 
         /// <summary>
