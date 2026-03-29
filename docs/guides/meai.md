@@ -1,6 +1,9 @@
 # Microsoft.Extensions.AI Integration
 
-The Photoroom SDK provides `AIFunction` tools that can be used with any `IChatClient` implementation via [Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI.Abstractions).
+!!! tip "Cross-SDK comparison"
+    See the [centralized MEAI documentation](https://tryagi.github.io/docs/meai/) for feature matrices and comparisons across all tryAGI SDKs.
+
+The Photoroom SDK provides `AIFunction` tool wrappers compatible with [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai). These tools can be used with any `IChatClient` to give AI models access to Photoroom's AI image editing, background removal, and image generation capabilities.
 
 ## Available Tools
 
