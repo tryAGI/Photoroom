@@ -35,13 +35,12 @@ jq '
 ' openapi.yaml > openapi.fixed.yaml
 mv openapi.fixed.yaml openapi.yaml
 
-# Auth: --security-scheme overrides the spec's apiKey auth with standard HTTP bearer.
-# --base-url injects server URL (missing from spec).
+# Auth: x-api-key header. --base-url injects server URL (missing from spec).
 autosdk generate openapi.yaml \
   --namespace Photoroom \
   --clientClassName PhotoroomClient \
   --targetFramework net10.0 \
   --output Generated \
   --exclude-deprecated-operations \
-  --security-scheme Http:Header:Bearer \
+  --security-scheme ApiKey:Header:x-api-key \
   --base-url https://image-api.photoroom.com
