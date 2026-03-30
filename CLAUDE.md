@@ -14,7 +14,7 @@ dotnet test src/tests/IntegrationTests/
 
 ## Auth
 
-Bearer token auth (converted to `x-api-key` header via PrepareRequest hook):
+API key auth via `x-api-key` header (native via `--security-scheme`):
 
 ```csharp
 var client = new PhotoroomClient(apiKey); // PHOTOROOM_API_KEY env var
@@ -25,7 +25,6 @@ var client = new PhotoroomClient(apiKey); // PHOTOROOM_API_KEY env var
 - `src/libs/Photoroom/openapi.yaml` -- OpenAPI spec (downloaded from image-api.photoroom.com)
 - `src/libs/Photoroom/generate.sh` -- Downloads spec, fixes auth + servers, runs autosdk
 - `src/libs/Photoroom/Generated/` -- **Never edit** -- auto-generated code
-- `src/libs/Photoroom/Extensions/PhotoroomClient.Auth.cs` -- PrepareRequest hook: `Bearer -> x-api-key`
 - `src/libs/Photoroom/Extensions/PhotoroomClient.Tools.cs` -- MEAI AIFunction tools
 - `src/tests/IntegrationTests/Tests.cs` -- Test helper with bearer auth
 - `src/tests/IntegrationTests/Examples/` -- Example tests (also generate docs)
@@ -34,25 +33,10 @@ var client = new PhotoroomClient(apiKey); // PHOTOROOM_API_KEY env var
 
 The `generate.sh` applies fixes via `jq`:
 
-1. **Auth conversion:** Converts `apiKey` security scheme to `http/bearer` for AutoSDK
+1. **Auth:** Native via `--security-scheme ApiKey:Header:x-api-key`
 2. **Servers:** Adds missing `servers` section with `https://image-api.photoroom.com`
 3. **Top-level security:** Adds `security` array (spec only has per-operation)
 4. **GET additionalProductImages:** Simplifies complex object array to string array (only URLs usable in GET)
-
-## Auth Hook
-
-Photoroom uses `x-api-key: <key>` header (not `Authorization: Bearer`). The `PrepareRequest` hook in `Extensions/PhotoroomClient.Auth.cs` rewrites the auth:
-
-```csharp
-partial void PrepareRequest(HttpClient client, HttpRequestMessage request)
-{
-    if (request.Headers.Authorization is { Scheme: "Bearer", Parameter: { } apiKey })
-    {
-        request.Headers.Authorization = null;
-        request.Headers.TryAddWithoutValidation("x-api-key", apiKey);
-    }
-}
-```
 
 ## MEAI Integration
 
