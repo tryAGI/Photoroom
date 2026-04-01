@@ -1284,6 +1284,7 @@ namespace Photoroom
             string? virtualModelSize = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Photoroom.EditImagePostRequest
             {
                 BackgroundBlurMode = backgroundBlurMode,
