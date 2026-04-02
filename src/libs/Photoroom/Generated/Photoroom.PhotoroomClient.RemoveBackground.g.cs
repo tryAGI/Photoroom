@@ -33,6 +33,26 @@ namespace Photoroom
             global::Photoroom.RemoveBackgroundPostParams request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await RemoveBackgroundAsResponseAsync(
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Remove Background (Basic plan)<br/>
+        /// Remove background from an image
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Photoroom.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Photoroom.AutoSDKHttpResponse<global::Photoroom.RemoveBackgroundResponse>> RemoveBackgroundAsResponseAsync(
+
+            global::Photoroom.RemoveBackgroundPostParams request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -272,9 +292,12 @@ namespace Photoroom
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Photoroom.RemoveBackgroundResponse.FromJson(__content, JsonSerializerContext) ??
+                    var __value = global::Photoroom.RemoveBackgroundResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Photoroom.AutoSDKHttpResponse<global::Photoroom.RemoveBackgroundResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Photoroom.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -303,9 +326,12 @@ namespace Photoroom
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Photoroom.RemoveBackgroundResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    var __value = await global::Photoroom.RemoveBackgroundResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Photoroom.AutoSDKHttpResponse<global::Photoroom.RemoveBackgroundResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Photoroom.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
