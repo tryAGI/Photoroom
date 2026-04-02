@@ -19,6 +19,17 @@ namespace Photoroom
         /// Remove Background (Basic plan)<br/>
         /// Remove background from an image
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Photoroom.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Photoroom.AutoSDKHttpResponse<global::Photoroom.RemoveBackgroundResponse>> RemoveBackgroundAsResponseAsync(
+
+            global::Photoroom.RemoveBackgroundPostParams request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Remove Background (Basic plan)<br/>
+        /// Remove background from an image
+        /// </summary>
         /// <param name="imageFile">
         /// The image file to render
         /// </param>
