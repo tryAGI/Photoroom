@@ -7,6 +7,25 @@ namespace Photoroom
 {
     public partial class PhotoroomClient
     {
+
+
+        private static readonly global::Photoroom.EndPointSecurityRequirement s_EditImageGet2SecurityRequirement0 =
+            new global::Photoroom.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Photoroom.EndPointAuthorizationRequirement[]
+                {                    new global::Photoroom.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Photoroom.EndPointSecurityRequirement[] s_EditImageGet2SecurityRequirements =
+            new global::Photoroom.EndPointSecurityRequirement[]
+            {                s_EditImageGet2SecurityRequirement0,
+            };
         partial void PrepareEditImageGet2Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? apiKey,
@@ -69,6 +88,12 @@ namespace Photoroom
                 imageUrl: ref imageUrl,
                 conceptUrl: ref conceptUrl);
 
+
+            var __authorizations = global::Photoroom.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_EditImageGet2SecurityRequirements,
+                operationName: "EditImageGet2Async");
+
             var __pathBuilder = new global::Photoroom.PathBuilder(
                 path: "/v1/render",
                 baseUri: HttpClient.BaseAddress); 
@@ -77,7 +102,7 @@ namespace Photoroom
                 .AddRequiredParameter("templateId", templateId)
                 .AddOptionalParameter("imageUrl", imageUrl)
                 .AddOptionalParameter("conceptUrl", conceptUrl) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -87,7 +112,7 @@ namespace Photoroom
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

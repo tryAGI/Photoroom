@@ -5,6 +5,25 @@ namespace Photoroom
 {
     public partial class PhotoroomClient
     {
+
+
+        private static readonly global::Photoroom.EndPointSecurityRequirement s_EditImageGetSecurityRequirement0 =
+            new global::Photoroom.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Photoroom.EndPointAuthorizationRequirement[]
+                {                    new global::Photoroom.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Photoroom.EndPointSecurityRequirement[] s_EditImageGetSecurityRequirements =
+            new global::Photoroom.EndPointSecurityRequirement[]
+            {                s_EditImageGetSecurityRequirement0,
+            };
         partial void PrepareEditImageGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::Photoroom.EditImageGetBackgroundBlurMode? backgroundBlurMode,
@@ -818,6 +837,12 @@ namespace Photoroom
                 virtualModelScene: ref virtualModelScene,
                 virtualModelSize: ref virtualModelSize);
 
+
+            var __authorizations = global::Photoroom.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_EditImageGetSecurityRequirements,
+                operationName: "EditImageGetAsync");
+
             var __pathBuilder = new global::Photoroom.PathBuilder(
                 path: "/v2/edit",
                 baseUri: HttpClient.BaseAddress); 
@@ -899,7 +924,7 @@ namespace Photoroom
                 .AddOptionalParameter("virtualModel.quality", virtualModelQuality?.ToValueString())
                 .AddOptionalParameter("virtualModel.scene", virtualModelScene?.ToString())
                 .AddOptionalParameter("virtualModel.size", virtualModelSize?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -909,7 +934,7 @@ namespace Photoroom
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
