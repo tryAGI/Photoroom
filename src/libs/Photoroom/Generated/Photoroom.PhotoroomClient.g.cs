@@ -21,7 +21,7 @@ namespace Photoroom
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://image-api.photoroom.com";
+        public const string DefaultBaseUrl = "https://image-api.photoroom.com/";
 
         private bool _disposeHttpClient = true;
 
