@@ -162,6 +162,7 @@ namespace Photoroom
         /// <param name="virtualModelSize">
         /// Default Value: PORTRAIT_HD_3_2
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Photoroom.ApiException"></exception>
         global::System.Threading.Tasks.Task<byte[]> EditImageGetAsync(
@@ -242,6 +243,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetVirtualModelQuality? virtualModelQuality = default,
             global::Photoroom.AnyOf<global::Photoroom.EditImageGetVirtualModelSceneVariant1, global::Photoroom.EditImageGetVirtualModelSceneVariant2>? virtualModelScene = default,
             global::Photoroom.EditImageGetVirtualModelSize? virtualModelSize = default,
+            global::Photoroom.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Image Editing v2 (Plus plan)<br/>
@@ -401,6 +403,7 @@ namespace Photoroom
         /// <param name="virtualModelSize">
         /// Default Value: PORTRAIT_HD_3_2
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Photoroom.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Photoroom.AutoSDKHttpResponse<byte[]>> EditImageGetAsResponseAsync(
@@ -481,6 +484,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetVirtualModelQuality? virtualModelQuality = default,
             global::Photoroom.AnyOf<global::Photoroom.EditImageGetVirtualModelSceneVariant1, global::Photoroom.EditImageGetVirtualModelSceneVariant2>? virtualModelScene = default,
             global::Photoroom.EditImageGetVirtualModelSize? virtualModelSize = default,
+            global::Photoroom.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

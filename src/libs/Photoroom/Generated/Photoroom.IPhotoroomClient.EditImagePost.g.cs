@@ -36,11 +36,13 @@ namespace Photoroom
         /// - [Sandbox Mode (free testing)](https://docs.photoroom.com/image-editing-api-plus-plan/sandbox-mode)
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Photoroom.ApiException"></exception>
         global::System.Threading.Tasks.Task<byte[]> EditImagePostAsync(
 
             global::Photoroom.EditImagePostRequest request,
+            global::Photoroom.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Image Editing v2 (Plus plan)<br/>
@@ -74,11 +76,13 @@ namespace Photoroom
         /// - [Sandbox Mode (free testing)](https://docs.photoroom.com/image-editing-api-plus-plan/sandbox-mode)
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Photoroom.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Photoroom.AutoSDKHttpResponse<byte[]>> EditImagePostAsResponseAsync(
 
             global::Photoroom.EditImagePostRequest request,
+            global::Photoroom.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Image Editing v2 (Plus plan)<br/>
@@ -422,6 +426,7 @@ namespace Photoroom
         /// <param name="virtualModelSize">
         /// The output size of the generated image.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<byte[]> EditImagePostAsync(
@@ -504,6 +509,7 @@ namespace Photoroom
             string? virtualModelQuality = default,
             object? virtualModelScene = default,
             string? virtualModelSize = default,
+            global::Photoroom.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
