@@ -26,6 +26,7 @@ namespace Photoroom
             Authorizations.Add(new global::Photoroom.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "ApikeyXApiKey",
                 Location = "Header",
                 Name = "x-api-key",
                 Value = apiKey,

@@ -28,6 +28,7 @@ namespace Photoroom
         /// Deprecated, use `imageUrl` instead.<br/>
         /// Example: https://s3.amazonaws.com/a.storyblok.com/f/191576/1024x1024/d25e1a99d7/sample-05.png
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Photoroom.ApiException"></exception>
         global::System.Threading.Tasks.Task<byte[]> EditImageGet2Async(
@@ -35,6 +36,7 @@ namespace Photoroom
             string? apiKey = default,
             string? imageUrl = default,
             string? conceptUrl = default,
+            global::Photoroom.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

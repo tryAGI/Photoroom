@@ -9,22 +9,26 @@ namespace Photoroom
         /// Remove background from an image
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Photoroom.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Photoroom.RemoveBackgroundResponse> RemoveBackgroundAsync(
 
             global::Photoroom.RemoveBackgroundPostParams request,
+            global::Photoroom.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Remove Background (Basic plan)<br/>
         /// Remove background from an image
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Photoroom.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Photoroom.AutoSDKHttpResponse<global::Photoroom.RemoveBackgroundResponse>> RemoveBackgroundAsResponseAsync(
 
             global::Photoroom.RemoveBackgroundPostParams request,
+            global::Photoroom.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Remove Background (Basic plan)<br/>
@@ -59,6 +63,7 @@ namespace Photoroom
         /// If `true`, automatically removes colored reflections that have been left on the main subject by a green background.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Photoroom.RemoveBackgroundResponse> RemoveBackgroundAsync(
@@ -70,6 +75,7 @@ namespace Photoroom
             global::Photoroom.RemoveBackgroundPostParamsSize? size = default,
             global::Photoroom.RemoveBackgroundPostParamsCrop? crop = default,
             global::Photoroom.RemoveBackgroundPostParamsDespill? despill = default,
+            global::Photoroom.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
