@@ -6,6 +6,14 @@ namespace Photoroom
     public partial class PhotoroomClient
     {
 
+        private static readonly global::Photoroom.AutoSDKServer[] s_RemoveBackgroundServers = new global::Photoroom.AutoSDKServer[]
+        {            new global::Photoroom.AutoSDKServer(
+                id: "https-sdk-photoroom-com",
+                name: "Production server (Basic plan)",
+                url: "https://sdk.photoroom.com/",
+                description: "Production server (Basic plan)"),
+        };
+
 
         private static readonly global::Photoroom.EndPointSecurityRequirement s_RemoveBackgroundSecurityRequirement0 =
             new global::Photoroom.EndPointSecurityRequirement
@@ -110,7 +118,9 @@ namespace Photoroom
             {
                             var __pathBuilder = new global::Photoroom.PathBuilder(
                                 path: "/v1/segment",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: ResolveBaseUri(
+                                servers: s_RemoveBackgroundServers,
+                                defaultBaseUrl: "https://sdk.photoroom.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::Photoroom.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
