@@ -6,6 +6,14 @@ namespace Photoroom
     public partial class PhotoroomClient
     {
 
+        private static readonly global::Photoroom.AutoSDKServer[] s_EditImageGetServers = new global::Photoroom.AutoSDKServer[]
+        {            new global::Photoroom.AutoSDKServer(
+                id: "https-image-api-photoroom-com",
+                name: "Production server (Plus plan)",
+                url: "https://image-api.photoroom.com/",
+                description: "Production server (Plus plan)"),
+        };
+
 
         private static readonly global::Photoroom.EndPointSecurityRequirement s_EditImageGetSecurityRequirement0 =
             new global::Photoroom.EndPointSecurityRequirement
@@ -867,7 +875,9 @@ namespace Photoroom
             {
                             var __pathBuilder = new global::Photoroom.PathBuilder(
                                 path: "/v2/edit",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_EditImageGetServers,
+                                defaultBaseUrl: "https://image-api.photoroom.com/")); 
                             __pathBuilder
                                 .AddOptionalParameter("background.blur.mode", backgroundBlurMode?.ToValueString())
                                 .AddOptionalParameter("background.blur.radius", backgroundBlurRadius?.ToString())

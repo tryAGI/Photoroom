@@ -6,6 +6,14 @@ namespace Photoroom
     public partial class PhotoroomClient
     {
 
+        private static readonly global::Photoroom.AutoSDKServer[] s_AccountDetailsV1Servers = new global::Photoroom.AutoSDKServer[]
+        {            new global::Photoroom.AutoSDKServer(
+                id: "https-image-api-photoroom-com",
+                name: "Production server (Plus plan)",
+                url: "https://image-api.photoroom.com/",
+                description: "Production server (Plus plan)"),
+        };
+
 
         private static readonly global::Photoroom.EndPointSecurityRequirement s_AccountDetailsV1SecurityRequirement0 =
             new global::Photoroom.EndPointSecurityRequirement
@@ -79,7 +87,9 @@ namespace Photoroom
             {
                             var __pathBuilder = new global::Photoroom.PathBuilder(
                                 path: "/v1/account",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: ResolveBaseUri(
+                                servers: s_AccountDetailsV1Servers,
+                                defaultBaseUrl: "https://image-api.photoroom.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::Photoroom.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
