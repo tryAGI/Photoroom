@@ -22,7 +22,7 @@ namespace Photoroom
         public string? NegativePrompt { get; set; }
 
         /// <summary>
-        /// A textual description of what the segmentation should keep.
+        /// Warning: Text-Guided Segmentation is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period. A textual description of what the segmentation should keep.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -38,7 +38,7 @@ namespace Photoroom
         /// Initializes a new instance of the <see cref="EditImageGetLayersVariant2ImageSegmentation" /> class.
         /// </summary>
         /// <param name="prompt">
-        /// A textual description of what the segmentation should keep.
+        /// Warning: Text-Guided Segmentation is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period. A textual description of what the segmentation should keep.
         /// </param>
         /// <param name="mode">
         /// Controls whether or not the salient object should be kept or ignored by the segmentation model.

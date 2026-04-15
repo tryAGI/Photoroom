@@ -454,7 +454,7 @@ namespace Photoroom
         public string? SegmentationNegativePrompt { get; set; }
 
         /// <summary>
-        /// A textual description of what the segmentation should keep.
+        /// Warning: Text-Guided Segmentation is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period. A textual description of what the segmentation should keep.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segmentation.prompt")]
         public string? SegmentationPrompt { get; set; }
@@ -494,7 +494,7 @@ namespace Photoroom
         public double? UncropSeed { get; set; }
 
         /// <summary>
-        /// (ALPHA) Warning: might get deprecated with a 2 weeks warning<br/>
+        /// Warning: AI Upscale is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period.<br/>
         /// If enabled, the input image will be upscaled (imageFile or imageUrl)<br/>
         /// The input image (imageFile or imageUrl) must not exceed 1000x1000 pixels in dimensions when using `ai.fast` mode. The input image (imageFile or imageUrl) must not exceed 512x512 pixels in dimensions when using `ai.slow` mode.<br/>
         /// The upscaling process will enlarge the input image up to 4 times its original size. This will significantly increase the resolution and affect both the input processing and the final output dimensions.<br/>
@@ -822,7 +822,7 @@ namespace Photoroom
         /// A textual description of what the segmentation should remove.
         /// </param>
         /// <param name="segmentationPrompt">
-        /// A textual description of what the segmentation should keep.
+        /// Warning: Text-Guided Segmentation is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period. A textual description of what the segmentation should keep.
         /// </param>
         /// <param name="shadowMode">
         /// Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated If set to `ai.hard`, a hard shadow will be generated If set to `ai.floating`, a floating shadow will be generated
@@ -844,7 +844,7 @@ namespace Photoroom
         /// Seed used to generate the background. Can be used to get similar looking results for the same prompt.
         /// </param>
         /// <param name="upscaleMode">
-        /// (ALPHA) Warning: might get deprecated with a 2 weeks warning<br/>
+        /// Warning: AI Upscale is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period.<br/>
         /// If enabled, the input image will be upscaled (imageFile or imageUrl)<br/>
         /// The input image (imageFile or imageUrl) must not exceed 1000x1000 pixels in dimensions when using `ai.fast` mode. The input image (imageFile or imageUrl) must not exceed 512x512 pixels in dimensions when using `ai.slow` mode.<br/>
         /// The upscaling process will enlarge the input image up to 4 times its original size. This will significantly increase the resolution and affect both the input processing and the final output dimensions.<br/>
