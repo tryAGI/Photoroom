@@ -1258,7 +1258,7 @@
                                 "type": "string"
                               },
                               "prompt": {
-                                "description": "A textual description of what the segmentation should keep.",
+                                "description": "Warning: Text-Guided Segmentation is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period. A textual description of what the segmentation should keep.",
                                 "examples": [
                                   "a red object"
                                 ],
@@ -1652,7 +1652,7 @@
           {
             "name": "segmentation.prompt",
             "in": "query",
-            "description": "A textual description of what the segmentation should keep.",
+            "description": "Warning: Text-Guided Segmentation is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period. A textual description of what the segmentation should keep.",
             "schema": {
               "examples": [
                 "a red object"
@@ -1731,7 +1731,7 @@
           {
             "name": "upscale.mode",
             "in": "query",
-            "description": "(ALPHA) Warning: might get deprecated with a 2 weeks warning\n\nIf enabled, the input image will be upscaled (imageFile or imageUrl)\n\nThe input image (imageFile or imageUrl) must not exceed 1000x1000 pixels in dimensions when using `ai.fast` mode. The input image (imageFile or imageUrl) must not exceed 512x512 pixels in dimensions when using `ai.slow` mode.\n\nThe upscaling process will enlarge the input image up to 4 times its original size. This will significantly increase the resolution and affect both the input processing and the final output dimensions.\n\nai.fast: This algorithm is optimized for speed and may not produce the highest quality results. ai.slow: This algorithm is optimized for quality and may take more time to process.",
+            "description": "Warning: AI Upscale is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period.\n\nIf enabled, the input image will be upscaled (imageFile or imageUrl)\n\nThe input image (imageFile or imageUrl) must not exceed 1000x1000 pixels in dimensions when using `ai.fast` mode. The input image (imageFile or imageUrl) must not exceed 512x512 pixels in dimensions when using `ai.slow` mode.\n\nThe upscaling process will enlarge the input image up to 4 times its original size. This will significantly increase the resolution and affect both the input processing and the final output dimensions.\n\nai.fast: This algorithm is optimized for speed and may not produce the highest quality results. ai.slow: This algorithm is optimized for quality and may take more time to process.",
             "schema": {
               "enum": [
                 "ai.fast",
@@ -2421,7 +2421,7 @@
                   },
                   "segmentation.prompt": {
                     "type": "string",
-                    "description": "A textual description of what the segmentation should keep."
+                    "description": "Warning: Text-Guided Segmentation is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period. A textual description of what the segmentation should keep."
                   },
                   "shadow.mode": {
                     "type": "string",
@@ -2446,7 +2446,7 @@
                   },
                   "upscale.mode": {
                     "type": "string",
-                    "description": "(ALPHA) Warning: might get deprecated with a 2 weeks warning\n\nIf enabled, the input image will be upscaled (imageFile or imageUrl)\n\nThe input image (imageFile or imageUrl) must not exceed 1000x1000 pixels in dimensions when using `ai.fast` mode. The input image (imageFile or imageUrl) must not exceed 512x512 pixels in dimensions when using `ai.slow` mode.\n\nThe upscaling process will enlarge the input image up to 4 times its original size. This will significantly increase the resolution and affect both the input processing and the final output dimensions.\n\nai.fast: This algorithm is optimized for speed and may not produce the highest quality results. ai.slow: This algorithm is optimized for quality and may take more time to process."
+                    "description": "Warning: AI Upscale is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period.\n\nIf enabled, the input image will be upscaled (imageFile or imageUrl)\n\nThe input image (imageFile or imageUrl) must not exceed 1000x1000 pixels in dimensions when using `ai.fast` mode. The input image (imageFile or imageUrl) must not exceed 512x512 pixels in dimensions when using `ai.slow` mode.\n\nThe upscaling process will enlarge the input image up to 4 times its original size. This will significantly increase the resolution and affect both the input processing and the final output dimensions.\n\nai.fast: This algorithm is optimized for speed and may not produce the highest quality results. ai.slow: This algorithm is optimized for quality and may take more time to process."
                   },
                   "verticalAlignment": {
                     "type": "string",
