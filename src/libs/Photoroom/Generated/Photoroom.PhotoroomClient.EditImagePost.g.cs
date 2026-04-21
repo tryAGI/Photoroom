@@ -56,6 +56,7 @@ namespace Photoroom
         /// Edits can be combined in a single call.<br/>
         /// It accepts an image file for the image. If you want to send a URL, please use the GET endpoint. For more details on the difference between the GET and POST endpoints, please have a look at our documentation: https://docs.photoroom.com/image-editing-api/which-endpoints-are-available.<br/>
         /// If you only have a URL for your image (not a local file), use the GET endpoint instead — it is simpler to integrate. Use this POST endpoint when you need to upload image files directly as multipart/form-data.<br/>
+        /// For this POST endpoint, all parameters must be passed via the request body using multipart/form-data encoding. Parameters must not be passed using the query string.<br/>
         /// Full documentation: https://docs.photoroom.com/image-editing-api-plus-plan/quickstart-guide<br/>
         /// Feature documentation:<br/>
         /// - [HD Background Removal](https://docs.photoroom.com/image-editing-api-plus-plan/hd-background-removal)<br/>
@@ -106,6 +107,7 @@ namespace Photoroom
         /// Edits can be combined in a single call.<br/>
         /// It accepts an image file for the image. If you want to send a URL, please use the GET endpoint. For more details on the difference between the GET and POST endpoints, please have a look at our documentation: https://docs.photoroom.com/image-editing-api/which-endpoints-are-available.<br/>
         /// If you only have a URL for your image (not a local file), use the GET endpoint instead — it is simpler to integrate. Use this POST endpoint when you need to upload image files directly as multipart/form-data.<br/>
+        /// For this POST endpoint, all parameters must be passed via the request body using multipart/form-data encoding. Parameters must not be passed using the query string.<br/>
         /// Full documentation: https://docs.photoroom.com/image-editing-api-plus-plan/quickstart-guide<br/>
         /// Feature documentation:<br/>
         /// - [HD Background Removal](https://docs.photoroom.com/image-editing-api-plus-plan/hd-background-removal)<br/>
@@ -650,12 +652,47 @@ namespace Photoroom
                                     content: new global::System.Net.Http.StringContent($"{request.SegmentationPrompt}"),
                                     name: "\"segmentation.prompt\"");
                             } 
+                            if (request.ShadowDirectionOverride != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.ShadowDirectionOverride}"),
+                                    name: "\"shadow.directionOverride\"");
+                            } 
+                            if (request.ShadowIntensityOverride != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.ShadowIntensityOverride}"),
+                                    name: "\"shadow.intensityOverride\"");
+                            } 
                             if (request.ShadowMode != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent($"{request.ShadowMode}"),
                                     name: "\"shadow.mode\"");
+                            } 
+                            if (request.ShadowSoftnessOverride != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.ShadowSoftnessOverride}"),
+                                    name: "\"shadow.softnessOverride\"");
+                            } 
+                            if (request.ShadowSpreadOverride != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.ShadowSpreadOverride}"),
+                                    name: "\"shadow.spreadOverride\"");
+                            } 
+                            if (request.ShadowSubjectPoseOverride != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.ShadowSubjectPoseOverride}"),
+                                    name: "\"shadow.subjectPoseOverride\"");
                             } 
                             if (request.TemplateId != default)
                             {
@@ -1138,6 +1175,7 @@ namespace Photoroom
         /// Edits can be combined in a single call.<br/>
         /// It accepts an image file for the image. If you want to send a URL, please use the GET endpoint. For more details on the difference between the GET and POST endpoints, please have a look at our documentation: https://docs.photoroom.com/image-editing-api/which-endpoints-are-available.<br/>
         /// If you only have a URL for your image (not a local file), use the GET endpoint instead — it is simpler to integrate. Use this POST endpoint when you need to upload image files directly as multipart/form-data.<br/>
+        /// For this POST endpoint, all parameters must be passed via the request body using multipart/form-data encoding. Parameters must not be passed using the query string.<br/>
         /// Full documentation: https://docs.photoroom.com/image-editing-api-plus-plan/quickstart-guide<br/>
         /// Feature documentation:<br/>
         /// - [HD Background Removal](https://docs.photoroom.com/image-editing-api-plus-plan/hd-background-removal)<br/>
@@ -1419,8 +1457,49 @@ namespace Photoroom
         /// <param name="segmentationPrompt">
         /// Warning: Text-Guided Segmentation is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period. A textual description of what the segmentation should keep.
         /// </param>
+        /// <param name="shadowDirectionOverride">
+        /// Override for the direction of the shadow.<br/>
+        /// Can be provided either as an angle in degrees or as one of the following presets:<br/>
+        /// - `behind` = 0<br/>
+        /// - `behindLeft` = 45<br/>
+        /// - `left` = 90<br/>
+        /// - `frontLeft` = 135<br/>
+        /// - `front` = 180<br/>
+        /// - `frontRight` = 225<br/>
+        /// - `right` = 270<br/>
+        /// - `behindRight` = 315<br/>
+        /// When using degrees, 0 means the shadow is behind the subject, 90 means the shadow is at the left of the subject, 180 means the shadow is in front of the subject, and 270 means the shadow is at the right of the subject.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
+        /// </param>
+        /// <param name="shadowIntensityOverride">
+        /// Override for the intensity of the shadow.<br/>
+        /// 0 means a very faint shadow, 1 means a very dark shadow.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
+        /// </param>
         /// <param name="shadowMode">
-        /// Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated If set to `ai.hard`, a hard shadow will be generated If set to `ai.floating`, a floating shadow will be generated
+        /// Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.hard`, a hard shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.floating`, a floating shadow will be generated. Not compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-soft`, a soft shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-hard`, a hard shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.auto-with-overrides`, the model will automatically generate a shadow with the best settings for the input image. Override parameters can be provided to further control the shadow. Only compatible with the `2026-04-15` AI Shadows model
+        /// </param>
+        /// <param name="shadowSoftnessOverride">
+        /// Override for the softness of the shadow.<br/>
+        /// 0 means a very hard shadow, 1 means a very soft shadow.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
+        /// </param>
+        /// <param name="shadowSpreadOverride">
+        /// Override for the spread of the shadow.<br/>
+        /// Can be provided either as an angle in degrees or as one of the following presets:<br/>
+        /// - `short` = 10<br/>
+        /// - `medium` = 45<br/>
+        /// - `long` = 90<br/>
+        /// When using degrees, 0 means a very short shadow and 90 means a very long shadow.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
+        /// </param>
+        /// <param name="shadowSubjectPoseOverride">
+        /// Override for the pose of the subject.<br/>
+        /// Can be provided either as an angle in degrees or as one of the following presets:<br/>
+        /// - `flatlay` = 0<br/>
+        /// - `upright` = 90<br/>
+        /// When using degrees, 0 means the subject is laying flat and 90 means the subject is placed upright.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
         /// </param>
         /// <param name="templateId">
         /// The ID of the template to render
@@ -1541,7 +1620,12 @@ namespace Photoroom
             string? segmentationMode = default,
             string? segmentationNegativePrompt = default,
             string? segmentationPrompt = default,
+            object? shadowDirectionOverride = default,
+            double? shadowIntensityOverride = default,
             string? shadowMode = default,
+            double? shadowSoftnessOverride = default,
+            object? shadowSpreadOverride = default,
+            object? shadowSubjectPoseOverride = default,
             global::System.Guid? templateId = default,
             string? textRemovalMode = default,
             string? uncropMode = default,
@@ -1625,7 +1709,12 @@ namespace Photoroom
                 SegmentationMode = segmentationMode,
                 SegmentationNegativePrompt = segmentationNegativePrompt,
                 SegmentationPrompt = segmentationPrompt,
+                ShadowDirectionOverride = shadowDirectionOverride,
+                ShadowIntensityOverride = shadowIntensityOverride,
                 ShadowMode = shadowMode,
+                ShadowSoftnessOverride = shadowSoftnessOverride,
+                ShadowSpreadOverride = shadowSpreadOverride,
+                ShadowSubjectPoseOverride = shadowSubjectPoseOverride,
                 TemplateId = templateId,
                 TextRemovalMode = textRemovalMode,
                 UncropMode = uncropMode,

@@ -97,7 +97,12 @@ namespace Photoroom
             ref global::Photoroom.EditImageGetSegmentationMode? segmentationMode,
             ref string? segmentationNegativePrompt,
             ref string? segmentationPrompt,
+            ref global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowDirectionOverride2?>? shadowDirectionOverride,
+            ref double? shadowIntensityOverride,
             ref global::Photoroom.EditImageGetShadowMode? shadowMode,
+            ref double? shadowSoftnessOverride,
+            ref global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowSpreadOverride2?>? shadowSpreadOverride,
+            ref global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowSubjectPoseOverride2?>? shadowSubjectPoseOverride,
             ref global::System.Guid? templateId,
             ref global::Photoroom.EditImageGetTextRemovalMode? textRemovalMode,
             ref string? uncropMode,
@@ -177,7 +182,12 @@ namespace Photoroom
             global::Photoroom.EditImageGetSegmentationMode? segmentationMode,
             string? segmentationNegativePrompt,
             string? segmentationPrompt,
+            global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowDirectionOverride2?>? shadowDirectionOverride,
+            double? shadowIntensityOverride,
             global::Photoroom.EditImageGetShadowMode? shadowMode,
+            double? shadowSoftnessOverride,
+            global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowSpreadOverride2?>? shadowSpreadOverride,
+            global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowSubjectPoseOverride2?>? shadowSubjectPoseOverride,
             global::System.Guid? templateId,
             global::Photoroom.EditImageGetTextRemovalMode? textRemovalMode,
             string? uncropMode,
@@ -332,7 +342,12 @@ namespace Photoroom
         /// <param name="segmentationMode"></param>
         /// <param name="segmentationNegativePrompt"></param>
         /// <param name="segmentationPrompt"></param>
+        /// <param name="shadowDirectionOverride"></param>
+        /// <param name="shadowIntensityOverride"></param>
         /// <param name="shadowMode"></param>
+        /// <param name="shadowSoftnessOverride"></param>
+        /// <param name="shadowSpreadOverride"></param>
+        /// <param name="shadowSubjectPoseOverride"></param>
         /// <param name="templateId"></param>
         /// <param name="textRemovalMode"></param>
         /// <param name="uncropMode"></param>
@@ -425,7 +440,12 @@ namespace Photoroom
             global::Photoroom.EditImageGetSegmentationMode? segmentationMode = default,
             string? segmentationNegativePrompt = default,
             string? segmentationPrompt = default,
+            global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowDirectionOverride2?>? shadowDirectionOverride = default,
+            double? shadowIntensityOverride = default,
             global::Photoroom.EditImageGetShadowMode? shadowMode = default,
+            double? shadowSoftnessOverride = default,
+            global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowSpreadOverride2?>? shadowSpreadOverride = default,
+            global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowSubjectPoseOverride2?>? shadowSubjectPoseOverride = default,
             global::System.Guid? templateId = default,
             global::Photoroom.EditImageGetTextRemovalMode? textRemovalMode = default,
             string? uncropMode = default,
@@ -506,7 +526,12 @@ namespace Photoroom
                 segmentationMode: segmentationMode,
                 segmentationNegativePrompt: segmentationNegativePrompt,
                 segmentationPrompt: segmentationPrompt,
+                shadowDirectionOverride: shadowDirectionOverride,
+                shadowIntensityOverride: shadowIntensityOverride,
                 shadowMode: shadowMode,
+                shadowSoftnessOverride: shadowSoftnessOverride,
+                shadowSpreadOverride: shadowSpreadOverride,
+                shadowSubjectPoseOverride: shadowSubjectPoseOverride,
                 templateId: templateId,
                 textRemovalMode: textRemovalMode,
                 uncropMode: uncropMode,
@@ -658,7 +683,12 @@ namespace Photoroom
         /// <param name="segmentationMode"></param>
         /// <param name="segmentationNegativePrompt"></param>
         /// <param name="segmentationPrompt"></param>
+        /// <param name="shadowDirectionOverride"></param>
+        /// <param name="shadowIntensityOverride"></param>
         /// <param name="shadowMode"></param>
+        /// <param name="shadowSoftnessOverride"></param>
+        /// <param name="shadowSpreadOverride"></param>
+        /// <param name="shadowSubjectPoseOverride"></param>
         /// <param name="templateId"></param>
         /// <param name="textRemovalMode"></param>
         /// <param name="uncropMode"></param>
@@ -751,7 +781,12 @@ namespace Photoroom
             global::Photoroom.EditImageGetSegmentationMode? segmentationMode = default,
             string? segmentationNegativePrompt = default,
             string? segmentationPrompt = default,
+            global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowDirectionOverride2?>? shadowDirectionOverride = default,
+            double? shadowIntensityOverride = default,
             global::Photoroom.EditImageGetShadowMode? shadowMode = default,
+            double? shadowSoftnessOverride = default,
+            global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowSpreadOverride2?>? shadowSpreadOverride = default,
+            global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowSubjectPoseOverride2?>? shadowSubjectPoseOverride = default,
             global::System.Guid? templateId = default,
             global::Photoroom.EditImageGetTextRemovalMode? textRemovalMode = default,
             string? uncropMode = default,
@@ -835,7 +870,12 @@ namespace Photoroom
                 segmentationMode: ref segmentationMode,
                 segmentationNegativePrompt: ref segmentationNegativePrompt,
                 segmentationPrompt: ref segmentationPrompt,
+                shadowDirectionOverride: ref shadowDirectionOverride,
+                shadowIntensityOverride: ref shadowIntensityOverride,
                 shadowMode: ref shadowMode,
+                shadowSoftnessOverride: ref shadowSoftnessOverride,
+                shadowSpreadOverride: ref shadowSpreadOverride,
+                shadowSubjectPoseOverride: ref shadowSubjectPoseOverride,
                 templateId: ref templateId,
                 textRemovalMode: ref textRemovalMode,
                 uncropMode: ref uncropMode,
@@ -941,7 +981,12 @@ namespace Photoroom
                                 .AddOptionalParameter("segmentation.mode", segmentationMode?.ToValueString())
                                 .AddOptionalParameter("segmentation.negativePrompt", segmentationNegativePrompt)
                                 .AddOptionalParameter("segmentation.prompt", segmentationPrompt)
+                                .AddOptionalParameter("shadow.directionOverride", shadowDirectionOverride?.ToString())
+                                .AddOptionalParameter("shadow.intensityOverride", shadowIntensityOverride?.ToString())
                                 .AddOptionalParameter("shadow.mode", shadowMode?.ToValueString())
+                                .AddOptionalParameter("shadow.softnessOverride", shadowSoftnessOverride?.ToString())
+                                .AddOptionalParameter("shadow.spreadOverride", shadowSpreadOverride?.ToString())
+                                .AddOptionalParameter("shadow.subjectPoseOverride", shadowSubjectPoseOverride?.ToString())
                                 .AddOptionalParameter("templateId", templateId?.ToString())
                                 .AddOptionalParameter("textRemoval.mode", textRemovalMode?.ToValueString())
                                 .AddOptionalParameter("uncrop.mode", uncropMode)
@@ -1059,7 +1104,12 @@ namespace Photoroom
                     segmentationMode: segmentationMode,
                     segmentationNegativePrompt: segmentationNegativePrompt,
                     segmentationPrompt: segmentationPrompt,
+                    shadowDirectionOverride: shadowDirectionOverride,
+                    shadowIntensityOverride: shadowIntensityOverride,
                     shadowMode: shadowMode,
+                    shadowSoftnessOverride: shadowSoftnessOverride,
+                    shadowSpreadOverride: shadowSpreadOverride,
+                    shadowSubjectPoseOverride: shadowSubjectPoseOverride,
                     templateId: templateId,
                     textRemovalMode: textRemovalMode,
                     uncropMode: uncropMode,

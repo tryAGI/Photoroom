@@ -117,9 +117,21 @@ namespace Photoroom
 
             typeof(global::Photoroom.JsonConverters.EditImageGetSegmentationModeNullableJsonConverter),
 
+            typeof(global::Photoroom.JsonConverters.EditImageGetShadowDirectionOverride2JsonConverter),
+
+            typeof(global::Photoroom.JsonConverters.EditImageGetShadowDirectionOverride2NullableJsonConverter),
+
             typeof(global::Photoroom.JsonConverters.EditImageGetShadowModeJsonConverter),
 
             typeof(global::Photoroom.JsonConverters.EditImageGetShadowModeNullableJsonConverter),
+
+            typeof(global::Photoroom.JsonConverters.EditImageGetShadowSpreadOverride2JsonConverter),
+
+            typeof(global::Photoroom.JsonConverters.EditImageGetShadowSpreadOverride2NullableJsonConverter),
+
+            typeof(global::Photoroom.JsonConverters.EditImageGetShadowSubjectPoseOverride2JsonConverter),
+
+            typeof(global::Photoroom.JsonConverters.EditImageGetShadowSubjectPoseOverride2NullableJsonConverter),
 
             typeof(global::Photoroom.JsonConverters.EditImageGetTextRemovalModeJsonConverter),
 
@@ -156,6 +168,12 @@ namespace Photoroom
             typeof(global::Photoroom.JsonConverters.AnyOfJsonConverter<string, string, global::Photoroom.EditImageGetBackgroundExpandPrompt2>),
 
             typeof(global::Photoroom.JsonConverters.AnyOfJsonConverter<global::Photoroom.EditImageGetLayersVariant1, global::Photoroom.EditImageGetLayersVariant2>),
+
+            typeof(global::Photoroom.JsonConverters.AnyOfJsonConverter<double?, global::Photoroom.EditImageGetShadowDirectionOverride2?>),
+
+            typeof(global::Photoroom.JsonConverters.AnyOfJsonConverter<double?, global::Photoroom.EditImageGetShadowSpreadOverride2?>),
+
+            typeof(global::Photoroom.JsonConverters.AnyOfJsonConverter<double?, global::Photoroom.EditImageGetShadowSubjectPoseOverride2?>),
 
             typeof(global::Photoroom.JsonConverters.AnyOfJsonConverter<global::Photoroom.EditImageGetVirtualModelModelVariant1, global::Photoroom.EditImageGetVirtualModelModelVariant2>),
 
@@ -214,7 +232,13 @@ namespace Photoroom
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetReferenceBox), TypeInfoPropertyName = "EditImageGetReferenceBox2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetScaling), TypeInfoPropertyName = "EditImageGetScaling2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetSegmentationMode), TypeInfoPropertyName = "EditImageGetSegmentationMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowDirectionOverride2?>), TypeInfoPropertyName = "AnyOfDoubleEditImageGetShadowDirectionOverride22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetShadowDirectionOverride2), TypeInfoPropertyName = "EditImageGetShadowDirectionOverride22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetShadowMode), TypeInfoPropertyName = "EditImageGetShadowMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowSpreadOverride2?>), TypeInfoPropertyName = "AnyOfDoubleEditImageGetShadowSpreadOverride22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetShadowSpreadOverride2), TypeInfoPropertyName = "EditImageGetShadowSpreadOverride22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowSubjectPoseOverride2?>), TypeInfoPropertyName = "AnyOfDoubleEditImageGetShadowSubjectPoseOverride22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetShadowSubjectPoseOverride2), TypeInfoPropertyName = "EditImageGetShadowSubjectPoseOverride22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetTextRemovalMode), TypeInfoPropertyName = "EditImageGetTextRemovalMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetUpscaleMode), TypeInfoPropertyName = "EditImageGetUpscaleMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetVerticalAlignment), TypeInfoPropertyName = "EditImageGetVerticalAlignment2")]

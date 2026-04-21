@@ -228,175 +228,199 @@ namespace Photoroom
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetShadowMode? Type50 { get; set; }
+        public global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowDirectionOverride2?>? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetTextRemovalMode? Type51 { get; set; }
+        public global::Photoroom.EditImageGetShadowDirectionOverride2? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetUpscaleMode? Type52 { get; set; }
+        public global::Photoroom.EditImageGetShadowMode? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetVerticalAlignment? Type53 { get; set; }
+        public global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowSpreadOverride2?>? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type54 { get; set; }
+        public global::Photoroom.EditImageGetShadowSpreadOverride2? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.AnyOf<global::Photoroom.EditImageGetVirtualModelModelVariant1, global::Photoroom.EditImageGetVirtualModelModelVariant2>? Type55 { get; set; }
+        public global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowSubjectPoseOverride2?>? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetVirtualModelModelVariant1? Type56 { get; set; }
+        public global::Photoroom.EditImageGetShadowSubjectPoseOverride2? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetVirtualModelModelVariant1Preset? Type57 { get; set; }
+        public global::Photoroom.EditImageGetTextRemovalMode? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetVirtualModelModelVariant1PresetName? Type58 { get; set; }
+        public global::Photoroom.EditImageGetUpscaleMode? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetVirtualModelModelVariant2? Type59 { get; set; }
+        public global::Photoroom.EditImageGetVerticalAlignment? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetVirtualModelModelVariant2Custom? Type60 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetVirtualModelPose? Type61 { get; set; }
+        public global::Photoroom.AnyOf<global::Photoroom.EditImageGetVirtualModelModelVariant1, global::Photoroom.EditImageGetVirtualModelModelVariant2>? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetVirtualModelQuality? Type62 { get; set; }
+        public global::Photoroom.EditImageGetVirtualModelModelVariant1? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.AnyOf<global::Photoroom.EditImageGetVirtualModelSceneVariant1, global::Photoroom.EditImageGetVirtualModelSceneVariant2>? Type63 { get; set; }
+        public global::Photoroom.EditImageGetVirtualModelModelVariant1Preset? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetVirtualModelSceneVariant1? Type64 { get; set; }
+        public global::Photoroom.EditImageGetVirtualModelModelVariant1PresetName? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetVirtualModelSceneVariant1Preset? Type65 { get; set; }
+        public global::Photoroom.EditImageGetVirtualModelModelVariant2? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetVirtualModelSceneVariant1PresetName? Type66 { get; set; }
+        public global::Photoroom.EditImageGetVirtualModelModelVariant2Custom? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetVirtualModelSceneVariant2? Type67 { get; set; }
+        public global::Photoroom.EditImageGetVirtualModelPose? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetVirtualModelSceneVariant2Custom? Type68 { get; set; }
+        public global::Photoroom.EditImageGetVirtualModelQuality? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetVirtualModelSize? Type69 { get; set; }
+        public global::Photoroom.AnyOf<global::Photoroom.EditImageGetVirtualModelSceneVariant1, global::Photoroom.EditImageGetVirtualModelSceneVariant2>? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.RemoveBackgroundResponse? Type70 { get; set; }
+        public global::Photoroom.EditImageGetVirtualModelSceneVariant1? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.RemoveBackgroundResponse2? Type71 { get; set; }
+        public global::Photoroom.EditImageGetVirtualModelSceneVariant1Preset? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.RemoveBackgroundResponse3? Type72 { get; set; }
+        public global::Photoroom.EditImageGetVirtualModelSceneVariant1PresetName? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.AccountDetailsV1Response? Type73 { get; set; }
+        public global::Photoroom.EditImageGetVirtualModelSceneVariant2? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.AccountDetailsV1ResponseCredits? Type74 { get; set; }
+        public global::Photoroom.EditImageGetVirtualModelSceneVariant2Custom? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.AccountDetailsV1Response2? Type75 { get; set; }
+        public global::Photoroom.EditImageGetVirtualModelSize? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.AccountDetailsV1ResponseError? Type76 { get; set; }
+        public global::Photoroom.RemoveBackgroundResponse? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.AccountDetailsV2Response? Type77 { get; set; }
+        public global::Photoroom.RemoveBackgroundResponse2? Type77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.AccountDetailsV2ResponseImages? Type78 { get; set; }
+        public global::Photoroom.RemoveBackgroundResponse3? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.AccountDetailsV2Response2? Type79 { get; set; }
+        public global::Photoroom.AccountDetailsV1Response? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.AccountDetailsV2ResponseError? Type80 { get; set; }
+        public global::Photoroom.AccountDetailsV1ResponseCredits? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetResponse? Type81 { get; set; }
+        public global::Photoroom.AccountDetailsV1Response2? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetResponseError? Type82 { get; set; }
+        public global::Photoroom.AccountDetailsV1ResponseError? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetResponse2? Type83 { get; set; }
+        public global::Photoroom.AccountDetailsV2Response? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetResponseError2? Type84 { get; set; }
+        public global::Photoroom.AccountDetailsV2ResponseImages? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetResponse3? Type85 { get; set; }
+        public global::Photoroom.AccountDetailsV2Response2? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImageGetResponseError3? Type86 { get; set; }
+        public global::Photoroom.AccountDetailsV2ResponseError? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImagePostResponse? Type87 { get; set; }
+        public global::Photoroom.EditImageGetResponse? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImagePostResponseError? Type88 { get; set; }
+        public global::Photoroom.EditImageGetResponseError? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImagePostResponse2? Type89 { get; set; }
+        public global::Photoroom.EditImageGetResponse2? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImagePostResponseError2? Type90 { get; set; }
+        public global::Photoroom.EditImageGetResponseError2? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImagePostResponse3? Type91 { get; set; }
+        public global::Photoroom.EditImageGetResponse3? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Photoroom.EditImagePostResponseError3? Type92 { get; set; }
+        public global::Photoroom.EditImageGetResponseError3? Type92 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Photoroom.EditImagePostResponse? Type93 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Photoroom.EditImagePostResponseError? Type94 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Photoroom.EditImagePostResponse2? Type95 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Photoroom.EditImagePostResponseError2? Type96 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Photoroom.EditImagePostResponse3? Type97 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Photoroom.EditImagePostResponseError3? Type98 { get; set; }
 
         /// <summary>
         /// 

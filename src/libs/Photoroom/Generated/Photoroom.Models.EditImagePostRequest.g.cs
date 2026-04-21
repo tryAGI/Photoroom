@@ -460,10 +460,66 @@ namespace Photoroom
         public string? SegmentationPrompt { get; set; }
 
         /// <summary>
-        /// Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated If set to `ai.hard`, a hard shadow will be generated If set to `ai.floating`, a floating shadow will be generated
+        /// Override for the direction of the shadow.<br/>
+        /// Can be provided either as an angle in degrees or as one of the following presets:<br/>
+        /// - `behind` = 0<br/>
+        /// - `behindLeft` = 45<br/>
+        /// - `left` = 90<br/>
+        /// - `frontLeft` = 135<br/>
+        /// - `front` = 180<br/>
+        /// - `frontRight` = 225<br/>
+        /// - `right` = 270<br/>
+        /// - `behindRight` = 315<br/>
+        /// When using degrees, 0 means the shadow is behind the subject, 90 means the shadow is at the left of the subject, 180 means the shadow is in front of the subject, and 270 means the shadow is at the right of the subject.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shadow.directionOverride")]
+        public object? ShadowDirectionOverride { get; set; }
+
+        /// <summary>
+        /// Override for the intensity of the shadow.<br/>
+        /// 0 means a very faint shadow, 1 means a very dark shadow.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shadow.intensityOverride")]
+        public double? ShadowIntensityOverride { get; set; }
+
+        /// <summary>
+        /// Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.hard`, a hard shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.floating`, a floating shadow will be generated. Not compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-soft`, a soft shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-hard`, a hard shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.auto-with-overrides`, the model will automatically generate a shadow with the best settings for the input image. Override parameters can be provided to further control the shadow. Only compatible with the `2026-04-15` AI Shadows model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shadow.mode")]
         public string? ShadowMode { get; set; }
+
+        /// <summary>
+        /// Override for the softness of the shadow.<br/>
+        /// 0 means a very hard shadow, 1 means a very soft shadow.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shadow.softnessOverride")]
+        public double? ShadowSoftnessOverride { get; set; }
+
+        /// <summary>
+        /// Override for the spread of the shadow.<br/>
+        /// Can be provided either as an angle in degrees or as one of the following presets:<br/>
+        /// - `short` = 10<br/>
+        /// - `medium` = 45<br/>
+        /// - `long` = 90<br/>
+        /// When using degrees, 0 means a very short shadow and 90 means a very long shadow.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shadow.spreadOverride")]
+        public object? ShadowSpreadOverride { get; set; }
+
+        /// <summary>
+        /// Override for the pose of the subject.<br/>
+        /// Can be provided either as an angle in degrees or as one of the following presets:<br/>
+        /// - `flatlay` = 0<br/>
+        /// - `upright` = 90<br/>
+        /// When using degrees, 0 means the subject is laying flat and 90 means the subject is placed upright.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shadow.subjectPoseOverride")]
+        public object? ShadowSubjectPoseOverride { get; set; }
 
         /// <summary>
         /// The ID of the template to render
@@ -824,8 +880,49 @@ namespace Photoroom
         /// <param name="segmentationPrompt">
         /// Warning: Text-Guided Segmentation is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period. A textual description of what the segmentation should keep.
         /// </param>
+        /// <param name="shadowDirectionOverride">
+        /// Override for the direction of the shadow.<br/>
+        /// Can be provided either as an angle in degrees or as one of the following presets:<br/>
+        /// - `behind` = 0<br/>
+        /// - `behindLeft` = 45<br/>
+        /// - `left` = 90<br/>
+        /// - `frontLeft` = 135<br/>
+        /// - `front` = 180<br/>
+        /// - `frontRight` = 225<br/>
+        /// - `right` = 270<br/>
+        /// - `behindRight` = 315<br/>
+        /// When using degrees, 0 means the shadow is behind the subject, 90 means the shadow is at the left of the subject, 180 means the shadow is in front of the subject, and 270 means the shadow is at the right of the subject.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
+        /// </param>
+        /// <param name="shadowIntensityOverride">
+        /// Override for the intensity of the shadow.<br/>
+        /// 0 means a very faint shadow, 1 means a very dark shadow.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
+        /// </param>
         /// <param name="shadowMode">
-        /// Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated If set to `ai.hard`, a hard shadow will be generated If set to `ai.floating`, a floating shadow will be generated
+        /// Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.hard`, a hard shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.floating`, a floating shadow will be generated. Not compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-soft`, a soft shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-hard`, a hard shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.auto-with-overrides`, the model will automatically generate a shadow with the best settings for the input image. Override parameters can be provided to further control the shadow. Only compatible with the `2026-04-15` AI Shadows model
+        /// </param>
+        /// <param name="shadowSoftnessOverride">
+        /// Override for the softness of the shadow.<br/>
+        /// 0 means a very hard shadow, 1 means a very soft shadow.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
+        /// </param>
+        /// <param name="shadowSpreadOverride">
+        /// Override for the spread of the shadow.<br/>
+        /// Can be provided either as an angle in degrees or as one of the following presets:<br/>
+        /// - `short` = 10<br/>
+        /// - `medium` = 45<br/>
+        /// - `long` = 90<br/>
+        /// When using degrees, 0 means a very short shadow and 90 means a very long shadow.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
+        /// </param>
+        /// <param name="shadowSubjectPoseOverride">
+        /// Override for the pose of the subject.<br/>
+        /// Can be provided either as an angle in degrees or as one of the following presets:<br/>
+        /// - `flatlay` = 0<br/>
+        /// - `upright` = 90<br/>
+        /// When using degrees, 0 means the subject is laying flat and 90 means the subject is placed upright.<br/>
+        /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
         /// </param>
         /// <param name="templateId">
         /// The ID of the template to render
@@ -946,7 +1043,12 @@ namespace Photoroom
             string? segmentationMode,
             string? segmentationNegativePrompt,
             string? segmentationPrompt,
+            object? shadowDirectionOverride,
+            double? shadowIntensityOverride,
             string? shadowMode,
+            double? shadowSoftnessOverride,
+            object? shadowSpreadOverride,
+            object? shadowSubjectPoseOverride,
             global::System.Guid? templateId,
             string? textRemovalMode,
             string? uncropMode,
@@ -1026,7 +1128,12 @@ namespace Photoroom
             this.SegmentationMode = segmentationMode;
             this.SegmentationNegativePrompt = segmentationNegativePrompt;
             this.SegmentationPrompt = segmentationPrompt;
+            this.ShadowDirectionOverride = shadowDirectionOverride;
+            this.ShadowIntensityOverride = shadowIntensityOverride;
             this.ShadowMode = shadowMode;
+            this.ShadowSoftnessOverride = shadowSoftnessOverride;
+            this.ShadowSpreadOverride = shadowSpreadOverride;
+            this.ShadowSubjectPoseOverride = shadowSubjectPoseOverride;
             this.TemplateId = templateId;
             this.TextRemovalMode = textRemovalMode;
             this.UncropMode = uncropMode;
