@@ -1661,21 +1661,146 @@
             }
           },
           {
+            "name": "shadow.directionOverride",
+            "in": "query",
+            "description": "Override for the direction of the shadow.\n\nCan be provided either as an angle in degrees or as one of the following presets:\n- `behind` = 0\n- `behindLeft` = 45\n- `left` = 90\n- `frontLeft` = 135\n- `front` = 180\n- `frontRight` = 225\n- `right` = 270\n- `behindRight` = 315\n\nWhen using degrees, 0 means the shadow is behind the subject, 90 means the shadow is at the left of the subject, 180 means the shadow is in front of the subject, and 270 means the shadow is at the right of the subject.\n\nThis option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "enum": [
+                    "behind",
+                    "behindLeft",
+                    "left",
+                    "frontLeft",
+                    "front",
+                    "frontRight",
+                    "right",
+                    "behindRight"
+                  ],
+                  "type": "string"
+                }
+              ],
+              "examples": [
+                0,
+                90,
+                180,
+                270,
+                "behind",
+                "left",
+                "frontRight"
+              ]
+            }
+          },
+          {
+            "name": "shadow.intensityOverride",
+            "in": "query",
+            "description": "Override for the intensity of the shadow.\n\n0 means a very faint shadow, 1 means a very dark shadow.\n\nThis option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.",
+            "schema": {
+              "examples": [
+                0,
+                0.5,
+                1
+              ],
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          {
             "name": "shadow.mode",
             "in": "query",
-            "description": "Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated If set to `ai.hard`, a hard shadow will be generated If set to `ai.floating`, a floating shadow will be generated",
+            "description": "Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.hard`, a hard shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.floating`, a floating shadow will be generated. Not compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-soft`, a soft shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-hard`, a hard shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.auto-with-overrides`, the model will automatically generate a shadow with the best settings for the input image. Override parameters can be provided to further control the shadow. Only compatible with the `2026-04-15` AI Shadows model",
             "schema": {
               "enum": [
                 "ai.soft",
                 "ai.hard",
-                "ai.floating"
+                "ai.floating",
+                "ai.preset-soft",
+                "ai.preset-hard",
+                "ai.auto-with-overrides"
               ],
               "examples": [
                 "ai.soft",
                 "ai.hard",
-                "ai.floating"
+                "ai.floating",
+                "ai.preset-soft",
+                "ai.preset-hard",
+                "ai.auto-with-overrides"
               ],
               "type": "string"
+            }
+          },
+          {
+            "name": "shadow.softnessOverride",
+            "in": "query",
+            "description": "Override for the softness of the shadow.\n\n0 means a very hard shadow, 1 means a very soft shadow.\n\nThis option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.",
+            "schema": {
+              "examples": [
+                0,
+                0.35,
+                1
+              ],
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          {
+            "name": "shadow.spreadOverride",
+            "in": "query",
+            "description": "Override for the spread of the shadow.\n\nCan be provided either as an angle in degrees or as one of the following presets:\n- `short` = 10\n- `medium` = 45\n- `long` = 90\n\nWhen using degrees, 0 means a very short shadow and 90 means a very long shadow.\n\nThis option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "enum": [
+                    "short",
+                    "medium",
+                    "long"
+                  ],
+                  "type": "string"
+                }
+              ],
+              "examples": [
+                0,
+                25,
+                45,
+                90,
+                "short",
+                "medium",
+                "long"
+              ]
+            }
+          },
+          {
+            "name": "shadow.subjectPoseOverride",
+            "in": "query",
+            "description": "Override for the pose of the subject.\n\nCan be provided either as an angle in degrees or as one of the following presets:\n- `flatlay` = 0\n- `upright` = 90\n\nWhen using degrees, 0 means the subject is laying flat and 90 means the subject is placed upright.\n\nThis option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "enum": [
+                    "flatlay",
+                    "upright"
+                  ],
+                  "type": "string"
+                }
+              ],
+              "examples": [
+                0,
+                45,
+                90,
+                "flatlay",
+                "upright"
+              ]
             }
           },
           {
@@ -2135,7 +2260,7 @@
       "post": {
         "operationId": "edit-image-post",
         "summary": "Image Editing v2 (Plus plan)",
-        "description": "This endpoint processes an image and applies one or more edits: background removal, AI-generated backgrounds (background.prompt), realistic shadows (shadow.mode), relighting (lighting.mode), text removal (textRemoval.mode), background blur (background.blur.*), subject outline (outline.*), AI beautification (beautify.mode), Flat Lay (flatLay.*), Ghost Mannequin (ghostMannequin.*), Virtual Model (virtualModel.*), AI expand (expand.mode), AI uncrop (uncrop.mode), AI upscale (upscale.mode), and positioning/resizing (padding, margin, outputSize).\n\nParameters are grouped by feature using dot notation: background.* for backgrounds, shadow.* for shadows, lighting.* for relighting, outline.* for subject outlines, beautify.* for AI beautification, flatLay.* for flat lay generation, ghostMannequin.* for ghost mannequin generation, virtualModel.* for virtual model generation, expand.* for AI expand, uncrop.* for AI uncrop, upscale.* for AI upscale, export.* for output format, and segmentation.* for text-guided segmentation.\n\nEdits can be combined in a single call.\n\nIt accepts an image file for the image. If you want to send a URL, please use the GET endpoint. For more details on the difference between the GET and POST endpoints, please have a look at our documentation: https://docs.photoroom.com/image-editing-api/which-endpoints-are-available.\n\nIf you only have a URL for your image (not a local file), use the GET endpoint instead — it is simpler to integrate. Use this POST endpoint when you need to upload image files directly as multipart/form-data.\n\nFull documentation: https://docs.photoroom.com/image-editing-api-plus-plan/quickstart-guide\n\nFeature documentation:\n- [HD Background Removal](https://docs.photoroom.com/image-editing-api-plus-plan/hd-background-removal)\n- [Positioning (padding, margin, scaling)](https://docs.photoroom.com/image-editing-api-plus-plan/positioning)\n- [Output Size](https://docs.photoroom.com/image-editing-api-plus-plan/output-size)\n- [Static Background](https://docs.photoroom.com/image-editing-api-plus-plan/static-background)\n- [Background Blur](https://docs.photoroom.com/image-editing-api-plus-plan/background-blur)\n- [Subject Outline](https://docs.photoroom.com/image-editing-api-plus-plan/subject-outline)\n- [AI Shadows](https://docs.photoroom.com/image-editing-api-plus-plan/ai-shadows)\n- [AI Backgrounds](https://docs.photoroom.com/image-editing-api-plus-plan/ai-backgrounds)\n- [AI Relight](https://docs.photoroom.com/image-editing-api-plus-plan/ai-relight)\n- [AI Text Removal](https://docs.photoroom.com/image-editing-api-plus-plan/ai-text-removal)\n- [AI Expand](https://docs.photoroom.com/image-editing-api-plus-plan/ai-expand)\n- [AI Uncrop](https://docs.photoroom.com/image-editing-api-plus-plan/ai-uncrop)\n- [AI Beautifier](https://docs.photoroom.com/image-editing-api-plus-plan/ai-beautifier)\n- [Flat Lay](https://docs.photoroom.com/image-editing-api-plus-plan/flat-lay)\n- [Ghost Mannequin](https://docs.photoroom.com/image-editing-api-plus-plan/ghost-mannequin)\n- [Virtual Model](https://docs.photoroom.com/image-editing-api-plus-plan/virtual-model)\n- [AI Upscale](https://docs.photoroom.com/image-editing-api-plus-plan/alpha-ai-upscale)\n- [Describe Any Change](https://docs.photoroom.com/image-editing-api-plus-plan/edit-with-ai)\n- [Create Any Image](https://docs.photoroom.com/image-editing-api-plus-plan/alpha-create-any-image)\n- [Text-Guided Segmentation](https://docs.photoroom.com/image-editing-api-plus-plan/alpha-text-guided-segmentation)\n- [Sandbox Mode (free testing)](https://docs.photoroom.com/image-editing-api-plus-plan/sandbox-mode)",
+        "description": "This endpoint processes an image and applies one or more edits: background removal, AI-generated backgrounds (background.prompt), realistic shadows (shadow.mode), relighting (lighting.mode), text removal (textRemoval.mode), background blur (background.blur.*), subject outline (outline.*), AI beautification (beautify.mode), Flat Lay (flatLay.*), Ghost Mannequin (ghostMannequin.*), Virtual Model (virtualModel.*), AI expand (expand.mode), AI uncrop (uncrop.mode), AI upscale (upscale.mode), and positioning/resizing (padding, margin, outputSize).\n\nParameters are grouped by feature using dot notation: background.* for backgrounds, shadow.* for shadows, lighting.* for relighting, outline.* for subject outlines, beautify.* for AI beautification, flatLay.* for flat lay generation, ghostMannequin.* for ghost mannequin generation, virtualModel.* for virtual model generation, expand.* for AI expand, uncrop.* for AI uncrop, upscale.* for AI upscale, export.* for output format, and segmentation.* for text-guided segmentation.\n\nEdits can be combined in a single call.\n\nIt accepts an image file for the image. If you want to send a URL, please use the GET endpoint. For more details on the difference between the GET and POST endpoints, please have a look at our documentation: https://docs.photoroom.com/image-editing-api/which-endpoints-are-available.\n\nIf you only have a URL for your image (not a local file), use the GET endpoint instead — it is simpler to integrate. Use this POST endpoint when you need to upload image files directly as multipart/form-data.\n\nFor this POST endpoint, all parameters must be passed via the request body using multipart/form-data encoding. Parameters must not be passed using the query string.\n\nFull documentation: https://docs.photoroom.com/image-editing-api-plus-plan/quickstart-guide\n\nFeature documentation:\n- [HD Background Removal](https://docs.photoroom.com/image-editing-api-plus-plan/hd-background-removal)\n- [Positioning (padding, margin, scaling)](https://docs.photoroom.com/image-editing-api-plus-plan/positioning)\n- [Output Size](https://docs.photoroom.com/image-editing-api-plus-plan/output-size)\n- [Static Background](https://docs.photoroom.com/image-editing-api-plus-plan/static-background)\n- [Background Blur](https://docs.photoroom.com/image-editing-api-plus-plan/background-blur)\n- [Subject Outline](https://docs.photoroom.com/image-editing-api-plus-plan/subject-outline)\n- [AI Shadows](https://docs.photoroom.com/image-editing-api-plus-plan/ai-shadows)\n- [AI Backgrounds](https://docs.photoroom.com/image-editing-api-plus-plan/ai-backgrounds)\n- [AI Relight](https://docs.photoroom.com/image-editing-api-plus-plan/ai-relight)\n- [AI Text Removal](https://docs.photoroom.com/image-editing-api-plus-plan/ai-text-removal)\n- [AI Expand](https://docs.photoroom.com/image-editing-api-plus-plan/ai-expand)\n- [AI Uncrop](https://docs.photoroom.com/image-editing-api-plus-plan/ai-uncrop)\n- [AI Beautifier](https://docs.photoroom.com/image-editing-api-plus-plan/ai-beautifier)\n- [Flat Lay](https://docs.photoroom.com/image-editing-api-plus-plan/flat-lay)\n- [Ghost Mannequin](https://docs.photoroom.com/image-editing-api-plus-plan/ghost-mannequin)\n- [Virtual Model](https://docs.photoroom.com/image-editing-api-plus-plan/virtual-model)\n- [AI Upscale](https://docs.photoroom.com/image-editing-api-plus-plan/alpha-ai-upscale)\n- [Describe Any Change](https://docs.photoroom.com/image-editing-api-plus-plan/edit-with-ai)\n- [Create Any Image](https://docs.photoroom.com/image-editing-api-plus-plan/alpha-create-any-image)\n- [Text-Guided Segmentation](https://docs.photoroom.com/image-editing-api-plus-plan/alpha-text-guided-segmentation)\n- [Sandbox Mode (free testing)](https://docs.photoroom.com/image-editing-api-plus-plan/sandbox-mode)",
         "servers": [
           {
             "url": "https://image-api.photoroom.com",
@@ -2423,9 +2548,26 @@
                     "type": "string",
                     "description": "Warning: Text-Guided Segmentation is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period. A textual description of what the segmentation should keep."
                   },
+                  "shadow.directionOverride": {
+                    "description": "Override for the direction of the shadow.\n\nCan be provided either as an angle in degrees or as one of the following presets:\n- `behind` = 0\n- `behindLeft` = 45\n- `left` = 90\n- `frontLeft` = 135\n- `front` = 180\n- `frontRight` = 225\n- `right` = 270\n- `behindRight` = 315\n\nWhen using degrees, 0 means the shadow is behind the subject, 90 means the shadow is at the left of the subject, 180 means the shadow is in front of the subject, and 270 means the shadow is at the right of the subject.\n\nThis option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`."
+                  },
+                  "shadow.intensityOverride": {
+                    "type": "number",
+                    "description": "Override for the intensity of the shadow.\n\n0 means a very faint shadow, 1 means a very dark shadow.\n\nThis option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`."
+                  },
                   "shadow.mode": {
                     "type": "string",
-                    "description": "Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated If set to `ai.hard`, a hard shadow will be generated If set to `ai.floating`, a floating shadow will be generated"
+                    "description": "Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.hard`, a hard shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.floating`, a floating shadow will be generated. Not compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-soft`, a soft shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-hard`, a hard shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.auto-with-overrides`, the model will automatically generate a shadow with the best settings for the input image. Override parameters can be provided to further control the shadow. Only compatible with the `2026-04-15` AI Shadows model"
+                  },
+                  "shadow.softnessOverride": {
+                    "type": "number",
+                    "description": "Override for the softness of the shadow.\n\n0 means a very hard shadow, 1 means a very soft shadow.\n\nThis option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`."
+                  },
+                  "shadow.spreadOverride": {
+                    "description": "Override for the spread of the shadow.\n\nCan be provided either as an angle in degrees or as one of the following presets:\n- `short` = 10\n- `medium` = 45\n- `long` = 90\n\nWhen using degrees, 0 means a very short shadow and 90 means a very long shadow.\n\nThis option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`."
+                  },
+                  "shadow.subjectPoseOverride": {
+                    "description": "Override for the pose of the subject.\n\nCan be provided either as an angle in degrees or as one of the following presets:\n- `flatlay` = 0\n- `upright` = 90\n\nWhen using degrees, 0 means the subject is laying flat and 90 means the subject is placed upright.\n\nThis option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`."
                   },
                   "templateId": {
                     "type": "string",
