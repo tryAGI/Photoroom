@@ -208,6 +208,8 @@ namespace Photoroom
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetBackgroundExpandPromptMode), TypeInfoPropertyName = "EditImageGetBackgroundExpandPromptMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetBackgroundScaling), TypeInfoPropertyName = "EditImageGetBackgroundScaling2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetBeautifyMode), TypeInfoPropertyName = "EditImageGetBeautifyMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Photoroom.EditImageGetEditWithAIAdditionalImages2>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetEditWithAIAdditionalImages2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetExportFormat), TypeInfoPropertyName = "EditImageGetExportFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetFlatLaySize), TypeInfoPropertyName = "EditImageGetFlatLaySize2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetGhostMannequinSize), TypeInfoPropertyName = "EditImageGetGhostMannequinSize2")]

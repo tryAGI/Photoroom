@@ -775,6 +775,32 @@
             }
           },
           {
+            "name": "editWithAI.additionalImages",
+            "in": "query",
+            "description": "Additional reference images to use during edit generation.",
+            "schema": {
+              "additionalProperties": {
+                "additionalProperties": false,
+                "properties": {
+                  "imageFile": {
+                    "description": "Bytes of an additional reference image. Only available in the POST request.",
+                    "format": "binary",
+                    "type": "string"
+                  },
+                  "imageUrl": {
+                    "description": "URL of an additional reference image.",
+                    "examples": [
+                      "https://example.com/reference-1.jpg"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "object"
+            }
+          },
+          {
             "name": "editWithAI.mode",
             "in": "query",
             "description": "Edit with AI mode to use on the main image used by the API.\n\nCurrently, only `ai.auto` is supported.",
@@ -1712,7 +1738,7 @@
           {
             "name": "shadow.mode",
             "in": "query",
-            "description": "Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.hard`, a hard shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.floating`, a floating shadow will be generated. Not compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-soft`, a soft shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-hard`, a hard shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.auto-with-overrides`, the model will automatically generate a shadow with the best settings for the input image. Override parameters can be provided to further control the shadow. Only compatible with the `2026-04-15` AI Shadows model",
+            "description": "Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.hard`, a hard shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.floating`, a floating shadow will be generated. Not compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-soft`, a soft shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-hard`, a hard shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.auto-with-overrides`, a shadow with most natural appearance for the input image will be generated. Override parameters can be provided to gain full control over the appearance of that shadow. Only compatible with the `2026-04-15` AI Shadows model",
             "schema": {
               "enum": [
                 "ai.soft",
@@ -2338,6 +2364,10 @@
                     "type": "number",
                     "description": "(DEPRECATED) Use `editWithAI.seed` instead.\n\nSeed used for the generation. Can be used to get similar looking results for the same prompt."
                   },
+                  "editWithAI.additionalImages": {
+                    "type": "object",
+                    "description": "Additional reference images to use during edit generation."
+                  },
                   "editWithAI.mode": {
                     "type": "string",
                     "description": "Edit with AI mode to use on the main image used by the API.\n\nCurrently, only `ai.auto` is supported."
@@ -2557,7 +2587,7 @@
                   },
                   "shadow.mode": {
                     "type": "string",
-                    "description": "Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.hard`, a hard shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.floating`, a floating shadow will be generated. Not compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-soft`, a soft shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-hard`, a hard shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.auto-with-overrides`, the model will automatically generate a shadow with the best settings for the input image. Override parameters can be provided to further control the shadow. Only compatible with the `2026-04-15` AI Shadows model"
+                    "description": "Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.hard`, a hard shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.floating`, a floating shadow will be generated. Not compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-soft`, a soft shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-hard`, a hard shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.auto-with-overrides`, a shadow with most natural appearance for the input image will be generated. Override parameters can be provided to gain full control over the appearance of that shadow. Only compatible with the `2026-04-15` AI Shadows model"
                   },
                   "shadow.softnessOverride": {
                     "type": "number",
