@@ -52,7 +52,7 @@ namespace Photoroom
             ref string? describeAnyChangeMode,
             ref string? describeAnyChangePrompt,
             ref double? describeAnyChangeSeed,
-            global::System.Collections.Generic.Dictionary<string, global::Photoroom.EditImageGetEditWithAIAdditionalImages2>? editWithAIAdditionalImages,
+            ref string? editWithAIAdditionalImages_key_ImageUrl,
             ref string? editWithAIMode,
             ref string? editWithAIPrompt,
             ref double? editWithAISeed,
@@ -138,7 +138,7 @@ namespace Photoroom
             string? describeAnyChangeMode,
             string? describeAnyChangePrompt,
             double? describeAnyChangeSeed,
-            global::System.Collections.Generic.Dictionary<string, global::Photoroom.EditImageGetEditWithAIAdditionalImages2>? editWithAIAdditionalImages,
+            string? editWithAIAdditionalImages_key_ImageUrl,
             string? editWithAIMode,
             string? editWithAIPrompt,
             double? editWithAISeed,
@@ -271,7 +271,7 @@ namespace Photoroom
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
         /// <param name="describeAnyChangeSeed"></param>
-        /// <param name="editWithAIAdditionalImages"></param>
+        /// <param name="editWithAIAdditionalImages_key_ImageUrl"></param>
         /// <param name="editWithAIMode"></param>
         /// <param name="editWithAIPrompt"></param>
         /// <param name="editWithAISeed"></param>
@@ -398,7 +398,7 @@ namespace Photoroom
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
-            global::System.Collections.Generic.Dictionary<string, global::Photoroom.EditImageGetEditWithAIAdditionalImages2>? editWithAIAdditionalImages = default,
+            string? editWithAIAdditionalImages_key_ImageUrl = default,
             string? editWithAIMode = default,
             string? editWithAIPrompt = default,
             double? editWithAISeed = default,
@@ -485,7 +485,7 @@ namespace Photoroom
                 describeAnyChangeMode: describeAnyChangeMode,
                 describeAnyChangePrompt: describeAnyChangePrompt,
                 describeAnyChangeSeed: describeAnyChangeSeed,
-                editWithAIAdditionalImages: editWithAIAdditionalImages,
+                editWithAIAdditionalImages_key_ImageUrl: editWithAIAdditionalImages_key_ImageUrl,
                 editWithAIMode: editWithAIMode,
                 editWithAIPrompt: editWithAIPrompt,
                 editWithAISeed: editWithAISeed,
@@ -615,7 +615,7 @@ namespace Photoroom
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
         /// <param name="describeAnyChangeSeed"></param>
-        /// <param name="editWithAIAdditionalImages"></param>
+        /// <param name="editWithAIAdditionalImages_key_ImageUrl"></param>
         /// <param name="editWithAIMode"></param>
         /// <param name="editWithAIPrompt"></param>
         /// <param name="editWithAISeed"></param>
@@ -742,7 +742,7 @@ namespace Photoroom
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
-            global::System.Collections.Generic.Dictionary<string, global::Photoroom.EditImageGetEditWithAIAdditionalImages2>? editWithAIAdditionalImages = default,
+            string? editWithAIAdditionalImages_key_ImageUrl = default,
             string? editWithAIMode = default,
             string? editWithAIPrompt = default,
             double? editWithAISeed = default,
@@ -832,7 +832,7 @@ namespace Photoroom
                 describeAnyChangeMode: ref describeAnyChangeMode,
                 describeAnyChangePrompt: ref describeAnyChangePrompt,
                 describeAnyChangeSeed: ref describeAnyChangeSeed,
-                editWithAIAdditionalImages: editWithAIAdditionalImages,
+                editWithAIAdditionalImages_key_ImageUrl: ref editWithAIAdditionalImages_key_ImageUrl,
                 editWithAIMode: ref editWithAIMode,
                 editWithAIPrompt: ref editWithAIPrompt,
                 editWithAISeed: ref editWithAISeed,
@@ -944,7 +944,7 @@ namespace Photoroom
                                 .AddOptionalParameter("describeAnyChange.mode", describeAnyChangeMode)
                                 .AddOptionalParameter("describeAnyChange.prompt", describeAnyChangePrompt)
                                 .AddOptionalParameter("describeAnyChange.seed", describeAnyChangeSeed?.ToString())
-                                .AddOptionalParameter("editWithAI.additionalImages", editWithAIAdditionalImages?.ToString())
+                                .AddOptionalParameter("editWithAI.additionalImages.{key}.imageUrl", editWithAIAdditionalImages_key_ImageUrl)
                                 .AddOptionalParameter("editWithAI.mode", editWithAIMode)
                                 .AddOptionalParameter("editWithAI.prompt", editWithAIPrompt)
                                 .AddOptionalParameter("editWithAI.seed", editWithAISeed?.ToString())
@@ -1068,7 +1068,7 @@ namespace Photoroom
                     describeAnyChangeMode: describeAnyChangeMode,
                     describeAnyChangePrompt: describeAnyChangePrompt,
                     describeAnyChangeSeed: describeAnyChangeSeed,
-                    editWithAIAdditionalImages: editWithAIAdditionalImages,
+                    editWithAIAdditionalImages_key_ImageUrl: editWithAIAdditionalImages_key_ImageUrl,
                     editWithAIMode: editWithAIMode,
                     editWithAIPrompt: editWithAIPrompt,
                     editWithAISeed: editWithAISeed,

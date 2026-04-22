@@ -775,29 +775,14 @@
             }
           },
           {
-            "name": "editWithAI.additionalImages",
+            "name": "editWithAI.additionalImages.{key}.imageUrl",
             "in": "query",
-            "description": "Additional reference images to use during edit generation.",
+            "description": "URL of an additional reference image.",
             "schema": {
-              "additionalProperties": {
-                "additionalProperties": false,
-                "properties": {
-                  "imageFile": {
-                    "description": "Bytes of an additional reference image. Only available in the POST request.",
-                    "format": "binary",
-                    "type": "string"
-                  },
-                  "imageUrl": {
-                    "description": "URL of an additional reference image.",
-                    "examples": [
-                      "https://example.com/reference-1.jpg"
-                    ],
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              },
-              "type": "object"
+              "examples": [
+                "https://example.com/reference-1.jpg"
+              ],
+              "type": "string"
             }
           },
           {
@@ -2364,9 +2349,10 @@
                     "type": "number",
                     "description": "(DEPRECATED) Use `editWithAI.seed` instead.\n\nSeed used for the generation. Can be used to get similar looking results for the same prompt."
                   },
-                  "editWithAI.additionalImages": {
-                    "type": "object",
-                    "description": "Additional reference images to use during edit generation."
+                  "editWithAI.additionalImages.{key}.imageFile": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "Bytes of an additional reference image. Only available in the POST request."
                   },
                   "editWithAI.mode": {
                     "type": "string",

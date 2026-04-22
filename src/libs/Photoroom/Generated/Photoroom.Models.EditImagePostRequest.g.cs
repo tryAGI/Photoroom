@@ -149,10 +149,16 @@ namespace Photoroom
         public double? DescribeAnyChangeSeed { get; set; }
 
         /// <summary>
-        /// Additional reference images to use during edit generation.
+        /// Bytes of an additional reference image. Only available in the POST request.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("editWithAI.additionalImages")]
-        public object? EditWithAIAdditionalImages { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("editWithAI.additionalImages.{key}.imageFile")]
+        public byte[]? EditWithAIAdditionalImages_key_ImageFile { get; set; }
+
+        /// <summary>
+        /// Bytes of an additional reference image. Only available in the POST request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("editWithAI.additionalImages.{key}.imageFilename")]
+        public string? EditWithAIAdditionalImages_key_ImageFilename { get; set; }
 
         /// <summary>
         /// Edit with AI mode to use on the main image used by the API.<br/>
@@ -715,8 +721,11 @@ namespace Photoroom
         /// (DEPRECATED) Use `editWithAI.seed` instead.<br/>
         /// Seed used for the generation. Can be used to get similar looking results for the same prompt.
         /// </param>
-        /// <param name="editWithAIAdditionalImages">
-        /// Additional reference images to use during edit generation.
+        /// <param name="editWithAIAdditionalImages_key_ImageFile">
+        /// Bytes of an additional reference image. Only available in the POST request.
+        /// </param>
+        /// <param name="editWithAIAdditionalImages_key_ImageFilename">
+        /// Bytes of an additional reference image. Only available in the POST request.
         /// </param>
         /// <param name="editWithAIMode">
         /// Edit with AI mode to use on the main image used by the API.<br/>
@@ -1006,7 +1015,8 @@ namespace Photoroom
             string? describeAnyChangeMode,
             string? describeAnyChangePrompt,
             double? describeAnyChangeSeed,
-            object? editWithAIAdditionalImages,
+            byte[]? editWithAIAdditionalImages_key_ImageFile,
+            string? editWithAIAdditionalImages_key_ImageFilename,
             string? editWithAIMode,
             string? editWithAIPrompt,
             double? editWithAISeed,
@@ -1092,7 +1102,8 @@ namespace Photoroom
             this.DescribeAnyChangeMode = describeAnyChangeMode;
             this.DescribeAnyChangePrompt = describeAnyChangePrompt;
             this.DescribeAnyChangeSeed = describeAnyChangeSeed;
-            this.EditWithAIAdditionalImages = editWithAIAdditionalImages;
+            this.EditWithAIAdditionalImages_key_ImageFile = editWithAIAdditionalImages_key_ImageFile;
+            this.EditWithAIAdditionalImages_key_ImageFilename = editWithAIAdditionalImages_key_ImageFilename;
             this.EditWithAIMode = editWithAIMode;
             this.EditWithAIPrompt = editWithAIPrompt;
             this.EditWithAISeed = editWithAISeed;
