@@ -331,6 +331,13 @@ namespace Photoroom
                                     content: new global::System.Net.Http.StringContent($"{request.DescribeAnyChangeSeed}"),
                                     name: "\"describeAnyChange.seed\"");
                             } 
+                            if (request.EditWithAIAdditionalImages != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.EditWithAIAdditionalImages}"),
+                                    name: "\"editWithAI.additionalImages\"");
+                            } 
                             if (request.EditWithAIMode != default)
                             {
 
@@ -1286,6 +1293,9 @@ namespace Photoroom
         /// (DEPRECATED) Use `editWithAI.seed` instead.<br/>
         /// Seed used for the generation. Can be used to get similar looking results for the same prompt.
         /// </param>
+        /// <param name="editWithAIAdditionalImages">
+        /// Additional reference images to use during edit generation.
+        /// </param>
         /// <param name="editWithAIMode">
         /// Edit with AI mode to use on the main image used by the API.<br/>
         /// Currently, only `ai.auto` is supported.
@@ -1477,7 +1487,7 @@ namespace Photoroom
         /// This option is only supported by the `2026-04-15` AI Shadows model. It requires setting `shadow.mode` to `ai.auto-with-overrides`.
         /// </param>
         /// <param name="shadowMode">
-        /// Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.hard`, a hard shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.floating`, a floating shadow will be generated. Not compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-soft`, a soft shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-hard`, a hard shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.auto-with-overrides`, the model will automatically generate a shadow with the best settings for the input image. Override parameters can be provided to further control the shadow. Only compatible with the `2026-04-15` AI Shadows model
+        /// Shadow generation mode to use on the main image used by the API. If set to `ai.soft`, a soft shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.hard`, a hard shadow will be generated. Only compatible with legacy AI Shadows models If set to `ai.floating`, a floating shadow will be generated. Not compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-soft`, a soft shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.preset-hard`, a hard shadow will be generated. Only compatible with the `2026-04-15` AI Shadows model If set to `ai.auto-with-overrides`, a shadow with most natural appearance for the input image will be generated. Override parameters can be provided to gain full control over the appearance of that shadow. Only compatible with the `2026-04-15` AI Shadows model
         /// </param>
         /// <param name="shadowSoftnessOverride">
         /// Override for the softness of the shadow.<br/>
@@ -1574,6 +1584,7 @@ namespace Photoroom
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
+            object? editWithAIAdditionalImages = default,
             string? editWithAIMode = default,
             string? editWithAIPrompt = default,
             double? editWithAISeed = default,
@@ -1663,6 +1674,7 @@ namespace Photoroom
                 DescribeAnyChangeMode = describeAnyChangeMode,
                 DescribeAnyChangePrompt = describeAnyChangePrompt,
                 DescribeAnyChangeSeed = describeAnyChangeSeed,
+                EditWithAIAdditionalImages = editWithAIAdditionalImages,
                 EditWithAIMode = editWithAIMode,
                 EditWithAIPrompt = editWithAIPrompt,
                 EditWithAISeed = editWithAISeed,
