@@ -62,7 +62,7 @@ namespace Photoroom
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
         /// <param name="describeAnyChangeSeed"></param>
-        /// <param name="editWithAIAdditionalImages"></param>
+        /// <param name="editWithAIAdditionalImages_key_ImageUrl"></param>
         /// <param name="editWithAIMode"></param>
         /// <param name="editWithAIPrompt"></param>
         /// <param name="editWithAISeed"></param>
@@ -189,7 +189,7 @@ namespace Photoroom
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
-            global::System.Collections.Generic.Dictionary<string, global::Photoroom.EditImageGetEditWithAIAdditionalImages2>? editWithAIAdditionalImages = default,
+            string? editWithAIAdditionalImages_key_ImageUrl = default,
             string? editWithAIMode = default,
             string? editWithAIPrompt = default,
             double? editWithAISeed = default,
@@ -315,7 +315,7 @@ namespace Photoroom
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
         /// <param name="describeAnyChangeSeed"></param>
-        /// <param name="editWithAIAdditionalImages"></param>
+        /// <param name="editWithAIAdditionalImages_key_ImageUrl"></param>
         /// <param name="editWithAIMode"></param>
         /// <param name="editWithAIPrompt"></param>
         /// <param name="editWithAISeed"></param>
@@ -442,7 +442,7 @@ namespace Photoroom
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
-            global::System.Collections.Generic.Dictionary<string, global::Photoroom.EditImageGetEditWithAIAdditionalImages2>? editWithAIAdditionalImages = default,
+            string? editWithAIAdditionalImages_key_ImageUrl = default,
             string? editWithAIMode = default,
             string? editWithAIPrompt = default,
             double? editWithAISeed = default,

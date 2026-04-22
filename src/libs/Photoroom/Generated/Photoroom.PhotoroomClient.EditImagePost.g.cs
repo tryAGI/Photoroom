@@ -331,12 +331,18 @@ namespace Photoroom
                                     content: new global::System.Net.Http.StringContent($"{request.DescribeAnyChangeSeed}"),
                                     name: "\"describeAnyChange.seed\"");
                             } 
-                            if (request.EditWithAIAdditionalImages != default)
+                            if (request.EditWithAIAdditionalImages_key_ImageFile != default)
                             {
 
+                                var __contentEditWithAIAdditionalImages_key_ImageFile = new global::System.Net.Http.ByteArrayContent(request.EditWithAIAdditionalImages_key_ImageFile ?? global::System.Array.Empty<byte>());
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.EditWithAIAdditionalImages}"),
-                                    name: "\"editWithAI.additionalImages\"");
+                                    content: __contentEditWithAIAdditionalImages_key_ImageFile,
+                                    name: "\"editWithAI.additionalImages.{key}.imageFile\"",
+                                    fileName: request.EditWithAIAdditionalImages_key_ImageFilename != null ? $"\"{request.EditWithAIAdditionalImages_key_ImageFilename}\"" : string.Empty);
+                                if (__contentEditWithAIAdditionalImages_key_ImageFile.Headers.ContentDisposition != null)
+                                {
+                                    __contentEditWithAIAdditionalImages_key_ImageFile.Headers.ContentDisposition.FileNameStar = null;
+                                }
                             } 
                             if (request.EditWithAIMode != default)
                             {
@@ -1293,8 +1299,11 @@ namespace Photoroom
         /// (DEPRECATED) Use `editWithAI.seed` instead.<br/>
         /// Seed used for the generation. Can be used to get similar looking results for the same prompt.
         /// </param>
-        /// <param name="editWithAIAdditionalImages">
-        /// Additional reference images to use during edit generation.
+        /// <param name="editWithAIAdditionalImages_key_ImageFile">
+        /// Bytes of an additional reference image. Only available in the POST request.
+        /// </param>
+        /// <param name="editWithAIAdditionalImages_key_ImageFilename">
+        /// Bytes of an additional reference image. Only available in the POST request.
         /// </param>
         /// <param name="editWithAIMode">
         /// Edit with AI mode to use on the main image used by the API.<br/>
@@ -1584,7 +1593,8 @@ namespace Photoroom
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
-            object? editWithAIAdditionalImages = default,
+            byte[]? editWithAIAdditionalImages_key_ImageFile = default,
+            string? editWithAIAdditionalImages_key_ImageFilename = default,
             string? editWithAIMode = default,
             string? editWithAIPrompt = default,
             double? editWithAISeed = default,
@@ -1674,7 +1684,8 @@ namespace Photoroom
                 DescribeAnyChangeMode = describeAnyChangeMode,
                 DescribeAnyChangePrompt = describeAnyChangePrompt,
                 DescribeAnyChangeSeed = describeAnyChangeSeed,
-                EditWithAIAdditionalImages = editWithAIAdditionalImages,
+                EditWithAIAdditionalImages_key_ImageFile = editWithAIAdditionalImages_key_ImageFile,
+                EditWithAIAdditionalImages_key_ImageFilename = editWithAIAdditionalImages_key_ImageFilename,
                 EditWithAIMode = editWithAIMode,
                 EditWithAIPrompt = editWithAIPrompt,
                 EditWithAISeed = editWithAISeed,
