@@ -562,9 +562,18 @@ namespace Photoroom
         public double? UncropSeed { get; set; }
 
         /// <summary>
+        /// Optional input downscaling strategy applied before AI Upscale when the selected model rejects the current input size.<br/>
+        /// `never`: keep the current behavior and return an error when the image is too large. `always`: downscale oversized images to the largest input size accepted by the selected model before upscaling. `skipUpscaleIfNotNeeded`: only downscale oversized images when the 4x upscaled result can still be at least as large as the original input.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("upscale.downscaleIfNeeded")]
+        public string? UpscaleDownscaleIfNeeded { get; set; }
+
+        /// <summary>
         /// Warning: AI Upscale is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period.<br/>
         /// If enabled, the input image will be upscaled (imageFile or imageUrl)<br/>
-        /// The input image (imageFile or imageUrl) must not exceed 1000x1000 pixels in dimensions when using `ai.fast` mode. The input image (imageFile or imageUrl) must not exceed 512x512 pixels in dimensions when using `ai.slow` mode.<br/>
+        /// Input limits depend on the model selected for AI Upscale. With the default model:<br/>
+        /// - `ai.fast`: maximum 1,000,000 input pixels<br/>
+        /// - `ai.slow`: maximum 512,000 input pixels<br/>
         /// The upscaling process will enlarge the input image up to 4 times its original size. This will significantly increase the resolution and affect both the input processing and the final output dimensions.<br/>
         /// ai.fast: This algorithm is optimized for speed and may not produce the highest quality results. ai.slow: This algorithm is optimized for quality and may take more time to process.
         /// </summary>
@@ -958,10 +967,16 @@ namespace Photoroom
         /// <param name="uncropSeed">
         /// Seed used to generate the background. Can be used to get similar looking results for the same prompt.
         /// </param>
+        /// <param name="upscaleDownscaleIfNeeded">
+        /// Optional input downscaling strategy applied before AI Upscale when the selected model rejects the current input size.<br/>
+        /// `never`: keep the current behavior and return an error when the image is too large. `always`: downscale oversized images to the largest input size accepted by the selected model before upscaling. `skipUpscaleIfNotNeeded`: only downscale oversized images when the 4x upscaled result can still be at least as large as the original input.
+        /// </param>
         /// <param name="upscaleMode">
         /// Warning: AI Upscale is available as a preview feature. As such, please be aware that there could be breaking changes with a 2-week notice period.<br/>
         /// If enabled, the input image will be upscaled (imageFile or imageUrl)<br/>
-        /// The input image (imageFile or imageUrl) must not exceed 1000x1000 pixels in dimensions when using `ai.fast` mode. The input image (imageFile or imageUrl) must not exceed 512x512 pixels in dimensions when using `ai.slow` mode.<br/>
+        /// Input limits depend on the model selected for AI Upscale. With the default model:<br/>
+        /// - `ai.fast`: maximum 1,000,000 input pixels<br/>
+        /// - `ai.slow`: maximum 512,000 input pixels<br/>
         /// The upscaling process will enlarge the input image up to 4 times its original size. This will significantly increase the resolution and affect both the input processing and the final output dimensions.<br/>
         /// ai.fast: This algorithm is optimized for speed and may not produce the highest quality results. ai.slow: This algorithm is optimized for quality and may take more time to process.
         /// </param>
@@ -1073,6 +1088,7 @@ namespace Photoroom
             string? textRemovalMode,
             string? uncropMode,
             double? uncropSeed,
+            string? upscaleDownscaleIfNeeded,
             string? upscaleMode,
             string? verticalAlignment,
             byte[]? virtualModelAdditionalProductImages,
@@ -1160,6 +1176,7 @@ namespace Photoroom
             this.TextRemovalMode = textRemovalMode;
             this.UncropMode = uncropMode;
             this.UncropSeed = uncropSeed;
+            this.UpscaleDownscaleIfNeeded = upscaleDownscaleIfNeeded;
             this.UpscaleMode = upscaleMode;
             this.VerticalAlignment = verticalAlignment;
             this.VirtualModelAdditionalProductImages = virtualModelAdditionalProductImages;

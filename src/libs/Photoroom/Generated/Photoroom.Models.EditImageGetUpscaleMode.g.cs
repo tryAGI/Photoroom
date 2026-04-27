@@ -9,11 +9,11 @@ namespace Photoroom
     public enum EditImageGetUpscaleMode
     {
         /// <summary>
-        /// This algorithm is optimized for speed and may not produce the highest quality results. ai.slow: This algorithm is optimized for quality and may take more time to process.
+        /// maximum 1,000,000 input pixels
         /// </summary>
         AiFast,
         /// <summary>
-        /// This algorithm is optimized for speed and may not produce the highest quality results. ai.slow: This algorithm is optimized for quality and may take more time to process.
+        /// maximum 512,000 input pixels
         /// </summary>
         AiSlow,
     }

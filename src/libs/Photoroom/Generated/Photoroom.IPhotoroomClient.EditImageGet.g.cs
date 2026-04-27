@@ -146,6 +146,7 @@ namespace Photoroom
         /// <param name="textRemovalMode"></param>
         /// <param name="uncropMode"></param>
         /// <param name="uncropSeed"></param>
+        /// <param name="upscaleDownscaleIfNeeded"></param>
         /// <param name="upscaleMode"></param>
         /// <param name="verticalAlignment"></param>
         /// <param name="virtualModelAdditionalProductImages">
@@ -245,6 +246,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetTextRemovalMode? textRemovalMode = default,
             string? uncropMode = default,
             double? uncropSeed = default,
+            global::Photoroom.EditImageGetUpscaleDownscaleIfNeeded? upscaleDownscaleIfNeeded = default,
             global::Photoroom.EditImageGetUpscaleMode? upscaleMode = default,
             global::Photoroom.EditImageGetVerticalAlignment? verticalAlignment = default,
             global::System.Collections.Generic.IList<string>? virtualModelAdditionalProductImages = default,
@@ -399,6 +401,7 @@ namespace Photoroom
         /// <param name="textRemovalMode"></param>
         /// <param name="uncropMode"></param>
         /// <param name="uncropSeed"></param>
+        /// <param name="upscaleDownscaleIfNeeded"></param>
         /// <param name="upscaleMode"></param>
         /// <param name="verticalAlignment"></param>
         /// <param name="virtualModelAdditionalProductImages">
@@ -498,6 +501,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetTextRemovalMode? textRemovalMode = default,
             string? uncropMode = default,
             double? uncropSeed = default,
+            global::Photoroom.EditImageGetUpscaleDownscaleIfNeeded? upscaleDownscaleIfNeeded = default,
             global::Photoroom.EditImageGetUpscaleMode? upscaleMode = default,
             global::Photoroom.EditImageGetVerticalAlignment? verticalAlignment = default,
             global::System.Collections.Generic.IList<string>? virtualModelAdditionalProductImages = default,
