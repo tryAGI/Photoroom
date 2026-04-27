@@ -137,6 +137,10 @@ namespace Photoroom
 
             typeof(global::Photoroom.JsonConverters.EditImageGetTextRemovalModeNullableJsonConverter),
 
+            typeof(global::Photoroom.JsonConverters.EditImageGetUpscaleDownscaleIfNeededJsonConverter),
+
+            typeof(global::Photoroom.JsonConverters.EditImageGetUpscaleDownscaleIfNeededNullableJsonConverter),
+
             typeof(global::Photoroom.JsonConverters.EditImageGetUpscaleModeJsonConverter),
 
             typeof(global::Photoroom.JsonConverters.EditImageGetUpscaleModeNullableJsonConverter),
@@ -240,6 +244,7 @@ namespace Photoroom
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.AnyOf<double?, global::Photoroom.EditImageGetShadowSubjectPoseOverride2?>), TypeInfoPropertyName = "AnyOfDoubleEditImageGetShadowSubjectPoseOverride22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetShadowSubjectPoseOverride2), TypeInfoPropertyName = "EditImageGetShadowSubjectPoseOverride22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetTextRemovalMode), TypeInfoPropertyName = "EditImageGetTextRemovalMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetUpscaleDownscaleIfNeeded), TypeInfoPropertyName = "EditImageGetUpscaleDownscaleIfNeeded2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetUpscaleMode), TypeInfoPropertyName = "EditImageGetUpscaleMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetVerticalAlignment), TypeInfoPropertyName = "EditImageGetVerticalAlignment2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
