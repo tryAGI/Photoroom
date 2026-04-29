@@ -211,34 +211,62 @@ namespace Photoroom
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BackgroundBlurMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.BackgroundBlurMode ?? string.Empty),
                                     name: "\"background.blur.mode\"");
                             } 
                             if (request.BackgroundBlurRadius != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BackgroundBlurRadius}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.BackgroundBlurRadius, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"background.blur.radius\"");
                             } 
                             if (request.BackgroundColor != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BackgroundColor}"),
+                                    content: new global::System.Net.Http.StringContent(request.BackgroundColor ?? string.Empty),
                                     name: "\"background.color\"");
                             } 
                             if (request.BackgroundExpandPrompt != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BackgroundExpandPrompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.BackgroundExpandPrompt.ToString() ?? string.Empty),
                                     name: "\"background.expandPrompt\"");
                             } 
                             if (request.BackgroundGuidanceImageFile != default)
                             {
 
                                 var __contentBackgroundGuidanceImageFile = new global::System.Net.Http.ByteArrayContent(request.BackgroundGuidanceImageFile ?? global::System.Array.Empty<byte>());
+                                __contentBackgroundGuidanceImageFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.BackgroundGuidanceImageFilename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.BackgroundGuidanceImageFilename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentBackgroundGuidanceImageFile,
                                     name: "\"background.guidance.imageFile\"",
@@ -252,13 +280,41 @@ namespace Photoroom
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BackgroundGuidanceScale}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.BackgroundGuidanceScale, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"background.guidance.scale\"");
                             } 
                             if (request.BackgroundImageFile != default)
                             {
 
                                 var __contentBackgroundImageFile = new global::System.Net.Http.ByteArrayContent(request.BackgroundImageFile ?? global::System.Array.Empty<byte>());
+                                __contentBackgroundImageFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.BackgroundImageFilename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.BackgroundImageFilename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentBackgroundImageFile,
                                     name: "\"background.imageFile\"",
@@ -272,69 +328,97 @@ namespace Photoroom
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BackgroundNegativePrompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.BackgroundNegativePrompt ?? string.Empty),
                                     name: "\"background.negativePrompt\"");
                             } 
                             if (request.BackgroundPrompt != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BackgroundPrompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.BackgroundPrompt ?? string.Empty),
                                     name: "\"background.prompt\"");
                             } 
                             if (request.BackgroundScaling != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BackgroundScaling}"),
+                                    content: new global::System.Net.Http.StringContent(request.BackgroundScaling ?? string.Empty),
                                     name: "\"background.scaling\"");
                             } 
                             if (request.BackgroundSeed != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BackgroundSeed}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.BackgroundSeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"background.seed\"");
                             } 
                             if (request.BeautifyMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BeautifyMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.BeautifyMode ?? string.Empty),
                                     name: "\"beautify.mode\"");
                             } 
                             if (request.BeautifySeed != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BeautifySeed}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.BeautifySeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"beautify.seed\"");
                             } 
                             if (request.DescribeAnyChangeMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DescribeAnyChangeMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.DescribeAnyChangeMode ?? string.Empty),
                                     name: "\"describeAnyChange.mode\"");
                             } 
                             if (request.DescribeAnyChangePrompt != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DescribeAnyChangePrompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.DescribeAnyChangePrompt ?? string.Empty),
                                     name: "\"describeAnyChange.prompt\"");
                             } 
                             if (request.DescribeAnyChangeSeed != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DescribeAnyChangeSeed}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.DescribeAnyChangeSeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"describeAnyChange.seed\"");
                             } 
                             if (request.EditWithAIAdditionalImages_key_ImageFile != default)
                             {
 
                                 var __contentEditWithAIAdditionalImages_key_ImageFile = new global::System.Net.Http.ByteArrayContent(request.EditWithAIAdditionalImages_key_ImageFile ?? global::System.Array.Empty<byte>());
+                                __contentEditWithAIAdditionalImages_key_ImageFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.EditWithAIAdditionalImages_key_ImageFilename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.EditWithAIAdditionalImages_key_ImageFilename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentEditWithAIAdditionalImages_key_ImageFile,
                                     name: "\"editWithAI.additionalImages.{key}.imageFile\"",
@@ -348,111 +432,139 @@ namespace Photoroom
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.EditWithAIMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.EditWithAIMode ?? string.Empty),
                                     name: "\"editWithAI.mode\"");
                             } 
                             if (request.EditWithAIPrompt != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.EditWithAIPrompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.EditWithAIPrompt ?? string.Empty),
                                     name: "\"editWithAI.prompt\"");
                             } 
                             if (request.EditWithAISeed != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.EditWithAISeed}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.EditWithAISeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"editWithAI.seed\"");
                             } 
                             if (request.ExpandMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ExpandMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.ExpandMode ?? string.Empty),
                                     name: "\"expand.mode\"");
                             } 
                             if (request.ExpandSeed != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ExpandSeed}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.ExpandSeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"expand.seed\"");
                             } 
                             if (request.ExportDpi != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ExportDpi}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.ExportDpi, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"export.dpi\"");
                             } 
                             if (request.ExportFormat != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ExportFormat}"),
+                                    content: new global::System.Net.Http.StringContent(request.ExportFormat ?? string.Empty),
                                     name: "\"export.format\"");
                             } 
                             if (request.FlatLayMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.FlatLayMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.FlatLayMode ?? string.Empty),
                                     name: "\"flatLay.mode\"");
                             } 
                             if (request.FlatLayPrompt != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.FlatLayPrompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.FlatLayPrompt ?? string.Empty),
                                     name: "\"flatLay.prompt\"");
                             } 
                             if (request.FlatLaySize != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.FlatLaySize}"),
+                                    content: new global::System.Net.Http.StringContent(request.FlatLaySize ?? string.Empty),
                                     name: "\"flatLay.size\"");
                             } 
                             if (request.GhostMannequinMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.GhostMannequinMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.GhostMannequinMode ?? string.Empty),
                                     name: "\"ghostMannequin.mode\"");
                             } 
                             if (request.GhostMannequinPrompt != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.GhostMannequinPrompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.GhostMannequinPrompt ?? string.Empty),
                                     name: "\"ghostMannequin.prompt\"");
                             } 
                             if (request.GhostMannequinSize != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.GhostMannequinSize}"),
+                                    content: new global::System.Net.Http.StringContent(request.GhostMannequinSize ?? string.Empty),
                                     name: "\"ghostMannequin.size\"");
                             } 
                             if (request.HorizontalAlignment != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.HorizontalAlignment}"),
+                                    content: new global::System.Net.Http.StringContent(request.HorizontalAlignment ?? string.Empty),
                                     name: "\"horizontalAlignment\"");
                             } 
                             if (request.IgnorePaddingAndSnapOnCroppedSides != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.IgnorePaddingAndSnapOnCroppedSides}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.IgnorePaddingAndSnapOnCroppedSides, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"ignorePaddingAndSnapOnCroppedSides\"");
                             } 
                             if (request.ImageFile != default)
                             {
 
                                 var __contentImageFile = new global::System.Net.Http.ByteArrayContent(request.ImageFile ?? global::System.Array.Empty<byte>());
+                                __contentImageFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.ImageFilename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.ImageFilename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentImageFile,
                                     name: "\"imageFile\"",
@@ -466,350 +578,350 @@ namespace Photoroom
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ImageFromPromptPrompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.ImageFromPromptPrompt ?? string.Empty),
                                     name: "\"imageFromPrompt.prompt\"");
                             } 
                             if (request.ImageFromPromptSeed != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ImageFromPromptSeed}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.ImageFromPromptSeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"imageFromPrompt.seed\"");
                             } 
                             if (request.ImageFromPromptSize != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ImageFromPromptSize}"),
+                                    content: new global::System.Net.Http.StringContent(request.ImageFromPromptSize ?? string.Empty),
                                     name: "\"imageFromPrompt.size\"");
                             } 
                             if (request.KeepExistingAlphaChannel != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.KeepExistingAlphaChannel}"),
+                                    content: new global::System.Net.Http.StringContent(request.KeepExistingAlphaChannel ?? string.Empty),
                                     name: "\"keepExistingAlphaChannel\"");
                             } 
                             if (request.Layers != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Layers}"),
+                                    content: new global::System.Net.Http.StringContent(request.Layers.ToString() ?? string.Empty),
                                     name: "\"layers\"");
                             } 
                             if (request.LightingMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.LightingMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.LightingMode ?? string.Empty),
                                     name: "\"lighting.mode\"");
                             } 
                             if (request.Margin != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Margin}"),
+                                    content: new global::System.Net.Http.StringContent(request.Margin ?? string.Empty),
                                     name: "\"margin\"");
                             } 
                             if (request.MarginBottom != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.MarginBottom}"),
+                                    content: new global::System.Net.Http.StringContent(request.MarginBottom ?? string.Empty),
                                     name: "\"marginBottom\"");
                             } 
                             if (request.MarginLeft != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.MarginLeft}"),
+                                    content: new global::System.Net.Http.StringContent(request.MarginLeft ?? string.Empty),
                                     name: "\"marginLeft\"");
                             } 
                             if (request.MarginRight != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.MarginRight}"),
+                                    content: new global::System.Net.Http.StringContent(request.MarginRight ?? string.Empty),
                                     name: "\"marginRight\"");
                             } 
                             if (request.MarginTop != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.MarginTop}"),
+                                    content: new global::System.Net.Http.StringContent(request.MarginTop ?? string.Empty),
                                     name: "\"marginTop\"");
                             } 
                             if (request.MaxHeight != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.MaxHeight}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.MaxHeight, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"maxHeight\"");
                             } 
                             if (request.MaxWidth != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.MaxWidth}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.MaxWidth, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"maxWidth\"");
                             } 
                             if (request.OutlineBlurRadius != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutlineBlurRadius}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.OutlineBlurRadius, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"outline.blurRadius\"");
                             } 
                             if (request.OutlineColor != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutlineColor}"),
+                                    content: new global::System.Net.Http.StringContent(request.OutlineColor ?? string.Empty),
                                     name: "\"outline.color\"");
                             } 
                             if (request.OutlineWidth != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutlineWidth}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.OutlineWidth, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"outline.width\"");
                             } 
                             if (request.OutputSize != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutputSize}"),
+                                    content: new global::System.Net.Http.StringContent(request.OutputSize ?? string.Empty),
                                     name: "\"outputSize\"");
                             } 
                             if (request.Padding != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Padding}"),
+                                    content: new global::System.Net.Http.StringContent(request.Padding ?? string.Empty),
                                     name: "\"padding\"");
                             } 
                             if (request.PaddingBottom != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PaddingBottom}"),
+                                    content: new global::System.Net.Http.StringContent(request.PaddingBottom ?? string.Empty),
                                     name: "\"paddingBottom\"");
                             } 
                             if (request.PaddingLeft != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PaddingLeft}"),
+                                    content: new global::System.Net.Http.StringContent(request.PaddingLeft ?? string.Empty),
                                     name: "\"paddingLeft\"");
                             } 
                             if (request.PaddingRight != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PaddingRight}"),
+                                    content: new global::System.Net.Http.StringContent(request.PaddingRight ?? string.Empty),
                                     name: "\"paddingRight\"");
                             } 
                             if (request.PaddingTop != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PaddingTop}"),
+                                    content: new global::System.Net.Http.StringContent(request.PaddingTop ?? string.Empty),
                                     name: "\"paddingTop\"");
                             } 
                             if (request.PreserveMetadata != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PreserveMetadata}"),
+                                    content: new global::System.Net.Http.StringContent(request.PreserveMetadata ?? string.Empty),
                                     name: "\"preserveMetadata\"");
                             } 
                             if (request.ReferenceBox != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ReferenceBox}"),
+                                    content: new global::System.Net.Http.StringContent(request.ReferenceBox ?? string.Empty),
                                     name: "\"referenceBox\"");
                             } 
                             if (request.RemoveBackground != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.RemoveBackground}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.RemoveBackground, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"removeBackground\"");
                             } 
                             if (request.Scaling != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Scaling}"),
+                                    content: new global::System.Net.Http.StringContent(request.Scaling ?? string.Empty),
                                     name: "\"scaling\"");
                             } 
                             if (request.SegmentationMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SegmentationMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.SegmentationMode ?? string.Empty),
                                     name: "\"segmentation.mode\"");
                             } 
                             if (request.SegmentationNegativePrompt != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SegmentationNegativePrompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.SegmentationNegativePrompt ?? string.Empty),
                                     name: "\"segmentation.negativePrompt\"");
                             } 
                             if (request.SegmentationPrompt != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SegmentationPrompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.SegmentationPrompt ?? string.Empty),
                                     name: "\"segmentation.prompt\"");
                             } 
                             if (request.ShadowDirectionOverride != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ShadowDirectionOverride}"),
+                                    content: new global::System.Net.Http.StringContent(request.ShadowDirectionOverride.ToString() ?? string.Empty),
                                     name: "\"shadow.directionOverride\"");
                             } 
                             if (request.ShadowIntensityOverride != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ShadowIntensityOverride}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.ShadowIntensityOverride, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"shadow.intensityOverride\"");
                             } 
                             if (request.ShadowMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ShadowMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.ShadowMode ?? string.Empty),
                                     name: "\"shadow.mode\"");
                             } 
                             if (request.ShadowSoftnessOverride != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ShadowSoftnessOverride}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.ShadowSoftnessOverride, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"shadow.softnessOverride\"");
                             } 
                             if (request.ShadowSpreadOverride != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ShadowSpreadOverride}"),
+                                    content: new global::System.Net.Http.StringContent(request.ShadowSpreadOverride.ToString() ?? string.Empty),
                                     name: "\"shadow.spreadOverride\"");
                             } 
                             if (request.ShadowSubjectPoseOverride != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ShadowSubjectPoseOverride}"),
+                                    content: new global::System.Net.Http.StringContent(request.ShadowSubjectPoseOverride.ToString() ?? string.Empty),
                                     name: "\"shadow.subjectPoseOverride\"");
                             } 
                             if (request.TemplateId != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.TemplateId}"),
+                                    content: new global::System.Net.Http.StringContent(request.TemplateId.ToString() ?? string.Empty),
                                     name: "\"templateId\"");
                             } 
                             if (request.TextRemovalMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.TextRemovalMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.TextRemovalMode ?? string.Empty),
                                     name: "\"textRemoval.mode\"");
                             } 
                             if (request.UncropMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.UncropMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.UncropMode ?? string.Empty),
                                     name: "\"uncrop.mode\"");
                             } 
                             if (request.UncropSeed != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.UncropSeed}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.UncropSeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"uncrop.seed\"");
                             } 
                             if (request.UpscaleDownscaleIfNeeded != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.UpscaleDownscaleIfNeeded}"),
+                                    content: new global::System.Net.Http.StringContent(request.UpscaleDownscaleIfNeeded ?? string.Empty),
                                     name: "\"upscale.downscaleIfNeeded\"");
                             } 
                             if (request.UpscaleMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.UpscaleMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.UpscaleMode ?? string.Empty),
                                     name: "\"upscale.mode\"");
                             } 
                             if (request.VerticalAlignment != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.VerticalAlignment}"),
+                                    content: new global::System.Net.Http.StringContent(request.VerticalAlignment ?? string.Empty),
                                     name: "\"verticalAlignment\"");
                             } 
                             if (request.VirtualModelAdditionalProductImages != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.VirtualModelAdditionalProductImages}"),
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelAdditionalProductImages.ToString() ?? string.Empty),
                                     name: "\"virtualModel.additionalProductImages\"");
                             } 
                             if (request.VirtualModelMode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.VirtualModelMode}"),
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelMode ?? string.Empty),
                                     name: "\"virtualModel.mode\"");
                             } 
                             if (request.VirtualModelModel != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.VirtualModelModel}"),
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelModel.ToString() ?? string.Empty),
                                     name: "\"virtualModel.model\"");
                             } 
                             if (request.VirtualModelPose != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.VirtualModelPose}"),
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelPose ?? string.Empty),
                                     name: "\"virtualModel.pose\"");
                             } 
                             if (request.VirtualModelPrompt != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.VirtualModelPrompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelPrompt ?? string.Empty),
                                     name: "\"virtualModel.prompt\"");
                             } 
                             if (request.VirtualModelQuality != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.VirtualModelQuality}"),
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelQuality ?? string.Empty),
                                     name: "\"virtualModel.quality\"");
                             } 
                             if (request.VirtualModelScene != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.VirtualModelScene}"),
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelScene.ToString() ?? string.Empty),
                                     name: "\"virtualModel.scene\"");
                             } 
                             if (request.VirtualModelSize != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.VirtualModelSize}"),
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelSize ?? string.Empty),
                                     name: "\"virtualModel.size\"");
                             }
                             __httpRequest.Content = __httpRequestContent;

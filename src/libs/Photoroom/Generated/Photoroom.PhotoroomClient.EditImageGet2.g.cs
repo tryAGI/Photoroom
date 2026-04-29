@@ -173,7 +173,7 @@ namespace Photoroom
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     apiKey: apiKey,
-                    templateId: templateId,
+                    templateId: templateId!,
                     imageUrl: imageUrl,
                     conceptUrl: conceptUrl);
 

@@ -152,6 +152,34 @@ namespace Photoroom
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             var __contentImageFile = new global::System.Net.Http.ByteArrayContent(request.ImageFile ?? global::System.Array.Empty<byte>());
+                            __contentImageFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.ImageFilename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.ImageFilename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentImageFile,
                                 name: "\"image_file\"",
@@ -164,42 +192,42 @@ namespace Photoroom
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Format?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Format).HasValue ? (request.Format).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"format\"");
                             } 
                             if (request.Channels != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Channels?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Channels).HasValue ? (request.Channels).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"channels\"");
                             } 
                             if (request.BgColor != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BgColor}"),
+                                    content: new global::System.Net.Http.StringContent(request.BgColor ?? string.Empty),
                                     name: "\"bg_color\"");
                             } 
                             if (request.Size != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Size).HasValue ? (request.Size).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"size\"");
                             } 
                             if (request.Crop != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Crop?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Crop).HasValue ? (request.Crop).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"crop\"");
                             } 
                             if (request.Despill != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Despill?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Despill).HasValue ? (request.Despill).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"despill\"");
                             }
                             __httpRequest.Content = __httpRequestContent;
