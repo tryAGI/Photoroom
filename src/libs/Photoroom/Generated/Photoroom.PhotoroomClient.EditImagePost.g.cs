@@ -1664,7 +1664,7 @@ namespace Photoroom
         /// If enabled, the input image will be upscaled (imageFile or imageUrl)<br/>
         /// Input limits depend on the model selected for AI Upscale. With the default model:<br/>
         /// - `ai.fast`: maximum 1,000,000 input pixels<br/>
-        /// - `ai.slow`: maximum 512,000 input pixels<br/>
+        /// - `ai.slow`: maximum 262,144 input pixels<br/>
         /// The upscaling process will enlarge the input image up to 4 times its original size. This will significantly increase the resolution and affect both the input processing and the final output dimensions.<br/>
         /// ai.fast: This algorithm is optimized for speed and may not produce the highest quality results. ai.slow: This algorithm is optimized for quality and may take more time to process.
         /// </param>

@@ -13,7 +13,7 @@ namespace Photoroom
         /// </summary>
         AiFast,
         /// <summary>
-        /// maximum 512,000 input pixels
+        /// maximum 262,144 input pixels
         /// </summary>
         AiSlow,
     }
