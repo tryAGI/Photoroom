@@ -225,5 +225,6 @@ namespace Photoroom
         public EditImageGetLayersVariant2Image()
         {
         }
+
     }
 }
