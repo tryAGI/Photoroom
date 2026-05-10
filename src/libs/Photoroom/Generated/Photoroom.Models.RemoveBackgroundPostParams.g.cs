@@ -135,5 +135,6 @@ namespace Photoroom
         public RemoveBackgroundPostParams()
         {
         }
+
     }
 }

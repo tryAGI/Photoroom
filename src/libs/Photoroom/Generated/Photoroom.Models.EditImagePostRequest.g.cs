@@ -1195,5 +1195,6 @@ namespace Photoroom
         public EditImagePostRequest()
         {
         }
+
     }
 }
