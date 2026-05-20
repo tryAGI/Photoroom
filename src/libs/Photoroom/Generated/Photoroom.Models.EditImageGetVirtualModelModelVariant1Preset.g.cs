@@ -43,5 +43,6 @@ namespace Photoroom
         public EditImageGetVirtualModelModelVariant1Preset()
         {
         }
+
     }
 }

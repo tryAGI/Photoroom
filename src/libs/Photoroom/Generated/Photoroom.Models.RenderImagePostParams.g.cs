@@ -78,5 +78,6 @@ namespace Photoroom
         public RenderImagePostParams()
         {
         }
+
     }
 }

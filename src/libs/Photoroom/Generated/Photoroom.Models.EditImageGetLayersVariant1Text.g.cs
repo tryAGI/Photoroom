@@ -66,5 +66,6 @@ namespace Photoroom
         public EditImageGetLayersVariant1Text()
         {
         }
+
     }
 }

@@ -75,5 +75,6 @@ namespace Photoroom
         public RemoveBackgroundResponse3()
         {
         }
+
     }
 }

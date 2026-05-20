@@ -63,5 +63,6 @@ namespace Photoroom
         public EditImageGetVirtualModelModelVariant2Custom()
         {
         }
+
     }
 }

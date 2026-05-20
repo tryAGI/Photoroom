@@ -45,5 +45,6 @@ namespace Photoroom
         public AccountDetailsV2ResponseError()
         {
         }
+
     }
 }

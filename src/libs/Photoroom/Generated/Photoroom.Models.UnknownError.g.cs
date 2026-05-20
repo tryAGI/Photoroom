@@ -40,5 +40,6 @@ namespace Photoroom
         public UnknownError()
         {
         }
+
     }
 }
