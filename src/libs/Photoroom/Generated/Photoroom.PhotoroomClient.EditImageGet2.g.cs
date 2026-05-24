@@ -424,18 +424,17 @@ namespace Photoroom
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::Photoroom.ApiException<global::Photoroom.EditImageGetResponse>(
+
+                                throw global::Photoroom.ApiException<global::Photoroom.EditImageGetResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Payment Required
                             if ((int)__response.StatusCode == 402)
@@ -462,18 +461,17 @@ namespace Photoroom
                                     __exception_402 = __ex;
                                 }
 
-                                throw new global::Photoroom.ApiException<global::Photoroom.EditImageGetResponse2>(
+
+                                throw global::Photoroom.ApiException<global::Photoroom.EditImageGetResponse2>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_402,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_402,
-                                    ResponseObject = __value_402,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_402,
+                                    responseObject: __value_402,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // 
                             if ((int)__response.StatusCode == 403)
@@ -496,17 +494,16 @@ namespace Photoroom
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::Photoroom.ApiException(
+
+                                throw global::Photoroom.ApiException.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Internal Server Error
                             if ((int)__response.StatusCode == 500)
@@ -533,18 +530,17 @@ namespace Photoroom
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::Photoroom.ApiException<global::Photoroom.EditImageGetResponse3>(
+
+                                throw global::Photoroom.ApiException<global::Photoroom.EditImageGetResponse3>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             try
@@ -574,17 +570,15 @@ namespace Photoroom
                                 {
                                 }
 
-                                throw new global::Photoroom.ApiException(
+                                throw global::Photoroom.ApiException.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __ex,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                 }
@@ -922,18 +916,17 @@ namespace Photoroom
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::Photoroom.ApiException<global::Photoroom.EditImageGetResponse>(
+
+                                throw global::Photoroom.ApiException<global::Photoroom.EditImageGetResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Payment Required
                             if ((int)__response.StatusCode == 402)
@@ -960,18 +953,17 @@ namespace Photoroom
                                     __exception_402 = __ex;
                                 }
 
-                                throw new global::Photoroom.ApiException<global::Photoroom.EditImageGetResponse2>(
+
+                                throw global::Photoroom.ApiException<global::Photoroom.EditImageGetResponse2>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_402,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_402,
-                                    ResponseObject = __value_402,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_402,
+                                    responseObject: __value_402,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // 
                             if ((int)__response.StatusCode == 403)
@@ -994,17 +986,16 @@ namespace Photoroom
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::Photoroom.ApiException(
+
+                                throw global::Photoroom.ApiException.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Internal Server Error
                             if ((int)__response.StatusCode == 500)
@@ -1031,18 +1022,17 @@ namespace Photoroom
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::Photoroom.ApiException<global::Photoroom.EditImageGetResponse3>(
+
+                                throw global::Photoroom.ApiException<global::Photoroom.EditImageGetResponse3>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -1070,16 +1060,15 @@ namespace Photoroom
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::Photoroom.ApiException(
+                                    throw global::Photoroom.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: null,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -1114,17 +1103,15 @@ namespace Photoroom
                                     {
                                     }
 
-                                    throw new global::Photoroom.ApiException(
+                                    throw global::Photoroom.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
