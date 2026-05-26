@@ -15,6 +15,10 @@ namespace Photoroom
         /// <summary>
         /// 
         /// </summary>
+        AiOptimizePortrait,
+        /// <summary>
+        /// 
+        /// </summary>
         AiPreserveHueAndSaturation,
     }
 
@@ -31,6 +35,7 @@ namespace Photoroom
             return value switch
             {
                 EditImageGetLightingMode.AiAuto => "ai.auto",
+                EditImageGetLightingMode.AiOptimizePortrait => "ai.optimize-portrait",
                 EditImageGetLightingMode.AiPreserveHueAndSaturation => "ai.preserve-hue-and-saturation",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace Photoroom
             return value switch
             {
                 "ai.auto" => EditImageGetLightingMode.AiAuto,
+                "ai.optimize-portrait" => EditImageGetLightingMode.AiOptimizePortrait,
                 "ai.preserve-hue-and-saturation" => EditImageGetLightingMode.AiPreserveHueAndSaturation,
                 _ => null,
             };

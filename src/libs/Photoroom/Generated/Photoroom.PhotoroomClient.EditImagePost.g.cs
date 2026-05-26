@@ -2869,7 +2869,8 @@ namespace Photoroom
         /// <param name="lightingMode">
         /// Lighting mode to use on the main image used by the API.<br/>
         /// If set to `ai.auto`, the lighting will be automatically adjusted<br/>
-        /// If set to `ai.preserve-hue-and-saturation`, the lighting will be adjusted while keeping color hues and saturations as close as possible to the original image
+        /// If set to `ai.preserve-hue-and-saturation`, the lighting will be adjusted while keeping color hues and saturations as close as possible to the original image<br/>
+        /// If set to `ai.optimize-portrait`, the lighting will be adjusted using a model optimized for portrait subjects
         /// </param>
         /// <param name="margin">
         /// General margin around the subject. Can be expressed as a number between 0 and 0.49, a percentage string between 0% and 49% (e.g., "30%"), or a pixel value string (e.g., "100px"). Unlike `padding`, margin is never ignored even on cropped sides of the subject. Expressed in a ratio of the output image size. See positioning section of the documentation for more information.<br/>
