@@ -1313,15 +1313,17 @@
           {
             "name": "lighting.mode",
             "in": "query",
-            "description": "Lighting mode to use on the main image used by the API.\n\nIf set to `ai.auto`, the lighting will be automatically adjusted\n\nIf set to `ai.preserve-hue-and-saturation`, the lighting will be adjusted while keeping color hues and saturations as close as possible to the original image",
+            "description": "Lighting mode to use on the main image used by the API.\n\nIf set to `ai.auto`, the lighting will be automatically adjusted\n\nIf set to `ai.preserve-hue-and-saturation`, the lighting will be adjusted while keeping color hues and saturations as close as possible to the original image\n\nIf set to `ai.optimize-portrait`, the lighting will be adjusted using a model optimized for portrait subjects",
             "schema": {
               "enum": [
                 "ai.auto",
-                "ai.preserve-hue-and-saturation"
+                "ai.preserve-hue-and-saturation",
+                "ai.optimize-portrait"
               ],
               "examples": [
                 "ai.auto",
-                "ai.preserve-hue-and-saturation"
+                "ai.preserve-hue-and-saturation",
+                "ai.optimize-portrait"
               ],
               "type": "string"
             }
@@ -2458,7 +2460,7 @@
                   },
                   "lighting.mode": {
                     "type": "string",
-                    "description": "Lighting mode to use on the main image used by the API.\n\nIf set to `ai.auto`, the lighting will be automatically adjusted\n\nIf set to `ai.preserve-hue-and-saturation`, the lighting will be adjusted while keeping color hues and saturations as close as possible to the original image"
+                    "description": "Lighting mode to use on the main image used by the API.\n\nIf set to `ai.auto`, the lighting will be automatically adjusted\n\nIf set to `ai.preserve-hue-and-saturation`, the lighting will be adjusted while keeping color hues and saturations as close as possible to the original image\n\nIf set to `ai.optimize-portrait`, the lighting will be adjusted using a model optimized for portrait subjects"
                   },
                   "margin": {
                     "type": [
