@@ -72,6 +72,7 @@ namespace Photoroom
             ref double? imageFromPromptSeed,
             ref global::Photoroom.EditImageGetImageFromPromptSize? imageFromPromptSize,
             ref string? imageUrl,
+            ref string? ironingMode,
             ref global::Photoroom.EditImageGetKeepExistingAlphaChannel? keepExistingAlphaChannel,
             object? layers,
             ref global::Photoroom.EditImageGetLightingMode? lightingMode,
@@ -159,6 +160,7 @@ namespace Photoroom
             double? imageFromPromptSeed,
             global::Photoroom.EditImageGetImageFromPromptSize? imageFromPromptSize,
             string? imageUrl,
+            string? ironingMode,
             global::Photoroom.EditImageGetKeepExistingAlphaChannel? keepExistingAlphaChannel,
             object? layers,
             global::Photoroom.EditImageGetLightingMode? lightingMode,
@@ -217,8 +219,8 @@ namespace Photoroom
 
         /// <summary>
         /// Image Editing v2 (Plus plan)<br/>
-        /// This endpoint processes an image and applies one or more edits: background removal, AI-generated backgrounds (background.prompt), realistic shadows (shadow.mode), relighting (lighting.mode), text removal (textRemoval.mode), background blur (background.blur.*), subject outline (outline.*), AI beautification (beautify.mode), Flat Lay (flatLay.*), Ghost Mannequin (ghostMannequin.*), Virtual Model (virtualModel.*), AI expand (expand.mode), AI uncrop (uncrop.mode), AI upscale (upscale.mode), and positioning/resizing (padding, margin, outputSize).<br/>
-        /// Parameters are grouped by feature using dot notation: background.* for backgrounds, shadow.* for shadows, lighting.* for relighting, outline.* for subject outlines, beautify.* for AI beautification, flatLay.* for flat lay generation, ghostMannequin.* for ghost mannequin generation, virtualModel.* for virtual model generation, expand.* for AI expand, uncrop.* for AI uncrop, upscale.* for AI upscale, export.* for output format, and segmentation.* for text-guided segmentation.<br/>
+        /// This endpoint processes an image and applies one or more edits: background removal, AI-generated backgrounds (background.prompt), realistic shadows (shadow.mode), relighting (lighting.mode), text removal (textRemoval.mode), background blur (background.blur.*), subject outline (outline.*), AI beautification (beautify.mode), Flat Lay (flatLay.*), Ghost Mannequin (ghostMannequin.*), Ironing (ironing.mode), Virtual Model (virtualModel.*), AI expand (expand.mode), AI uncrop (uncrop.mode), AI upscale (upscale.mode), and positioning/resizing (padding, margin, outputSize).<br/>
+        /// Parameters are grouped by feature using dot notation: background.* for backgrounds, shadow.* for shadows, lighting.* for relighting, outline.* for subject outlines, beautify.* for AI beautification, flatLay.* for flat lay generation, ghostMannequin.* for ghost mannequin generation, ironing.* for wrinkle removal, virtualModel.* for virtual model generation, expand.* for AI expand, uncrop.* for AI uncrop, upscale.* for AI upscale, export.* for output format, and segmentation.* for text-guided segmentation.<br/>
         /// Edits can be combined in a single call.<br/>
         /// It accepts a URL input for the image. If you want to directly upload an image file, please use the POST endpoint. For more details on the difference between the GET and POST endpoints, please have a look at our documentation: https://docs.photoroom.com/image-editing-api/which-endpoints-are-available.<br/>
         /// For the simplest integration (recommended for no-code tools like Lovable), use this GET endpoint with imageUrl — no file upload handling required. <br/>
@@ -301,6 +303,7 @@ namespace Photoroom
         /// <param name="imageFromPromptSeed"></param>
         /// <param name="imageFromPromptSize"></param>
         /// <param name="imageUrl"></param>
+        /// <param name="ironingMode"></param>
         /// <param name="keepExistingAlphaChannel">
         /// Default Value: never
         /// </param>
@@ -421,6 +424,7 @@ namespace Photoroom
             double? imageFromPromptSeed = default,
             global::Photoroom.EditImageGetImageFromPromptSize? imageFromPromptSize = default,
             string? imageUrl = default,
+            string? ironingMode = default,
             global::Photoroom.EditImageGetKeepExistingAlphaChannel? keepExistingAlphaChannel = default,
             object? layers = default,
             global::Photoroom.EditImageGetLightingMode? lightingMode = default,
@@ -509,6 +513,7 @@ namespace Photoroom
                 imageFromPromptSeed: imageFromPromptSeed,
                 imageFromPromptSize: imageFromPromptSize,
                 imageUrl: imageUrl,
+                ironingMode: ironingMode,
                 keepExistingAlphaChannel: keepExistingAlphaChannel,
                 layers: layers,
                 lightingMode: lightingMode,
@@ -564,8 +569,8 @@ namespace Photoroom
         }
         /// <summary>
         /// Image Editing v2 (Plus plan)<br/>
-        /// This endpoint processes an image and applies one or more edits: background removal, AI-generated backgrounds (background.prompt), realistic shadows (shadow.mode), relighting (lighting.mode), text removal (textRemoval.mode), background blur (background.blur.*), subject outline (outline.*), AI beautification (beautify.mode), Flat Lay (flatLay.*), Ghost Mannequin (ghostMannequin.*), Virtual Model (virtualModel.*), AI expand (expand.mode), AI uncrop (uncrop.mode), AI upscale (upscale.mode), and positioning/resizing (padding, margin, outputSize).<br/>
-        /// Parameters are grouped by feature using dot notation: background.* for backgrounds, shadow.* for shadows, lighting.* for relighting, outline.* for subject outlines, beautify.* for AI beautification, flatLay.* for flat lay generation, ghostMannequin.* for ghost mannequin generation, virtualModel.* for virtual model generation, expand.* for AI expand, uncrop.* for AI uncrop, upscale.* for AI upscale, export.* for output format, and segmentation.* for text-guided segmentation.<br/>
+        /// This endpoint processes an image and applies one or more edits: background removal, AI-generated backgrounds (background.prompt), realistic shadows (shadow.mode), relighting (lighting.mode), text removal (textRemoval.mode), background blur (background.blur.*), subject outline (outline.*), AI beautification (beautify.mode), Flat Lay (flatLay.*), Ghost Mannequin (ghostMannequin.*), Ironing (ironing.mode), Virtual Model (virtualModel.*), AI expand (expand.mode), AI uncrop (uncrop.mode), AI upscale (upscale.mode), and positioning/resizing (padding, margin, outputSize).<br/>
+        /// Parameters are grouped by feature using dot notation: background.* for backgrounds, shadow.* for shadows, lighting.* for relighting, outline.* for subject outlines, beautify.* for AI beautification, flatLay.* for flat lay generation, ghostMannequin.* for ghost mannequin generation, ironing.* for wrinkle removal, virtualModel.* for virtual model generation, expand.* for AI expand, uncrop.* for AI uncrop, upscale.* for AI upscale, export.* for output format, and segmentation.* for text-guided segmentation.<br/>
         /// Edits can be combined in a single call.<br/>
         /// It accepts a URL input for the image. If you want to directly upload an image file, please use the POST endpoint. For more details on the difference between the GET and POST endpoints, please have a look at our documentation: https://docs.photoroom.com/image-editing-api/which-endpoints-are-available.<br/>
         /// For the simplest integration (recommended for no-code tools like Lovable), use this GET endpoint with imageUrl — no file upload handling required. <br/>
@@ -648,6 +653,7 @@ namespace Photoroom
         /// <param name="imageFromPromptSeed"></param>
         /// <param name="imageFromPromptSize"></param>
         /// <param name="imageUrl"></param>
+        /// <param name="ironingMode"></param>
         /// <param name="keepExistingAlphaChannel">
         /// Default Value: never
         /// </param>
@@ -768,6 +774,7 @@ namespace Photoroom
             double? imageFromPromptSeed = default,
             global::Photoroom.EditImageGetImageFromPromptSize? imageFromPromptSize = default,
             string? imageUrl = default,
+            string? ironingMode = default,
             global::Photoroom.EditImageGetKeepExistingAlphaChannel? keepExistingAlphaChannel = default,
             object? layers = default,
             global::Photoroom.EditImageGetLightingMode? lightingMode = default,
@@ -859,6 +866,7 @@ namespace Photoroom
                 imageFromPromptSeed: ref imageFromPromptSeed,
                 imageFromPromptSize: ref imageFromPromptSize,
                 imageUrl: ref imageUrl,
+                ironingMode: ref ironingMode,
                 keepExistingAlphaChannel: ref keepExistingAlphaChannel,
                 layers: layers,
                 lightingMode: ref lightingMode,
@@ -973,6 +981,7 @@ namespace Photoroom
                                 .AddOptionalParameter("imageFromPrompt.seed", imageFromPromptSeed?.ToString())
                                 .AddOptionalParameter("imageFromPrompt.size", imageFromPromptSize?.ToValueString())
                                 .AddOptionalParameter("imageUrl", imageUrl)
+                                .AddOptionalParameter("ironing.mode", ironingMode)
                                 .AddOptionalParameter("keepExistingAlphaChannel", keepExistingAlphaChannel?.ToValueString())
                                 .AddOptionalParameter("layers", layers?.ToString())
                                 .AddOptionalParameter("lighting.mode", lightingMode?.ToValueString())
@@ -1098,6 +1107,7 @@ namespace Photoroom
                     imageFromPromptSeed: imageFromPromptSeed,
                     imageFromPromptSize: imageFromPromptSize,
                     imageUrl: imageUrl,
+                    ironingMode: ironingMode,
                     keepExistingAlphaChannel: keepExistingAlphaChannel,
                     layers: layers,
                     lightingMode: lightingMode,
@@ -1487,8 +1497,8 @@ namespace Photoroom
         }
         /// <summary>
         /// Image Editing v2 (Plus plan)<br/>
-        /// This endpoint processes an image and applies one or more edits: background removal, AI-generated backgrounds (background.prompt), realistic shadows (shadow.mode), relighting (lighting.mode), text removal (textRemoval.mode), background blur (background.blur.*), subject outline (outline.*), AI beautification (beautify.mode), Flat Lay (flatLay.*), Ghost Mannequin (ghostMannequin.*), Virtual Model (virtualModel.*), AI expand (expand.mode), AI uncrop (uncrop.mode), AI upscale (upscale.mode), and positioning/resizing (padding, margin, outputSize).<br/>
-        /// Parameters are grouped by feature using dot notation: background.* for backgrounds, shadow.* for shadows, lighting.* for relighting, outline.* for subject outlines, beautify.* for AI beautification, flatLay.* for flat lay generation, ghostMannequin.* for ghost mannequin generation, virtualModel.* for virtual model generation, expand.* for AI expand, uncrop.* for AI uncrop, upscale.* for AI upscale, export.* for output format, and segmentation.* for text-guided segmentation.<br/>
+        /// This endpoint processes an image and applies one or more edits: background removal, AI-generated backgrounds (background.prompt), realistic shadows (shadow.mode), relighting (lighting.mode), text removal (textRemoval.mode), background blur (background.blur.*), subject outline (outline.*), AI beautification (beautify.mode), Flat Lay (flatLay.*), Ghost Mannequin (ghostMannequin.*), Ironing (ironing.mode), Virtual Model (virtualModel.*), AI expand (expand.mode), AI uncrop (uncrop.mode), AI upscale (upscale.mode), and positioning/resizing (padding, margin, outputSize).<br/>
+        /// Parameters are grouped by feature using dot notation: background.* for backgrounds, shadow.* for shadows, lighting.* for relighting, outline.* for subject outlines, beautify.* for AI beautification, flatLay.* for flat lay generation, ghostMannequin.* for ghost mannequin generation, ironing.* for wrinkle removal, virtualModel.* for virtual model generation, expand.* for AI expand, uncrop.* for AI uncrop, upscale.* for AI upscale, export.* for output format, and segmentation.* for text-guided segmentation.<br/>
         /// Edits can be combined in a single call.<br/>
         /// It accepts a URL input for the image. If you want to directly upload an image file, please use the POST endpoint. For more details on the difference between the GET and POST endpoints, please have a look at our documentation: https://docs.photoroom.com/image-editing-api/which-endpoints-are-available.<br/>
         /// For the simplest integration (recommended for no-code tools like Lovable), use this GET endpoint with imageUrl — no file upload handling required. <br/>
@@ -1571,6 +1581,7 @@ namespace Photoroom
         /// <param name="imageFromPromptSeed"></param>
         /// <param name="imageFromPromptSize"></param>
         /// <param name="imageUrl"></param>
+        /// <param name="ironingMode"></param>
         /// <param name="keepExistingAlphaChannel">
         /// Default Value: never
         /// </param>
@@ -1691,6 +1702,7 @@ namespace Photoroom
             double? imageFromPromptSeed = default,
             global::Photoroom.EditImageGetImageFromPromptSize? imageFromPromptSize = default,
             string? imageUrl = default,
+            string? ironingMode = default,
             global::Photoroom.EditImageGetKeepExistingAlphaChannel? keepExistingAlphaChannel = default,
             object? layers = default,
             global::Photoroom.EditImageGetLightingMode? lightingMode = default,
@@ -1782,6 +1794,7 @@ namespace Photoroom
                 imageFromPromptSeed: ref imageFromPromptSeed,
                 imageFromPromptSize: ref imageFromPromptSize,
                 imageUrl: ref imageUrl,
+                ironingMode: ref ironingMode,
                 keepExistingAlphaChannel: ref keepExistingAlphaChannel,
                 layers: layers,
                 lightingMode: ref lightingMode,
@@ -1896,6 +1909,7 @@ namespace Photoroom
                                 .AddOptionalParameter("imageFromPrompt.seed", imageFromPromptSeed?.ToString())
                                 .AddOptionalParameter("imageFromPrompt.size", imageFromPromptSize?.ToValueString())
                                 .AddOptionalParameter("imageUrl", imageUrl)
+                                .AddOptionalParameter("ironing.mode", ironingMode)
                                 .AddOptionalParameter("keepExistingAlphaChannel", keepExistingAlphaChannel?.ToValueString())
                                 .AddOptionalParameter("layers", layers?.ToString())
                                 .AddOptionalParameter("lighting.mode", lightingMode?.ToValueString())
@@ -2021,6 +2035,7 @@ namespace Photoroom
                     imageFromPromptSeed: imageFromPromptSeed,
                     imageFromPromptSize: imageFromPromptSize,
                     imageUrl: imageUrl,
+                    ironingMode: ironingMode,
                     keepExistingAlphaChannel: keepExistingAlphaChannel,
                     layers: layers,
                     lightingMode: lightingMode,
