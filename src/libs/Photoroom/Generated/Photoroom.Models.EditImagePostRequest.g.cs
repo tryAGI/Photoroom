@@ -294,6 +294,12 @@ namespace Photoroom
         public string? ImageFromPromptSize { get; set; }
 
         /// <summary>
+        /// Must be set to `ai.auto` to enable ironing.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ironing.mode")]
+        public string? IroningMode { get; set; }
+
+        /// <summary>
         /// If set to `auto` and if the image has transparency, the existing transparency will be used to cutout the subject.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("keepExistingAlphaChannel")]
@@ -810,6 +816,9 @@ namespace Photoroom
         /// <param name="imageFromPromptSize">
         /// Supported sizes for AI image generation
         /// </param>
+        /// <param name="ironingMode">
+        /// Must be set to `ai.auto` to enable ironing.
+        /// </param>
         /// <param name="keepExistingAlphaChannel">
         /// If set to `auto` and if the image has transparency, the existing transparency will be used to cutout the subject.
         /// </param>
@@ -1054,6 +1063,7 @@ namespace Photoroom
             string? imageFromPromptPrompt,
             double? imageFromPromptSeed,
             string? imageFromPromptSize,
+            string? ironingMode,
             string? keepExistingAlphaChannel,
             object? layers,
             string? lightingMode,
@@ -1142,6 +1152,7 @@ namespace Photoroom
             this.ImageFromPromptPrompt = imageFromPromptPrompt;
             this.ImageFromPromptSeed = imageFromPromptSeed;
             this.ImageFromPromptSize = imageFromPromptSize;
+            this.IroningMode = ironingMode;
             this.KeepExistingAlphaChannel = keepExistingAlphaChannel;
             this.Layers = layers;
             this.LightingMode = lightingMode;
