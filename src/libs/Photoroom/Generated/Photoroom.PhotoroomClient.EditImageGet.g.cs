@@ -49,6 +49,7 @@ namespace Photoroom
             ref double? backgroundSeed,
             ref global::Photoroom.EditImageGetBeautifyMode? beautifyMode,
             ref double? beautifySeed,
+            ref global::Photoroom.EditImageGetColorSpace? colorSpace,
             ref string? describeAnyChangeMode,
             ref string? describeAnyChangePrompt,
             ref double? describeAnyChangeSeed,
@@ -137,6 +138,7 @@ namespace Photoroom
             double? backgroundSeed,
             global::Photoroom.EditImageGetBeautifyMode? beautifyMode,
             double? beautifySeed,
+            global::Photoroom.EditImageGetColorSpace? colorSpace,
             string? describeAnyChangeMode,
             string? describeAnyChangePrompt,
             double? describeAnyChangeSeed,
@@ -223,9 +225,9 @@ namespace Photoroom
         /// Parameters are grouped by feature using dot notation: background.* for backgrounds, shadow.* for shadows, lighting.* for relighting, outline.* for subject outlines, beautify.* for AI beautification, flatLay.* for flat lay generation, ghostMannequin.* for ghost mannequin generation, ironing.* for wrinkle removal, virtualModel.* for virtual model generation, expand.* for AI expand, uncrop.* for AI uncrop, upscale.* for AI upscale, export.* for output format, and segmentation.* for text-guided segmentation.<br/>
         /// Edits can be combined in a single call.<br/>
         /// It accepts a URL input for the image. If you want to directly upload an image file, please use the POST endpoint. For more details on the difference between the GET and POST endpoints, please have a look at our documentation: https://docs.photoroom.com/image-editing-api/which-endpoints-are-available.<br/>
-        /// For the simplest integration (recommended for no-code tools like Lovable), use this GET endpoint with imageUrl — no file upload handling required. <br/>
+        /// For the simplest integration (recommended for no-code tools like Lovable), use this GET endpoint with imageUrl — no file upload handling required.<br/>
         /// Example of a request: GET https://image-api.photoroom.com/v2/edit?imageUrl=https://example.com/photo.jpg&amp;removeBackground=true&amp;background.color=FFFFFF&amp;outputSize=1000x1000&amp;padding=0.1 with header x-api-key: YOUR_API_KEY<br/>
-        /// The response is the edited image as binary data (image/png by default). To change format, set export.format to jpeg or webp.<br/>
+        /// The response is the edited image as binary data (image/png by default). To change format, set export.format to jpeg, webp or avif.<br/>
         /// Full documentation: https://docs.photoroom.com/image-editing-api-plus-plan/quickstart-guide<br/>
         /// Feature documentation:<br/>
         /// - [HD Background Removal](https://docs.photoroom.com/image-editing-api-plus-plan/hd-background-removal)<br/>
@@ -272,6 +274,9 @@ namespace Photoroom
         /// <param name="backgroundSeed"></param>
         /// <param name="beautifyMode"></param>
         /// <param name="beautifySeed"></param>
+        /// <param name="colorSpace">
+        /// Default Value: sRGB
+        /// </param>
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
         /// <param name="describeAnyChangeSeed"></param>
@@ -401,6 +406,7 @@ namespace Photoroom
             double? backgroundSeed = default,
             global::Photoroom.EditImageGetBeautifyMode? beautifyMode = default,
             double? beautifySeed = default,
+            global::Photoroom.EditImageGetColorSpace? colorSpace = default,
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
@@ -490,6 +496,7 @@ namespace Photoroom
                 backgroundSeed: backgroundSeed,
                 beautifyMode: beautifyMode,
                 beautifySeed: beautifySeed,
+                colorSpace: colorSpace,
                 describeAnyChangeMode: describeAnyChangeMode,
                 describeAnyChangePrompt: describeAnyChangePrompt,
                 describeAnyChangeSeed: describeAnyChangeSeed,
@@ -573,9 +580,9 @@ namespace Photoroom
         /// Parameters are grouped by feature using dot notation: background.* for backgrounds, shadow.* for shadows, lighting.* for relighting, outline.* for subject outlines, beautify.* for AI beautification, flatLay.* for flat lay generation, ghostMannequin.* for ghost mannequin generation, ironing.* for wrinkle removal, virtualModel.* for virtual model generation, expand.* for AI expand, uncrop.* for AI uncrop, upscale.* for AI upscale, export.* for output format, and segmentation.* for text-guided segmentation.<br/>
         /// Edits can be combined in a single call.<br/>
         /// It accepts a URL input for the image. If you want to directly upload an image file, please use the POST endpoint. For more details on the difference between the GET and POST endpoints, please have a look at our documentation: https://docs.photoroom.com/image-editing-api/which-endpoints-are-available.<br/>
-        /// For the simplest integration (recommended for no-code tools like Lovable), use this GET endpoint with imageUrl — no file upload handling required. <br/>
+        /// For the simplest integration (recommended for no-code tools like Lovable), use this GET endpoint with imageUrl — no file upload handling required.<br/>
         /// Example of a request: GET https://image-api.photoroom.com/v2/edit?imageUrl=https://example.com/photo.jpg&amp;removeBackground=true&amp;background.color=FFFFFF&amp;outputSize=1000x1000&amp;padding=0.1 with header x-api-key: YOUR_API_KEY<br/>
-        /// The response is the edited image as binary data (image/png by default). To change format, set export.format to jpeg or webp.<br/>
+        /// The response is the edited image as binary data (image/png by default). To change format, set export.format to jpeg, webp or avif.<br/>
         /// Full documentation: https://docs.photoroom.com/image-editing-api-plus-plan/quickstart-guide<br/>
         /// Feature documentation:<br/>
         /// - [HD Background Removal](https://docs.photoroom.com/image-editing-api-plus-plan/hd-background-removal)<br/>
@@ -622,6 +629,9 @@ namespace Photoroom
         /// <param name="backgroundSeed"></param>
         /// <param name="beautifyMode"></param>
         /// <param name="beautifySeed"></param>
+        /// <param name="colorSpace">
+        /// Default Value: sRGB
+        /// </param>
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
         /// <param name="describeAnyChangeSeed"></param>
@@ -751,6 +761,7 @@ namespace Photoroom
             double? backgroundSeed = default,
             global::Photoroom.EditImageGetBeautifyMode? beautifyMode = default,
             double? beautifySeed = default,
+            global::Photoroom.EditImageGetColorSpace? colorSpace = default,
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
@@ -843,6 +854,7 @@ namespace Photoroom
                 backgroundSeed: ref backgroundSeed,
                 beautifyMode: ref beautifyMode,
                 beautifySeed: ref beautifySeed,
+                colorSpace: ref colorSpace,
                 describeAnyChangeMode: ref describeAnyChangeMode,
                 describeAnyChangePrompt: ref describeAnyChangePrompt,
                 describeAnyChangeSeed: ref describeAnyChangeSeed,
@@ -958,6 +970,7 @@ namespace Photoroom
                                 .AddOptionalParameter("background.seed", backgroundSeed?.ToString())
                                 .AddOptionalParameter("beautify.mode", beautifyMode?.ToValueString())
                                 .AddOptionalParameter("beautify.seed", beautifySeed?.ToString())
+                                .AddOptionalParameter("colorSpace", colorSpace?.ToValueString())
                                 .AddOptionalParameter("describeAnyChange.mode", describeAnyChangeMode)
                                 .AddOptionalParameter("describeAnyChange.prompt", describeAnyChangePrompt)
                                 .AddOptionalParameter("describeAnyChange.seed", describeAnyChangeSeed?.ToString())
@@ -1084,6 +1097,7 @@ namespace Photoroom
                     backgroundSeed: backgroundSeed,
                     beautifyMode: beautifyMode,
                     beautifySeed: beautifySeed,
+                    colorSpace: colorSpace,
                     describeAnyChangeMode: describeAnyChangeMode,
                     describeAnyChangePrompt: describeAnyChangePrompt,
                     describeAnyChangeSeed: describeAnyChangeSeed,
@@ -1501,9 +1515,9 @@ namespace Photoroom
         /// Parameters are grouped by feature using dot notation: background.* for backgrounds, shadow.* for shadows, lighting.* for relighting, outline.* for subject outlines, beautify.* for AI beautification, flatLay.* for flat lay generation, ghostMannequin.* for ghost mannequin generation, ironing.* for wrinkle removal, virtualModel.* for virtual model generation, expand.* for AI expand, uncrop.* for AI uncrop, upscale.* for AI upscale, export.* for output format, and segmentation.* for text-guided segmentation.<br/>
         /// Edits can be combined in a single call.<br/>
         /// It accepts a URL input for the image. If you want to directly upload an image file, please use the POST endpoint. For more details on the difference between the GET and POST endpoints, please have a look at our documentation: https://docs.photoroom.com/image-editing-api/which-endpoints-are-available.<br/>
-        /// For the simplest integration (recommended for no-code tools like Lovable), use this GET endpoint with imageUrl — no file upload handling required. <br/>
+        /// For the simplest integration (recommended for no-code tools like Lovable), use this GET endpoint with imageUrl — no file upload handling required.<br/>
         /// Example of a request: GET https://image-api.photoroom.com/v2/edit?imageUrl=https://example.com/photo.jpg&amp;removeBackground=true&amp;background.color=FFFFFF&amp;outputSize=1000x1000&amp;padding=0.1 with header x-api-key: YOUR_API_KEY<br/>
-        /// The response is the edited image as binary data (image/png by default). To change format, set export.format to jpeg or webp.<br/>
+        /// The response is the edited image as binary data (image/png by default). To change format, set export.format to jpeg, webp or avif.<br/>
         /// Full documentation: https://docs.photoroom.com/image-editing-api-plus-plan/quickstart-guide<br/>
         /// Feature documentation:<br/>
         /// - [HD Background Removal](https://docs.photoroom.com/image-editing-api-plus-plan/hd-background-removal)<br/>
@@ -1550,6 +1564,9 @@ namespace Photoroom
         /// <param name="backgroundSeed"></param>
         /// <param name="beautifyMode"></param>
         /// <param name="beautifySeed"></param>
+        /// <param name="colorSpace">
+        /// Default Value: sRGB
+        /// </param>
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
         /// <param name="describeAnyChangeSeed"></param>
@@ -1679,6 +1696,7 @@ namespace Photoroom
             double? backgroundSeed = default,
             global::Photoroom.EditImageGetBeautifyMode? beautifyMode = default,
             double? beautifySeed = default,
+            global::Photoroom.EditImageGetColorSpace? colorSpace = default,
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
@@ -1771,6 +1789,7 @@ namespace Photoroom
                 backgroundSeed: ref backgroundSeed,
                 beautifyMode: ref beautifyMode,
                 beautifySeed: ref beautifySeed,
+                colorSpace: ref colorSpace,
                 describeAnyChangeMode: ref describeAnyChangeMode,
                 describeAnyChangePrompt: ref describeAnyChangePrompt,
                 describeAnyChangeSeed: ref describeAnyChangeSeed,
@@ -1886,6 +1905,7 @@ namespace Photoroom
                                 .AddOptionalParameter("background.seed", backgroundSeed?.ToString())
                                 .AddOptionalParameter("beautify.mode", beautifyMode?.ToValueString())
                                 .AddOptionalParameter("beautify.seed", beautifySeed?.ToString())
+                                .AddOptionalParameter("colorSpace", colorSpace?.ToValueString())
                                 .AddOptionalParameter("describeAnyChange.mode", describeAnyChangeMode)
                                 .AddOptionalParameter("describeAnyChange.prompt", describeAnyChangePrompt)
                                 .AddOptionalParameter("describeAnyChange.seed", describeAnyChangeSeed?.ToString())
@@ -2012,6 +2032,7 @@ namespace Photoroom
                     backgroundSeed: backgroundSeed,
                     beautifyMode: beautifyMode,
                     beautifySeed: beautifySeed,
+                    colorSpace: colorSpace,
                     describeAnyChangeMode: describeAnyChangeMode,
                     describeAnyChangePrompt: describeAnyChangePrompt,
                     describeAnyChangeSeed: describeAnyChangeSeed,

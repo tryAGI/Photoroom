@@ -232,6 +232,9 @@ namespace Photoroom
         /// <param name="beautifySeed">
         /// Seed used to run the subject beautifier. Can be used to get similar looking results for the same subject.
         /// </param>
+        /// <param name="colorSpace">
+        /// Controls the colour space of the output image. 'sRGB' (default) encodes the output in sRGB. 'original' preserves the input's embedded ICC profile; it is only valid when the request is a pure background removal with PNG output. Combining it with any other operation (background, shadow, geometry changes, non-PNG export, export.dpi, keepExistingAlphaChannel:'auto', EXIF-subset preserveMetadata modes, ...) returns a 400 error naming the conflicting parameter.
+        /// </param>
         /// <param name="describeAnyChangeMode">
         /// (DEPRECATED) Use `editWithAI.mode` instead.<br/>
         /// Describe any change mode to use on the main image used by the API.<br/>
@@ -276,7 +279,7 @@ namespace Photoroom
         /// <param name="exportFormat">
         /// The format of the result image.<br/>
         /// Default value is "png".<br/>
-        /// Jpeg exports with a quality of 80 and WebP exports with a quality of 90.
+        /// Jpeg exports with a quality of 80, WebP and AVIF export with a quality of 90.
         /// </param>
         /// <param name="flatLayMode">
         /// Must be set to `ai.auto` to enable flat lay generation.
@@ -546,6 +549,7 @@ namespace Photoroom
             double? backgroundSeed = default,
             string? beautifyMode = default,
             double? beautifySeed = default,
+            string? colorSpace = default,
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
