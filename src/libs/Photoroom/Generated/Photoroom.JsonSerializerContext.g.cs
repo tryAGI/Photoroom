@@ -49,6 +49,10 @@ namespace Photoroom
 
             typeof(global::Photoroom.JsonConverters.EditImageGetBeautifyModeNullableJsonConverter),
 
+            typeof(global::Photoroom.JsonConverters.EditImageGetColorSpaceJsonConverter),
+
+            typeof(global::Photoroom.JsonConverters.EditImageGetColorSpaceNullableJsonConverter),
+
             typeof(global::Photoroom.JsonConverters.EditImageGetExportFormatJsonConverter),
 
             typeof(global::Photoroom.JsonConverters.EditImageGetExportFormatNullableJsonConverter),
@@ -212,6 +216,7 @@ namespace Photoroom
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetBackgroundExpandPromptMode), TypeInfoPropertyName = "EditImageGetBackgroundExpandPromptMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetBackgroundScaling), TypeInfoPropertyName = "EditImageGetBackgroundScaling2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetBeautifyMode), TypeInfoPropertyName = "EditImageGetBeautifyMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetColorSpace), TypeInfoPropertyName = "EditImageGetColorSpace2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetExportFormat), TypeInfoPropertyName = "EditImageGetExportFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetFlatLaySize), TypeInfoPropertyName = "EditImageGetFlatLaySize2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImageGetGhostMannequinSize), TypeInfoPropertyName = "EditImageGetGhostMannequinSize2")]

@@ -11,6 +11,10 @@ namespace Photoroom
         /// <summary>
         /// 
         /// </summary>
+        Avif,
+        /// <summary>
+        /// 
+        /// </summary>
         Jpeg,
         /// <summary>
         /// 
@@ -38,6 +42,7 @@ namespace Photoroom
         {
             return value switch
             {
+                EditImageGetExportFormat.Avif => "avif",
                 EditImageGetExportFormat.Jpeg => "jpeg",
                 EditImageGetExportFormat.Jpg => "jpg",
                 EditImageGetExportFormat.Png => "png",
@@ -52,6 +57,7 @@ namespace Photoroom
         {
             return value switch
             {
+                "avif" => EditImageGetExportFormat.Avif,
                 "jpeg" => EditImageGetExportFormat.Jpeg,
                 "jpg" => EditImageGetExportFormat.Jpg,
                 "png" => EditImageGetExportFormat.Png,
