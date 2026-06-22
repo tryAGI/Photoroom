@@ -48,6 +48,7 @@ namespace Photoroom
             ref global::Photoroom.EditImageGetBackgroundScaling? backgroundScaling,
             ref double? backgroundSeed,
             ref global::Photoroom.EditImageGetBeautifyMode? beautifyMode,
+            ref global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch,
             ref double? beautifySeed,
             ref global::Photoroom.EditImageGetColorSpace? colorSpace,
             ref string? describeAnyChangeMode,
@@ -137,6 +138,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBackgroundScaling? backgroundScaling,
             double? backgroundSeed,
             global::Photoroom.EditImageGetBeautifyMode? beautifyMode,
+            global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch,
             double? beautifySeed,
             global::Photoroom.EditImageGetColorSpace? colorSpace,
             string? describeAnyChangeMode,
@@ -273,6 +275,7 @@ namespace Photoroom
         /// </param>
         /// <param name="backgroundSeed"></param>
         /// <param name="beautifyMode"></param>
+        /// <param name="beautifyOnSubjectMismatch"></param>
         /// <param name="beautifySeed"></param>
         /// <param name="colorSpace">
         /// Default Value: sRGB
@@ -405,6 +408,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBackgroundScaling? backgroundScaling = default,
             double? backgroundSeed = default,
             global::Photoroom.EditImageGetBeautifyMode? beautifyMode = default,
+            global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             global::Photoroom.EditImageGetColorSpace? colorSpace = default,
             string? describeAnyChangeMode = default,
@@ -495,6 +499,7 @@ namespace Photoroom
                 backgroundScaling: backgroundScaling,
                 backgroundSeed: backgroundSeed,
                 beautifyMode: beautifyMode,
+                beautifyOnSubjectMismatch: beautifyOnSubjectMismatch,
                 beautifySeed: beautifySeed,
                 colorSpace: colorSpace,
                 describeAnyChangeMode: describeAnyChangeMode,
@@ -628,6 +633,7 @@ namespace Photoroom
         /// </param>
         /// <param name="backgroundSeed"></param>
         /// <param name="beautifyMode"></param>
+        /// <param name="beautifyOnSubjectMismatch"></param>
         /// <param name="beautifySeed"></param>
         /// <param name="colorSpace">
         /// Default Value: sRGB
@@ -760,6 +766,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBackgroundScaling? backgroundScaling = default,
             double? backgroundSeed = default,
             global::Photoroom.EditImageGetBeautifyMode? beautifyMode = default,
+            global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             global::Photoroom.EditImageGetColorSpace? colorSpace = default,
             string? describeAnyChangeMode = default,
@@ -853,6 +860,7 @@ namespace Photoroom
                 backgroundScaling: ref backgroundScaling,
                 backgroundSeed: ref backgroundSeed,
                 beautifyMode: ref beautifyMode,
+                beautifyOnSubjectMismatch: ref beautifyOnSubjectMismatch,
                 beautifySeed: ref beautifySeed,
                 colorSpace: ref colorSpace,
                 describeAnyChangeMode: ref describeAnyChangeMode,
@@ -969,6 +977,7 @@ namespace Photoroom
                                 .AddOptionalParameter("background.scaling", backgroundScaling?.ToValueString())
                                 .AddOptionalParameter("background.seed", backgroundSeed?.ToString())
                                 .AddOptionalParameter("beautify.mode", beautifyMode?.ToValueString())
+                                .AddOptionalParameter("beautify.onSubjectMismatch", beautifyOnSubjectMismatch?.ToValueString())
                                 .AddOptionalParameter("beautify.seed", beautifySeed?.ToString())
                                 .AddOptionalParameter("colorSpace", colorSpace?.ToValueString())
                                 .AddOptionalParameter("describeAnyChange.mode", describeAnyChangeMode)
@@ -1096,6 +1105,7 @@ namespace Photoroom
                     backgroundScaling: backgroundScaling,
                     backgroundSeed: backgroundSeed,
                     beautifyMode: beautifyMode,
+                    beautifyOnSubjectMismatch: beautifyOnSubjectMismatch,
                     beautifySeed: beautifySeed,
                     colorSpace: colorSpace,
                     describeAnyChangeMode: describeAnyChangeMode,
@@ -1563,6 +1573,7 @@ namespace Photoroom
         /// </param>
         /// <param name="backgroundSeed"></param>
         /// <param name="beautifyMode"></param>
+        /// <param name="beautifyOnSubjectMismatch"></param>
         /// <param name="beautifySeed"></param>
         /// <param name="colorSpace">
         /// Default Value: sRGB
@@ -1695,6 +1706,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBackgroundScaling? backgroundScaling = default,
             double? backgroundSeed = default,
             global::Photoroom.EditImageGetBeautifyMode? beautifyMode = default,
+            global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             global::Photoroom.EditImageGetColorSpace? colorSpace = default,
             string? describeAnyChangeMode = default,
@@ -1788,6 +1800,7 @@ namespace Photoroom
                 backgroundScaling: ref backgroundScaling,
                 backgroundSeed: ref backgroundSeed,
                 beautifyMode: ref beautifyMode,
+                beautifyOnSubjectMismatch: ref beautifyOnSubjectMismatch,
                 beautifySeed: ref beautifySeed,
                 colorSpace: ref colorSpace,
                 describeAnyChangeMode: ref describeAnyChangeMode,
@@ -1904,6 +1917,7 @@ namespace Photoroom
                                 .AddOptionalParameter("background.scaling", backgroundScaling?.ToValueString())
                                 .AddOptionalParameter("background.seed", backgroundSeed?.ToString())
                                 .AddOptionalParameter("beautify.mode", beautifyMode?.ToValueString())
+                                .AddOptionalParameter("beautify.onSubjectMismatch", beautifyOnSubjectMismatch?.ToValueString())
                                 .AddOptionalParameter("beautify.seed", beautifySeed?.ToString())
                                 .AddOptionalParameter("colorSpace", colorSpace?.ToValueString())
                                 .AddOptionalParameter("describeAnyChange.mode", describeAnyChangeMode)
@@ -2031,6 +2045,7 @@ namespace Photoroom
                     backgroundScaling: backgroundScaling,
                     backgroundSeed: backgroundSeed,
                     beautifyMode: beautifyMode,
+                    beautifyOnSubjectMismatch: beautifyOnSubjectMismatch,
                     beautifySeed: beautifySeed,
                     colorSpace: colorSpace,
                     describeAnyChangeMode: describeAnyChangeMode,

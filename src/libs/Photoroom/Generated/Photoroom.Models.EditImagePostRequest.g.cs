@@ -121,13 +121,23 @@ namespace Photoroom
         public string? BeautifyMode { get; set; }
 
         /// <summary>
+        /// Controls what happens when the image doesn't match the subject expected by `beautify.mode`. The subject check is only available for `beautify.mode` `ai.food`.<br/>
+        /// If set to `error`, the request is rejected with HTTP 400: for `ai.food`, when the provided image is not detected as food (before any processing happens) — use this to fail fast instead of beautifying a non-food image; for any other mode, because the check is not supported there.<br/>
+        /// If set to `ignore` (the default), no subject check is performed and the image is beautified as-is.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("beautify.onSubjectMismatch")]
+        public string? BeautifyOnSubjectMismatch { get; set; }
+
+        /// <summary>
         /// Seed used to run the subject beautifier. Can be used to get similar looking results for the same subject.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("beautify.seed")]
         public double? BeautifySeed { get; set; }
 
         /// <summary>
-        /// Controls the colour space of the output image. 'sRGB' (default) encodes the output in sRGB. 'original' preserves the input's embedded ICC profile; it is only valid when the request is a pure background removal with PNG output. Combining it with any other operation (background, shadow, geometry changes, non-PNG export, export.dpi, keepExistingAlphaChannel:'auto', EXIF-subset preserveMetadata modes, ...) returns a 400 error naming the conflicting parameter.
+        /// Controls the colour space of the output image.<br/>
+        /// - `sRGB` (default): the output is encoded in sRGB (current behaviour).<br/>
+        /// - `original`: the input's embedded ICC profile is preserved in the output. Only valid when   the request is a pure background removal with PNG output; combining it with any other   operation (background, shadow, geometry changes, non-PNG export, `export.dpi`,   `keepExistingAlphaChannel: "auto"`, EXIF-subset `preserveMetadata` modes, ...) returns a   400 error naming the conflicting parameter.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("colorSpace")]
         public string? ColorSpace { get; set; }
@@ -727,11 +737,18 @@ namespace Photoroom
         /// - the beautifier will not preserve the original background: we recommend using this option along with `removeBackground` set to `true`<br/>
         /// - the beautifier is meant for images of products, food, or cars; we do not recommend using it with subjects such as humans, pets, etc.
         /// </param>
+        /// <param name="beautifyOnSubjectMismatch">
+        /// Controls what happens when the image doesn't match the subject expected by `beautify.mode`. The subject check is only available for `beautify.mode` `ai.food`.<br/>
+        /// If set to `error`, the request is rejected with HTTP 400: for `ai.food`, when the provided image is not detected as food (before any processing happens) — use this to fail fast instead of beautifying a non-food image; for any other mode, because the check is not supported there.<br/>
+        /// If set to `ignore` (the default), no subject check is performed and the image is beautified as-is.
+        /// </param>
         /// <param name="beautifySeed">
         /// Seed used to run the subject beautifier. Can be used to get similar looking results for the same subject.
         /// </param>
         /// <param name="colorSpace">
-        /// Controls the colour space of the output image. 'sRGB' (default) encodes the output in sRGB. 'original' preserves the input's embedded ICC profile; it is only valid when the request is a pure background removal with PNG output. Combining it with any other operation (background, shadow, geometry changes, non-PNG export, export.dpi, keepExistingAlphaChannel:'auto', EXIF-subset preserveMetadata modes, ...) returns a 400 error naming the conflicting parameter.
+        /// Controls the colour space of the output image.<br/>
+        /// - `sRGB` (default): the output is encoded in sRGB (current behaviour).<br/>
+        /// - `original`: the input's embedded ICC profile is preserved in the output. Only valid when   the request is a pure background removal with PNG output; combining it with any other   operation (background, shadow, geometry changes, non-PNG export, `export.dpi`,   `keepExistingAlphaChannel: "auto"`, EXIF-subset `preserveMetadata` modes, ...) returns a   400 error naming the conflicting parameter.
         /// </param>
         /// <param name="describeAnyChangeMode">
         /// (DEPRECATED) Use `editWithAI.mode` instead.<br/>
@@ -1046,6 +1063,7 @@ namespace Photoroom
             string? backgroundScaling,
             double? backgroundSeed,
             string? beautifyMode,
+            string? beautifyOnSubjectMismatch,
             double? beautifySeed,
             string? colorSpace,
             string? describeAnyChangeMode,
@@ -1136,6 +1154,7 @@ namespace Photoroom
             this.BackgroundScaling = backgroundScaling;
             this.BackgroundSeed = backgroundSeed;
             this.BeautifyMode = beautifyMode;
+            this.BeautifyOnSubjectMismatch = beautifyOnSubjectMismatch;
             this.BeautifySeed = beautifySeed;
             this.ColorSpace = colorSpace;
             this.DescribeAnyChangeMode = describeAnyChangeMode;
