@@ -58,6 +58,7 @@ namespace Photoroom
         /// </param>
         /// <param name="backgroundSeed"></param>
         /// <param name="beautifyMode"></param>
+        /// <param name="beautifyOnSubjectMismatch"></param>
         /// <param name="beautifySeed"></param>
         /// <param name="colorSpace">
         /// Default Value: sRGB
@@ -190,6 +191,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBackgroundScaling? backgroundScaling = default,
             double? backgroundSeed = default,
             global::Photoroom.EditImageGetBeautifyMode? beautifyMode = default,
+            global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             global::Photoroom.EditImageGetColorSpace? colorSpace = default,
             string? describeAnyChangeMode = default,
@@ -319,6 +321,7 @@ namespace Photoroom
         /// </param>
         /// <param name="backgroundSeed"></param>
         /// <param name="beautifyMode"></param>
+        /// <param name="beautifyOnSubjectMismatch"></param>
         /// <param name="beautifySeed"></param>
         /// <param name="colorSpace">
         /// Default Value: sRGB
@@ -451,6 +454,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBackgroundScaling? backgroundScaling = default,
             double? backgroundSeed = default,
             global::Photoroom.EditImageGetBeautifyMode? beautifyMode = default,
+            global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             global::Photoroom.EditImageGetColorSpace? colorSpace = default,
             string? describeAnyChangeMode = default,
@@ -580,6 +584,7 @@ namespace Photoroom
         /// </param>
         /// <param name="backgroundSeed"></param>
         /// <param name="beautifyMode"></param>
+        /// <param name="beautifyOnSubjectMismatch"></param>
         /// <param name="beautifySeed"></param>
         /// <param name="colorSpace">
         /// Default Value: sRGB
@@ -712,6 +717,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBackgroundScaling? backgroundScaling = default,
             double? backgroundSeed = default,
             global::Photoroom.EditImageGetBeautifyMode? beautifyMode = default,
+            global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             global::Photoroom.EditImageGetColorSpace? colorSpace = default,
             string? describeAnyChangeMode = default,

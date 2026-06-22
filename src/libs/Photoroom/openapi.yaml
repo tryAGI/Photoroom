@@ -728,6 +728,22 @@
             }
           },
           {
+            "name": "beautify.onSubjectMismatch",
+            "in": "query",
+            "description": "Controls what happens when the image doesn't match the subject expected by `beautify.mode`. The subject check is only available for `beautify.mode` `ai.food`.\n\nIf set to `error`, the request is rejected with HTTP 400: for `ai.food`, when the provided image is not detected as food (before any processing happens) — use this to fail fast instead of beautifying a non-food image; for any other mode, because the check is not supported there.\n\nIf set to `ignore` (the default), no subject check is performed and the image is beautified as-is.",
+            "schema": {
+              "enum": [
+                "ignore",
+                "error"
+              ],
+              "examples": [
+                "ignore",
+                "error"
+              ],
+              "type": "string"
+            }
+          },
+          {
             "name": "beautify.seed",
             "in": "query",
             "description": "Seed used to run the subject beautifier. Can be used to get similar looking results for the same subject.",
@@ -741,7 +757,7 @@
           {
             "name": "colorSpace",
             "in": "query",
-            "description": "Controls the colour space of the output image. 'sRGB' (default) encodes the output in sRGB. 'original' preserves the input's embedded ICC profile; it is only valid when the request is a pure background removal with PNG output. Combining it with any other operation (background, shadow, geometry changes, non-PNG export, export.dpi, keepExistingAlphaChannel:'auto', EXIF-subset preserveMetadata modes, ...) returns a 400 error naming the conflicting parameter.",
+            "description": "Controls the colour space of the output image.\n\n- `sRGB` (default): the output is encoded in sRGB (current behaviour).\n- `original`: the input's embedded ICC profile is preserved in the output. Only valid when   the request is a pure background removal with PNG output; combining it with any other   operation (background, shadow, geometry changes, non-PNG export, `export.dpi`,   `keepExistingAlphaChannel: \"auto\"`, EXIF-subset `preserveMetadata` modes, ...) returns a   400 error naming the conflicting parameter.",
             "schema": {
               "default": "sRGB",
               "enum": [
@@ -2384,13 +2400,17 @@
                     "type": "string",
                     "description": "If enabled, the input image will be beautified (imageFile or imageUrl).\n\nThis is intended to enhance product images by automatically improving the aesthetics of the image, such as the lighting, background, and overall appearance.\n\nIf set to `ai.auto`, the input image will be beautified to match the aesthetic of a packshot product image.\n\nIf set to `ai.food`, the input image will be beautified in a way that's specific to food images, such as placing the subject on a plate.\n\nIf set to `ai.car`, the input image will be beautified in a way that's specific to car images, such as removing reflections.\n\nImportant:\n- the beautifier will not preserve the original background: we recommend using this option along with `removeBackground` set to `true`\n- the beautifier is meant for images of products, food, or cars; we do not recommend using it with subjects such as humans, pets, etc."
                   },
+                  "beautify.onSubjectMismatch": {
+                    "type": "string",
+                    "description": "Controls what happens when the image doesn't match the subject expected by `beautify.mode`. The subject check is only available for `beautify.mode` `ai.food`.\n\nIf set to `error`, the request is rejected with HTTP 400: for `ai.food`, when the provided image is not detected as food (before any processing happens) — use this to fail fast instead of beautifying a non-food image; for any other mode, because the check is not supported there.\n\nIf set to `ignore` (the default), no subject check is performed and the image is beautified as-is."
+                  },
                   "beautify.seed": {
                     "type": "number",
                     "description": "Seed used to run the subject beautifier. Can be used to get similar looking results for the same subject."
                   },
                   "colorSpace": {
                     "type": "string",
-                    "description": "Controls the colour space of the output image. 'sRGB' (default) encodes the output in sRGB. 'original' preserves the input's embedded ICC profile; it is only valid when the request is a pure background removal with PNG output. Combining it with any other operation (background, shadow, geometry changes, non-PNG export, export.dpi, keepExistingAlphaChannel:'auto', EXIF-subset preserveMetadata modes, ...) returns a 400 error naming the conflicting parameter."
+                    "description": "Controls the colour space of the output image.\n\n- `sRGB` (default): the output is encoded in sRGB (current behaviour).\n- `original`: the input's embedded ICC profile is preserved in the output. Only valid when   the request is a pure background removal with PNG output; combining it with any other   operation (background, shadow, geometry changes, non-PNG export, `export.dpi`,   `keepExistingAlphaChannel: \"auto\"`, EXIF-subset `preserveMetadata` modes, ...) returns a   400 error naming the conflicting parameter."
                   },
                   "describeAnyChange.mode": {
                     "type": "string",

@@ -9,11 +9,11 @@ namespace Photoroom
     public enum EditImageGetColorSpace
     {
         /// <summary>
-        /// 'auto', EXIF-subset preserveMetadata modes, ...) returns a 400 error naming the conflicting parameter.
+        /// the input's embedded ICC profile is preserved in the output. Only valid when   the request is a pure background removal with PNG output; combining it with any other   operation (background, shadow, geometry changes, non-PNG export, `export.dpi`,   `keepExistingAlphaChannel: "auto"`, EXIF-subset `preserveMetadata` modes, ...) returns a   400 error naming the conflicting parameter.
         /// </summary>
         Original,
         /// <summary>
-        /// 'auto', EXIF-subset preserveMetadata modes, ...) returns a 400 error naming the conflicting parameter.
+        /// the output is encoded in sRGB (current behaviour).
         /// </summary>
         Srgb,
     }
