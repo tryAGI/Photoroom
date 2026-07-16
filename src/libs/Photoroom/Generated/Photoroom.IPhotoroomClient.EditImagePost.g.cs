@@ -240,7 +240,7 @@ namespace Photoroom
         /// <param name="colorSpace">
         /// Controls the colour space of the output image.<br/>
         /// - `sRGB` (default): the output is encoded in sRGB (current behaviour).<br/>
-        /// - `original`: the input's embedded ICC profile is preserved in the output. Only valid when   the request is a pure background removal with PNG output; combining it with any other   operation (background, shadow, geometry changes, non-PNG export, `export.dpi`,   `keepExistingAlphaChannel: "auto"`, EXIF-subset `preserveMetadata` modes, ...) returns a   400 error naming the conflicting parameter.
+        /// - `original`: the input's embedded ICC profile is preserved in the output. Only valid when   the request is a background removal with PNG output, optionally positioned relative to   the original image box: `referenceBox: "originalImage"` combined with `padding` (and its   side-specific variants) and/or an explicit `outputSize` ("widthxheight"). Note that a   non-zero padding or a size-changing outputSize resamples the pixels (never a colour   conversion — the ICC profile and gamut are untouched). Combining `original` with any   other operation (background, shadow, other geometry changes, non-PNG export,   `export.dpi`, `keepExistingAlphaChannel: "auto"`, EXIF-subset `preserveMetadata` modes,   ...) returns a 400 error naming the conflicting parameter.
         /// </param>
         /// <param name="describeAnyChangeMode">
         /// (DEPRECATED) Use `editWithAI.mode` instead.<br/>
