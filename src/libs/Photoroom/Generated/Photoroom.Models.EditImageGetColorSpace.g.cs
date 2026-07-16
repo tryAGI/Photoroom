@@ -9,7 +9,7 @@ namespace Photoroom
     public enum EditImageGetColorSpace
     {
         /// <summary>
-        /// the input's embedded ICC profile is preserved in the output. Only valid when   the request is a pure background removal with PNG output; combining it with any other   operation (background, shadow, geometry changes, non-PNG export, `export.dpi`,   `keepExistingAlphaChannel: "auto"`, EXIF-subset `preserveMetadata` modes, ...) returns a   400 error naming the conflicting parameter.
+        /// the input's embedded ICC profile is preserved in the output. Only valid when   the request is a background removal with PNG output, optionally positioned relative to   the original image box: `referenceBox: "originalImage"` combined with `padding` (and its   side-specific variants) and/or an explicit `outputSize` ("widthxheight"). Note that a   non-zero padding or a size-changing outputSize resamples the pixels (never a colour   conversion — the ICC profile and gamut are untouched). Combining `original` with any   other operation (background, shadow, other geometry changes, non-PNG export,   `export.dpi`, `keepExistingAlphaChannel: "auto"`, EXIF-subset `preserveMetadata` modes,   ...) returns a 400 error naming the conflicting parameter.
         /// </summary>
         Original,
         /// <summary>
