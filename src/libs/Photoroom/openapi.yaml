@@ -2798,6 +2798,401 @@
         }
       }
     },
+    "/v2/visual-qa": {
+      "post": {
+        "operationId": "visual-qa",
+        "summary": "Visual QA",
+        "description": "Analyze an image and return a caption, image metadata, and scores for the requested features (see the `features` enum).\n\nRequires an Enterprise plan: requests authenticated with a non-Enterprise API key receive a 403 with a link to contact our sales team.",
+        "servers": [
+          {
+            "url": "https://image-api.photoroom.com",
+            "description": "Production server (Plus plan)"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "imageFile": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "Image to analyze, as a binary file. Provide exactly one of imageFile or imageUrl."
+                  },
+                  "imageUrl": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL of the image to analyze. Provide exactly one of imageFile or imageUrl.",
+                    "example": "https://example.com/image.jpg"
+                  },
+                  "referenceImageFile": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "Reference image (binary) to compare against, required when features includes fashionFidelity or foodFidelity. Provide exactly one of referenceImageFile or referenceImageUrl."
+                  },
+                  "referenceImageUrl": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL of the reference image to compare against, required when features includes fashionFidelity or foodFidelity. Provide exactly one of referenceImageFile or referenceImageUrl.",
+                    "example": "https://example.com/reference.jpg"
+                  },
+                  "features": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "aiGenerated",
+                        "hate",
+                        "violence",
+                        "text",
+                        "overallImageQuality",
+                        "humanElements",
+                        "isEcommerceProduct",
+                        "isFoodOrBeverage",
+                        "cropped",
+                        "fashionFidelity",
+                        "foodFidelity",
+                        "shadowCastOverProduct"
+                      ]
+                    },
+                    "description": "Features to run, as an array or a comma-separated string (e.g. \"aiGenerated,text\"). If omitted, you still receive the caption and metadata.",
+                    "example": [
+                      "aiGenerated",
+                      "text"
+                    ]
+                  }
+                },
+                "title": "Visual QA Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "caption": {
+                      "type": "string",
+                      "description": "A generated caption describing the image. Omitted if no caption could be produced.",
+                      "example": "Three gold rings with blue stones on a marble surface."
+                    },
+                    "metadata": {
+                      "type": "object",
+                      "properties": {
+                        "width": {
+                          "type": "number",
+                          "description": "Image width in pixels."
+                        },
+                        "height": {
+                          "type": "number",
+                          "description": "Image height in pixels."
+                        },
+                        "format": {
+                          "type": "string",
+                          "description": "Image format, e.g. \"jpeg\" or \"png\"."
+                        },
+                        "sizeMB": {
+                          "type": "number",
+                          "description": "Approximate image size in megabytes."
+                        }
+                      },
+                      "description": "Basic image metadata."
+                    },
+                    "features": {
+                      "type": "object",
+                      "properties": {
+                        "aiGenerated": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "number",
+                              "description": "Score for this feature; see the feature description for its meaning and range."
+                            }
+                          },
+                          "required": [
+                            "score"
+                          ],
+                          "description": "Likelihood the image is AI-generated. Scores closer to 1 mean a higher likelihood."
+                        },
+                        "hate": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "number",
+                              "description": "Score for this feature; see the feature description for its meaning and range."
+                            }
+                          },
+                          "required": [
+                            "score"
+                          ],
+                          "description": "Likelihood the image contains hateful or offensive content such as hate symbols. Scores closer to 1 mean a higher likelihood."
+                        },
+                        "violence": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "number",
+                              "description": "Score for this feature; see the feature description for its meaning and range."
+                            }
+                          },
+                          "required": [
+                            "score"
+                          ],
+                          "description": "Likelihood the image contains violent content. Scores closer to 1 mean a higher likelihood."
+                        },
+                        "text": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "number",
+                              "description": "Score for this feature; see the feature description for its meaning and range."
+                            }
+                          },
+                          "required": [
+                            "score"
+                          ],
+                          "description": "Likelihood the image contains artificial (added) text. Scores closer to 1 mean a higher likelihood."
+                        },
+                        "overallImageQuality": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "number",
+                              "description": "Score for this feature; see the feature description for its meaning and range."
+                            }
+                          },
+                          "required": [
+                            "score"
+                          ],
+                          "description": "Overall image quality (sharpness, blur, contrast, brightness). Scores closer to 1 mean better quality."
+                        },
+                        "humanElements": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "number",
+                              "description": "Score for this feature; see the feature description for its meaning and range."
+                            }
+                          },
+                          "required": [
+                            "score"
+                          ],
+                          "description": "Likelihood the image contains humans or human elements such as hands or legs. Scores closer to 1 mean a higher likelihood."
+                        },
+                        "isEcommerceProduct": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "number",
+                              "description": "Score for this feature; see the feature description for its meaning and range."
+                            }
+                          },
+                          "required": [
+                            "score"
+                          ],
+                          "description": "Whether the main subject is a sellable physical product — a consumer good or retail item, food included: score 1 if so, 0 otherwise (e.g. logos, people, landscapes, abstract art)."
+                        },
+                        "isFoodOrBeverage": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "number",
+                              "description": "Score for this feature; see the feature description for its meaning and range."
+                            }
+                          },
+                          "required": [
+                            "score"
+                          ],
+                          "description": "Whether the main subject is an edible or drinkable item (packaged food, fresh produce, beverages, dishes, snacks): score 1 if so, 0 otherwise. A refinement of isEcommerceProduct — request both when you need food-specific routing."
+                        },
+                        "cropped": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "number",
+                              "description": "Crop-quality score. Scores closer to 1 mean a higher likelihood the subject is cropped."
+                            },
+                            "subjectBoundingBox": {
+                              "type": "object",
+                              "properties": {
+                                "ymin": {
+                                  "type": "number"
+                                },
+                                "ymax": {
+                                  "type": "number"
+                                },
+                                "xmin": {
+                                  "type": "number"
+                                },
+                                "xmax": {
+                                  "type": "number"
+                                }
+                              },
+                              "required": [
+                                "ymin",
+                                "ymax",
+                                "xmin",
+                                "xmax"
+                              ],
+                              "description": "Subject location relative to image size (0 to 1). A 0 (xmin/ymin) or 1 (xmax/ymax) means the subject touches that edge and is cropped."
+                            }
+                          },
+                          "required": [
+                            "score",
+                            "subjectBoundingBox"
+                          ],
+                          "description": "Crop-quality assessment and detected subject bounding box."
+                        },
+                        "shadowCastOverProduct": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "number",
+                              "description": "Score for this feature; see the feature description for its meaning and range."
+                            }
+                          },
+                          "required": [
+                            "score"
+                          ],
+                          "description": "Whether a shadow is cast over the product: score 1 if present, 0 otherwise."
+                        },
+                        "fashionFidelity": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "number",
+                              "description": "Score for this feature; see the feature description for its meaning and range."
+                            }
+                          },
+                          "required": [
+                            "score"
+                          ],
+                          "description": "Similarity between the image and the reference image (e.g. ghost-mannequin, virtual try-on): scores closer to 1 mean a better match. Requires a reference image."
+                        },
+                        "foodFidelity": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "number",
+                              "description": "Score for this feature; see the feature description for its meaning and range."
+                            }
+                          },
+                          "required": [
+                            "score"
+                          ],
+                          "description": "Whether an edited image stays faithful to the reference image: 0 = faithful, 1 = a fidelity issue detected. Requires a reference image."
+                        }
+                      },
+                      "description": "Requested features and their results; only requested features are present."
+                    }
+                  },
+                  "required": [
+                    "metadata",
+                    "features"
+                  ],
+                  "title": "Visual QA Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "description": "The message describing the error",
+                          "title": "Message",
+                          "example": "imageFile: must be provided"
+                        }
+                      },
+                      "required": [
+                        "message"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "error"
+                  ],
+                  "title": "Field Missing Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "description": "The message describing the error",
+                          "title": "Message",
+                          "example": "This endpoint is only available to customers on an Enterprise plan. Contact our sales team to get access: https://www.photoroom.com/contact-sales"
+                        }
+                      },
+                      "required": [
+                        "message"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "error"
+                  ],
+                  "title": "Enterprise Plan Required"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "description": "The message describing the error",
+                          "title": "Message",
+                          "example": "An unexpected error occurred. Please try again later or contact support."
+                        }
+                      },
+                      "required": [
+                        "message"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "error"
+                  ],
+                  "title": "Unknown Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/render": {
       "get": {
         "operationId": "edit-image-get",
