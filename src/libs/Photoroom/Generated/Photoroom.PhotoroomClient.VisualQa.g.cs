@@ -259,7 +259,7 @@ namespace Photoroom
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Features, x => x.ToValueString()))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Features!, x => x.ToValueString()))}]"),
                                     name: "\"features\"");
 
                             }
