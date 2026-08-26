@@ -61,6 +61,10 @@ namespace Photoroom
         /// Features to run, as an array or a comma-separated string (e.g. "aiGenerated,text"). If omitted, you still receive the caption and metadata.<br/>
         /// Example: [aiGenerated, text]
         /// </param>
+        /// <param name="clothingItemDetection">
+        /// Detect distinct clothing/footwear/accessory items in the image.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -72,6 +76,7 @@ namespace Photoroom
             string? referenceImageFilename = default,
             string? referenceImageUrl = default,
             global::System.Collections.Generic.IList<global::Photoroom.VisualQaRequestFeature>? features = default,
+            bool? clothingItemDetection = default,
             global::Photoroom.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

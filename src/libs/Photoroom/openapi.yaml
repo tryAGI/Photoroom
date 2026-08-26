@@ -2861,6 +2861,11 @@
                       "aiGenerated",
                       "text"
                     ]
+                  },
+                  "clothingItemDetection": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Detect distinct clothing/footwear/accessory items in the image."
                   }
                 },
                 "title": "Visual QA Request"
@@ -2880,6 +2885,52 @@
                       "type": "string",
                       "description": "A generated caption describing the image. Omitted if no caption could be produced.",
                       "example": "Three gold rings with blue stones on a marble surface."
+                    },
+                    "clothingItemDetection": {
+                      "type": "object",
+                      "properties": {
+                        "items": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string",
+                                "description": "Short, descriptive name of the item (e.g. \"black leather jacket\"). Plain name only — no bounding boxes — intended for direct use as a text-guided-segmentation prompt."
+                              },
+                              "category": {
+                                "type": "string",
+                                "enum": [
+                                  "top",
+                                  "t-shirt",
+                                  "shirt",
+                                  "blouse",
+                                  "sweater",
+                                  "dress",
+                                  "skirt",
+                                  "shorts",
+                                  "trousers",
+                                  "jacket",
+                                  "coat",
+                                  "shoes",
+                                  "accessory",
+                                  "other"
+                                ],
+                                "description": "The clothing category this item was classified into, from a fixed, versioned list (e.g. pumps or sneakers are classified as \"shoes\")."
+                              }
+                            },
+                            "required": [
+                              "name",
+                              "category"
+                            ]
+                          },
+                          "description": "Distinct clothing items, footwear, and accessories detected in the image, each with a short name and a category from a fixed list."
+                        }
+                      },
+                      "required": [
+                        "items"
+                      ],
+                      "description": "Distinct clothing, footwear, and accessory items detected in the image. Only present when clothingItemDetection is requested."
                     },
                     "metadata": {
                       "type": "object",

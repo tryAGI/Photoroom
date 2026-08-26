@@ -17,6 +17,12 @@ namespace Photoroom
         public string? Caption { get; set; }
 
         /// <summary>
+        /// Distinct clothing, footwear, and accessory items detected in the image. Only present when clothingItemDetection is requested.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("clothingItemDetection")]
+        public global::Photoroom.VisualQaResponseClothingItemDetection? ClothingItemDetection { get; set; }
+
+        /// <summary>
         /// Basic image metadata.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
@@ -49,15 +55,20 @@ namespace Photoroom
         /// A generated caption describing the image. Omitted if no caption could be produced.<br/>
         /// Example: Three gold rings with blue stones on a marble surface.
         /// </param>
+        /// <param name="clothingItemDetection">
+        /// Distinct clothing, footwear, and accessory items detected in the image. Only present when clothingItemDetection is requested.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VisualQaResponse(
             global::Photoroom.VisualQaResponseMetadata metadata,
             global::Photoroom.VisualQaResponseFeatures features,
-            string? caption)
+            string? caption,
+            global::Photoroom.VisualQaResponseClothingItemDetection? clothingItemDetection)
         {
             this.Caption = caption;
+            this.ClothingItemDetection = clothingItemDetection;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Features = features ?? throw new global::System.ArgumentNullException(nameof(features));
         }
