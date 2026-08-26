@@ -57,6 +57,13 @@ namespace Photoroom
         public global::System.Collections.Generic.IList<global::Photoroom.VisualQaRequestFeature>? Features { get; set; }
 
         /// <summary>
+        /// Detect distinct clothing/footwear/accessory items in the image.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("clothingItemDetection")]
+        public bool? ClothingItemDetection { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -89,6 +96,10 @@ namespace Photoroom
         /// Features to run, as an array or a comma-separated string (e.g. "aiGenerated,text"). If omitted, you still receive the caption and metadata.<br/>
         /// Example: [aiGenerated, text]
         /// </param>
+        /// <param name="clothingItemDetection">
+        /// Detect distinct clothing/footwear/accessory items in the image.<br/>
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -99,7 +110,8 @@ namespace Photoroom
             byte[]? referenceImageFile,
             string? referenceImageFilename,
             string? referenceImageUrl,
-            global::System.Collections.Generic.IList<global::Photoroom.VisualQaRequestFeature>? features)
+            global::System.Collections.Generic.IList<global::Photoroom.VisualQaRequestFeature>? features,
+            bool? clothingItemDetection)
         {
             this.ImageFile = imageFile;
             this.ImageFilename = imageFilename;
@@ -108,6 +120,7 @@ namespace Photoroom
             this.ReferenceImageFilename = referenceImageFilename;
             this.ReferenceImageUrl = referenceImageUrl;
             this.Features = features;
+            this.ClothingItemDetection = clothingItemDetection;
         }
 
         /// <summary>
