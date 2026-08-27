@@ -4,16 +4,16 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EditImageGetLayersVariant2ImageRemoveBackground
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Never,
     }

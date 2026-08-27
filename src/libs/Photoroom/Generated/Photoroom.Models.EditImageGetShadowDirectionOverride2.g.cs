@@ -4,40 +4,40 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EditImageGetShadowDirectionOverride2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Behind,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BehindLeft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BehindRight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Front,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FrontLeft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FrontRight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Left,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Right,
     }

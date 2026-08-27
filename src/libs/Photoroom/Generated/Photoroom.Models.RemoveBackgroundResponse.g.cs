@@ -4,12 +4,12 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RemoveBackgroundResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("base64img")]
         [global::System.Text.Json.Serialization.JsonRequired]

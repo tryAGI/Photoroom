@@ -9,23 +9,23 @@ namespace Photoroom
     public enum EditImageGetLayersVariant2ImageImageFromPromptSize
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Landscape169,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Landscape43,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Portrait169,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Portrait43,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SquareHd,
     }

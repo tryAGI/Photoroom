@@ -4,12 +4,12 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AccountDetailsV1Response
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
         [global::System.Text.Json.Serialization.JsonRequired]

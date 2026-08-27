@@ -4,20 +4,20 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EditImageGetLightingMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiAuto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiOptimizePortrait,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiPreserveHueAndSaturation,
     }

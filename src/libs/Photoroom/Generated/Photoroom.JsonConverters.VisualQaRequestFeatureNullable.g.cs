@@ -20,7 +20,7 @@ namespace Photoroom.JsonConverters
                     {
                         return global::Photoroom.VisualQaRequestFeatureExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

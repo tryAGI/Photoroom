@@ -9,71 +9,71 @@ namespace Photoroom
     public enum EditImageGetVirtualModelModelVariant1PresetName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Alex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ava,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Avery,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Casey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Emma,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fiona,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jackson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jordan,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Julia,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kendall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lena,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Maya,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Reece,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sam,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sophia,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Taylor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Zoe,
     }

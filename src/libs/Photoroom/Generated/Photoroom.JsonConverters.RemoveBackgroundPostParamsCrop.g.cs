@@ -20,7 +20,7 @@ namespace Photoroom.JsonConverters
                     {
                         return global::Photoroom.RemoveBackgroundPostParamsCropExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

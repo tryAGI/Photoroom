@@ -9,11 +9,11 @@ namespace Photoroom
     public enum EditImageGetKeepExistingAlphaChannel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Never,
     }

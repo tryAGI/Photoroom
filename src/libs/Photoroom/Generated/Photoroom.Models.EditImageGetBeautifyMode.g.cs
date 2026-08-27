@@ -4,20 +4,20 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EditImageGetBeautifyMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiAuto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiCar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiFood,
     }

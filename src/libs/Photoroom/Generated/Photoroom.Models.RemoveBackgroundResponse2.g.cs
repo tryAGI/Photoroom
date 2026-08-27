@@ -4,7 +4,7 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RemoveBackgroundResponse2
     {

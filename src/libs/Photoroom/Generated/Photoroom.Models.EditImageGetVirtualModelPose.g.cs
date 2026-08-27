@@ -9,51 +9,51 @@ namespace Photoroom
     public enum EditImageGetVirtualModelPose
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x34turn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Adjustingclothing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Back,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Crossedarms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Handinpocket,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Overtheshoulder,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Playfulspin,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Powerstance,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Random,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Seated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Standing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Walkingforward,
     }

@@ -9,59 +9,59 @@ namespace Photoroom
     public enum VisualQaResponseClothingItemDetectionItemCategory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Accessory,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Blouse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Coat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jacket,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Other,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shirt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shoes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shorts,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Skirt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sweater,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TShirt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Top,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Trousers,
     }

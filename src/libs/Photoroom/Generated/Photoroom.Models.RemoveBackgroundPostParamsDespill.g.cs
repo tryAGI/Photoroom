@@ -10,11 +10,11 @@ namespace Photoroom
     public enum RemoveBackgroundPostParamsDespill
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         False,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         True,
     }

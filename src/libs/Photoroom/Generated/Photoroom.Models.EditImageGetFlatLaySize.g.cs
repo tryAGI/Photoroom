@@ -9,31 +9,31 @@ namespace Photoroom
     public enum EditImageGetFlatLaySize
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LandscapeHd169,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LandscapeHd32,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LandscapeHd43,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PortraitHd169,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PortraitHd32,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PortraitHd43,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SquareHd,
     }

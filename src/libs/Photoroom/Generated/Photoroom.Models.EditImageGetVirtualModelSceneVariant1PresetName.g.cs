@@ -9,95 +9,95 @@ namespace Photoroom
     public enum EditImageGetVirtualModelSceneVariant1PresetName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asiancity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Beach,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bedroom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Businessdistrict,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cafe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Coloredstudio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Concretestudio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Countryside,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desert,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Factory,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flowers,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Forest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Goldenlight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Latincity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Library,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mountain,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nightlights,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pool,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Random,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Street,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Studio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sunset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tropical,
     }

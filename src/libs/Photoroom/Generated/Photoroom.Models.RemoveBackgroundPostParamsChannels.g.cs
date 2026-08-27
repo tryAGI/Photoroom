@@ -10,11 +10,11 @@ namespace Photoroom
     public enum RemoveBackgroundPostParamsChannels
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Alpha,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rgba,
     }

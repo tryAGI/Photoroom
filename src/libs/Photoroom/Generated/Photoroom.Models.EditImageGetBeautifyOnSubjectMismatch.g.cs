@@ -4,7 +4,7 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EditImageGetBeautifyOnSubjectMismatch
     {
@@ -13,7 +13,7 @@ namespace Photoroom
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ignore,
     }

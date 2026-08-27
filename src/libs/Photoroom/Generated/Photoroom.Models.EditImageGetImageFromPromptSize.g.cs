@@ -4,28 +4,28 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EditImageGetImageFromPromptSize
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Landscape169,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Landscape43,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Portrait169,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Portrait43,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SquareHd,
     }

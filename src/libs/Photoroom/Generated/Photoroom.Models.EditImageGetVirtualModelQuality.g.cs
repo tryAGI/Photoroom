@@ -9,15 +9,15 @@ namespace Photoroom
     public enum EditImageGetVirtualModelQuality
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Advanced,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Premium,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Standard,
     }

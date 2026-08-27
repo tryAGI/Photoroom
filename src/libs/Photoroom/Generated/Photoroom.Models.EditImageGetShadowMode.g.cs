@@ -4,32 +4,32 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EditImageGetShadowMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiAutoWithOverrides,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiFloating,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiHard,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiPresetHard,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiPresetSoft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiSoft,
     }
