@@ -4,20 +4,20 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EditImageGetTextRemovalMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiAll,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiArtificial,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiNatural,
     }

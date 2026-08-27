@@ -9,11 +9,11 @@ namespace Photoroom
     public enum EditImageGetLayersVariant2ImageSegmentationMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IgnoreSalientObject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KeepSalientObject,
     }

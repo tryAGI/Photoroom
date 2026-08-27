@@ -4,16 +4,16 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EditImageGetShadowSubjectPoseOverride2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flatlay,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Upright,
     }

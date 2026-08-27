@@ -9,28 +9,28 @@ namespace Photoroom
     public sealed partial class VisualQaResponseFeaturesCroppedSubjectBoundingBox
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ymin")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Ymin { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ymax")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Ymax { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("xmin")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Xmin { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("xmax")]
         [global::System.Text.Json.Serialization.JsonRequired]

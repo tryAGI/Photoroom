@@ -10,11 +10,11 @@ namespace Photoroom
     public enum RemoveBackgroundPostParamsCrop
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         False,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         True,
     }

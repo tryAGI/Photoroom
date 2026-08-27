@@ -4,7 +4,7 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EditImageGetUpscaleMode
     {

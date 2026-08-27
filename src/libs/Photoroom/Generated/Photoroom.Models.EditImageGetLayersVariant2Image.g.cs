@@ -4,12 +4,12 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class EditImageGetLayersVariant2Image
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("horizontalAlignment")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Photoroom.JsonConverters.EditImageGetLayersVariant2ImageHorizontalAlignmentJsonConverter))]
@@ -46,87 +46,87 @@ namespace Photoroom
         public string? ImageUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("margin")]
         public string? Margin { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("marginBottom")]
         public string? MarginBottom { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("marginLeft")]
         public string? MarginLeft { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("marginRight")]
         public string? MarginRight { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("marginTop")]
         public string? MarginTop { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("padding")]
         public string? Padding { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("paddingBottom")]
         public string? PaddingBottom { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("paddingLeft")]
         public string? PaddingLeft { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("paddingRight")]
         public string? PaddingRight { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("paddingTop")]
         public string? PaddingTop { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("removeBackground")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Photoroom.JsonConverters.EditImageGetLayersVariant2ImageRemoveBackgroundJsonConverter))]
         public global::Photoroom.EditImageGetLayersVariant2ImageRemoveBackground? RemoveBackground { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segmentation")]
         public global::Photoroom.EditImageGetLayersVariant2ImageSegmentation? Segmentation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("useForAIBackground")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Photoroom.JsonConverters.EditImageGetLayersVariant2ImageUseForAIBackgroundJsonConverter))]
         public global::Photoroom.EditImageGetLayersVariant2ImageUseForAIBackground? UseForAIBackground { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verticalAlignment")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Photoroom.JsonConverters.EditImageGetLayersVariant2ImageVerticalAlignmentJsonConverter))]

@@ -19,7 +19,7 @@ namespace Photoroom
     public sealed partial class PhotoroomClient : global::Photoroom.IPhotoroomClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://image-api.photoroom.com/";
 
@@ -49,7 +49,7 @@ namespace Photoroom
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Photoroom.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {

@@ -9,23 +9,23 @@ namespace Photoroom
     public enum EditImageGetExportFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Avif,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webp,
     }

@@ -136,7 +136,7 @@ namespace Photoroom
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::Photoroom.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -364,7 +364,7 @@ namespace Photoroom
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // 
+                            //
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;

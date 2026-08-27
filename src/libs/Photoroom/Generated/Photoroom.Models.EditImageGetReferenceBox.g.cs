@@ -9,11 +9,11 @@ namespace Photoroom
     public enum EditImageGetReferenceBox
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OriginalImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SubjectBox,
     }

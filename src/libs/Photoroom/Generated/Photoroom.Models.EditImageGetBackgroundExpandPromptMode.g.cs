@@ -11,11 +11,11 @@ namespace Photoroom
     public enum EditImageGetBackgroundExpandPromptMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiAuto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiNever,
     }

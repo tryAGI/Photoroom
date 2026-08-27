@@ -4,7 +4,7 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class EditImagePostRequest
     {
@@ -322,7 +322,7 @@ namespace Photoroom
         public string? KeepExistingAlphaChannel { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("layers")]
         public object? Layers { get; set; }

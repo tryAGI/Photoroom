@@ -4,56 +4,56 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum VisualQaRequestFeature
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiGenerated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cropped,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FashionFidelity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FoodFidelity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HumanElements,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsEcommerceProduct,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsFoodOrBeverage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OverallImageQuality,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShadowCastOverProduct,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Violence,
     }

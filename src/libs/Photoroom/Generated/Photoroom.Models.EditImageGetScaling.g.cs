@@ -9,11 +9,11 @@ namespace Photoroom
     public enum EditImageGetScaling
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fill,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fit,
     }

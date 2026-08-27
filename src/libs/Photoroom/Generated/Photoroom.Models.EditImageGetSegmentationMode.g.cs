@@ -4,16 +4,16 @@
 namespace Photoroom
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EditImageGetSegmentationMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IgnoreSalientObject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KeepSalientObject,
     }
