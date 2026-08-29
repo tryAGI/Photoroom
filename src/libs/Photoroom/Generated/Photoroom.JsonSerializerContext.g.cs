@@ -202,6 +202,7 @@ namespace Photoroom
             typeof(global::Photoroom.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.JsonSerializerContextTypes))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.PaymentError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.PaymentErrorError))]
