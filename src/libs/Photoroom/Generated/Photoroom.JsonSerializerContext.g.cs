@@ -33,6 +33,10 @@ namespace Photoroom
 
             typeof(global::Photoroom.JsonConverters.RemoveBackgroundPostParamsDespillNullableJsonConverter),
 
+            typeof(global::Photoroom.JsonConverters.VisualQaV3RequestFeaturesVariant2ItemJsonConverter),
+
+            typeof(global::Photoroom.JsonConverters.VisualQaV3RequestFeaturesVariant2ItemNullableJsonConverter),
+
             typeof(global::Photoroom.JsonConverters.VisualQaRequestFeatureJsonConverter),
 
             typeof(global::Photoroom.JsonConverters.VisualQaRequestFeatureNullableJsonConverter),
@@ -181,9 +185,15 @@ namespace Photoroom
 
             typeof(global::Photoroom.JsonConverters.EditImageGetVirtualModelSizeNullableJsonConverter),
 
+            typeof(global::Photoroom.JsonConverters.VisualQaV3ResponseClothingItemDetectionItemCategoryJsonConverter),
+
+            typeof(global::Photoroom.JsonConverters.VisualQaV3ResponseClothingItemDetectionItemCategoryNullableJsonConverter),
+
             typeof(global::Photoroom.JsonConverters.VisualQaResponseClothingItemDetectionItemCategoryJsonConverter),
 
             typeof(global::Photoroom.JsonConverters.VisualQaResponseClothingItemDetectionItemCategoryNullableJsonConverter),
+
+            typeof(global::Photoroom.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Photoroom.VisualQaV3RequestFeaturesVariant2Item>>),
 
             typeof(global::Photoroom.JsonConverters.AnyOfJsonConverter<string, string, global::Photoroom.EditImageGetBackgroundExpandPrompt2>),
 
@@ -223,6 +233,10 @@ namespace Photoroom
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3Request))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.AnyOf<string, global::System.Collections.Generic.IList<global::Photoroom.VisualQaV3RequestFeaturesVariant2Item>>), TypeInfoPropertyName = "AnyOfStringIListVisualQaV3RequestFeaturesVariant2Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Photoroom.VisualQaV3RequestFeaturesVariant2Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3RequestFeaturesVariant2Item), TypeInfoPropertyName = "VisualQaV3RequestFeaturesVariant2Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Photoroom.VisualQaRequestFeature>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaRequestFeature), TypeInfoPropertyName = "VisualQaRequestFeature2")]
@@ -296,6 +310,31 @@ namespace Photoroom
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.AccountDetailsV2ResponseImages))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.AccountDetailsV2Response2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.AccountDetailsV2ResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3Response))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseClothingItemDetection))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Photoroom.VisualQaV3ResponseClothingItemDetectionItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseClothingItemDetectionItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseClothingItemDetectionItemCategory), TypeInfoPropertyName = "VisualQaV3ResponseClothingItemDetectionItemCategory2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseMetadata))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseAiGenerated))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseHate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseViolence))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseText))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseOverallImageQuality))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseHumanElements))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseIsEcommerceProduct))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseIsFoodOrBeverage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseCropped))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseCroppedSubjectBoundingBox))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseShadowCastOverProduct))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseFashionFidelity))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseFoodFidelity))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3Response2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3Response3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseError2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3Response4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaV3ResponseError3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.VisualQaResponseClothingItemDetection))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Photoroom.VisualQaResponseClothingItemDetectionItem>))]
@@ -334,8 +373,11 @@ namespace Photoroom
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImagePostResponseError2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImagePostResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.EditImagePostResponseError3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Photoroom.AnyOf<string, global::System.Collections.Generic.List<global::Photoroom.VisualQaV3RequestFeaturesVariant2Item>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Photoroom.VisualQaV3RequestFeaturesVariant2Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Photoroom.VisualQaRequestFeature>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Photoroom.VisualQaV3ResponseClothingItemDetectionItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Photoroom.VisualQaResponseClothingItemDetectionItem>))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
