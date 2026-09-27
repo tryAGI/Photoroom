@@ -51,6 +51,14 @@ namespace Photoroom
         /// <summary>
         ///
         /// </summary>
+        MainGarmentCategory,
+        /// <summary>
+        ///
+        /// </summary>
+        MainGarmentColor,
+        /// <summary>
+        ///
+        /// </summary>
         Metadata,
         /// <summary>
         ///
@@ -92,6 +100,8 @@ namespace Photoroom
                 VisualQaV3RequestFeaturesVariant2Item.HumanElements => "humanElements",
                 VisualQaV3RequestFeaturesVariant2Item.IsEcommerceProduct => "isEcommerceProduct",
                 VisualQaV3RequestFeaturesVariant2Item.IsFoodOrBeverage => "isFoodOrBeverage",
+                VisualQaV3RequestFeaturesVariant2Item.MainGarmentCategory => "mainGarmentCategory",
+                VisualQaV3RequestFeaturesVariant2Item.MainGarmentColor => "mainGarmentColor",
                 VisualQaV3RequestFeaturesVariant2Item.Metadata => "metadata",
                 VisualQaV3RequestFeaturesVariant2Item.OverallImageQuality => "overallImageQuality",
                 VisualQaV3RequestFeaturesVariant2Item.ShadowCastOverProduct => "shadowCastOverProduct",
@@ -117,6 +127,8 @@ namespace Photoroom
                 "humanElements" => VisualQaV3RequestFeaturesVariant2Item.HumanElements,
                 "isEcommerceProduct" => VisualQaV3RequestFeaturesVariant2Item.IsEcommerceProduct,
                 "isFoodOrBeverage" => VisualQaV3RequestFeaturesVariant2Item.IsFoodOrBeverage,
+                "mainGarmentCategory" => VisualQaV3RequestFeaturesVariant2Item.MainGarmentCategory,
+                "mainGarmentColor" => VisualQaV3RequestFeaturesVariant2Item.MainGarmentColor,
                 "metadata" => VisualQaV3RequestFeaturesVariant2Item.Metadata,
                 "overallImageQuality" => VisualQaV3RequestFeaturesVariant2Item.OverallImageQuality,
                 "shadowCastOverProduct" => VisualQaV3RequestFeaturesVariant2Item.ShadowCastOverProduct,

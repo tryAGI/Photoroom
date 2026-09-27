@@ -52,6 +52,7 @@ namespace Photoroom
         /// <summary>
         /// Visual QA v3<br/>
         /// Analyze an image and return the results of the requested features (see the `features` enum).<br/>
+        /// The `mainGarmentColor` and `mainGarmentCategory` features classify the main garment against a taxonomy you supply per request, in `colorTaxonomy` and `categoryTaxonomy` respectively. Each feature and its taxonomy must be sent together — one without the other is a 400. Both classifications ride on the same model call as `clothingItemDetection`, so asking for any combination of the three costs a single call.<br/>
         /// Requires an Enterprise plan: requests authenticated with a non-Enterprise API key receive a 403 with a link to contact our sales team.
         /// </summary>
         /// <param name="request"></param>
@@ -76,6 +77,7 @@ namespace Photoroom
         /// <summary>
         /// Visual QA v3<br/>
         /// Analyze an image and return the results of the requested features (see the `features` enum).<br/>
+        /// The `mainGarmentColor` and `mainGarmentCategory` features classify the main garment against a taxonomy you supply per request, in `colorTaxonomy` and `categoryTaxonomy` respectively. Each feature and its taxonomy must be sent together — one without the other is a 400. Both classifications ride on the same model call as `clothingItemDetection`, so asking for any combination of the three costs a single call.<br/>
         /// Requires an Enterprise plan: requests authenticated with a non-Enterprise API key receive a 403 with a link to contact our sales team.
         /// </summary>
         /// <param name="request"></param>
@@ -275,6 +277,23 @@ namespace Photoroom
                                 }
                             }
 
+                            if (request.ColorTaxonomy != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.ColorTaxonomy ?? string.Empty),
+                                    name: "\"colorTaxonomy\"");
+
+                            }
+                            if (request.CategoryTaxonomy != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.CategoryTaxonomy ?? string.Empty),
+                                    name: "\"categoryTaxonomy\"");
+
+                            }
+
                             __httpRequest.Content = __httpRequestContent;
 
                 global::Photoroom.AutoSDKRequestOptionsSupport.ApplyHeaders(
@@ -467,7 +486,7 @@ namespace Photoroom
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad Request
+                            // Bad Request — returned when neither or both of imageFile / imageUrl are given, when no feature or an unknown feature is requested, when a reference image is missing for or supplied outside fashionFidelity / foodFidelity, when a taxonomy is not valid JSON or breaks its size or entry-shape bounds, or when mainGarmentColor / mainGarmentCategory and its taxonomy are not sent together.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -677,6 +696,7 @@ namespace Photoroom
         /// <summary>
         /// Visual QA v3<br/>
         /// Analyze an image and return the results of the requested features (see the `features` enum).<br/>
+        /// The `mainGarmentColor` and `mainGarmentCategory` features classify the main garment against a taxonomy you supply per request, in `colorTaxonomy` and `categoryTaxonomy` respectively. Each feature and its taxonomy must be sent together — one without the other is a 400. Both classifications ride on the same model call as `clothingItemDetection`, so asking for any combination of the three costs a single call.<br/>
         /// Requires an Enterprise plan: requests authenticated with a non-Enterprise API key receive a 403 with a link to contact our sales team.
         /// </summary>
         /// <param name="imageFile">
@@ -703,6 +723,14 @@ namespace Photoroom
         /// Features to run, as an array or a comma-separated string (e.g. "caption,aiGenerated"). Only the requested features are computed and returned; at least one is required.<br/>
         /// Example: [caption, aiGenerated]
         /// </param>
+        /// <param name="colorTaxonomy">
+        /// JSON array of the colour taxonomy to classify the main garment against: 1 to 1000 entries of { code, name?, hex }, where hex is a 6-digit colour with or without the leading "#". Required when features includes mainGarmentColor, and rejected without it. Codes must be unique and are returned verbatim.<br/>
+        /// Example: [{"code":"COLOR-027","name":"Navy","hex":"#002062"}]
+        /// </param>
+        /// <param name="categoryTaxonomy">
+        /// JSON array of the category taxonomy to classify the main garment against, flattened and linked by parentCode: 1 to 2000 nodes of { code, name, parentCode? }. A node with no parentCode is a root. Required when features includes mainGarmentCategory, and rejected without it. Codes must be unique and are returned verbatim.<br/>
+        /// Example: [{"code":"TOPS","name":"Tops"},{"code":"TEE","name":"T-Shirts","parentCode":"TOPS"}]
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -714,6 +742,8 @@ namespace Photoroom
             byte[]? referenceImageFile = default,
             string? referenceImageFilename = default,
             string? referenceImageUrl = default,
+            string? colorTaxonomy = default,
+            string? categoryTaxonomy = default,
             global::Photoroom.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -726,6 +756,8 @@ namespace Photoroom
                 ReferenceImageFilename = referenceImageFilename,
                 ReferenceImageUrl = referenceImageUrl,
                 Features = features,
+                ColorTaxonomy = colorTaxonomy,
+                CategoryTaxonomy = categoryTaxonomy,
             };
 
             return await VisualQaV3Async(
