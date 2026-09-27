@@ -23,6 +23,26 @@ namespace Photoroom
         public global::Photoroom.VisualQaV3ResponseClothingItemDetection? ClothingItemDetection { get; set; }
 
         /// <summary>
+        /// The garment mainGarmentColor and mainGarmentCategory describe. Only present when at least one of those two features is requested and a garment was found. It can be present without either classification, when the garment matched no entry of the supplied taxonomies.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mainGarment")]
+        public global::Photoroom.VisualQaV3ResponseMainGarment? MainGarment { get; set; }
+
+        /// <summary>
+        /// The colorTaxonomy entry matched to the main garment. Only present when the mainGarmentColor feature is requested and a garment was matched.<br/>
+        /// Example: {"code":"COLOR-042","name":"Brick","hex":"#AF4942"}
+        /// </summary>
+        /// <example>{"code":"COLOR-042","name":"Brick","hex":"#AF4942"}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mainGarmentColor")]
+        public global::Photoroom.VisualQaV3ResponseMainGarmentColor? MainGarmentColor { get; set; }
+
+        /// <summary>
+        /// The categoryTaxonomy node matched to the main garment, with its full ancestry. Only present when the mainGarmentCategory feature is requested and a garment was matched.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mainGarmentCategory")]
+        public global::Photoroom.VisualQaV3ResponseMainGarmentCategory? MainGarmentCategory { get; set; }
+
+        /// <summary>
         /// Basic image metadata. Only present when the metadata feature is requested.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
@@ -116,6 +136,16 @@ namespace Photoroom
         /// <param name="clothingItemDetection">
         /// Distinct clothing, footwear, and accessory items detected in the image. Only present when clothingItemDetection is requested.
         /// </param>
+        /// <param name="mainGarment">
+        /// The garment mainGarmentColor and mainGarmentCategory describe. Only present when at least one of those two features is requested and a garment was found. It can be present without either classification, when the garment matched no entry of the supplied taxonomies.
+        /// </param>
+        /// <param name="mainGarmentColor">
+        /// The colorTaxonomy entry matched to the main garment. Only present when the mainGarmentColor feature is requested and a garment was matched.<br/>
+        /// Example: {"code":"COLOR-042","name":"Brick","hex":"#AF4942"}
+        /// </param>
+        /// <param name="mainGarmentCategory">
+        /// The categoryTaxonomy node matched to the main garment, with its full ancestry. Only present when the mainGarmentCategory feature is requested and a garment was matched.
+        /// </param>
         /// <param name="metadata">
         /// Basic image metadata. Only present when the metadata feature is requested.
         /// </param>
@@ -161,6 +191,9 @@ namespace Photoroom
         public VisualQaV3Response(
             string? caption,
             global::Photoroom.VisualQaV3ResponseClothingItemDetection? clothingItemDetection,
+            global::Photoroom.VisualQaV3ResponseMainGarment? mainGarment,
+            global::Photoroom.VisualQaV3ResponseMainGarmentColor? mainGarmentColor,
+            global::Photoroom.VisualQaV3ResponseMainGarmentCategory? mainGarmentCategory,
             global::Photoroom.VisualQaV3ResponseMetadata? metadata,
             global::Photoroom.VisualQaV3ResponseAiGenerated? aiGenerated,
             global::Photoroom.VisualQaV3ResponseHate? hate,
@@ -177,6 +210,9 @@ namespace Photoroom
         {
             this.Caption = caption;
             this.ClothingItemDetection = clothingItemDetection;
+            this.MainGarment = mainGarment;
+            this.MainGarmentColor = mainGarmentColor;
+            this.MainGarmentCategory = mainGarmentCategory;
             this.Metadata = metadata;
             this.AiGenerated = aiGenerated;
             this.Hate = hate;

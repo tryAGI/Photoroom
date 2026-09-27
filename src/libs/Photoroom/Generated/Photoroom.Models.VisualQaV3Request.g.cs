@@ -59,6 +59,22 @@ namespace Photoroom
         public required global::Photoroom.AnyOf<string, global::System.Collections.Generic.IList<global::Photoroom.VisualQaV3RequestFeaturesVariant2Item>> Features { get; set; }
 
         /// <summary>
+        /// JSON array of the colour taxonomy to classify the main garment against: 1 to 1000 entries of { code, name?, hex }, where hex is a 6-digit colour with or without the leading "#". Required when features includes mainGarmentColor, and rejected without it. Codes must be unique and are returned verbatim.<br/>
+        /// Example: [{"code":"COLOR-027","name":"Navy","hex":"#002062"}]
+        /// </summary>
+        /// <example>[{"code":"COLOR-027","name":"Navy","hex":"#002062"}]</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("colorTaxonomy")]
+        public string? ColorTaxonomy { get; set; }
+
+        /// <summary>
+        /// JSON array of the category taxonomy to classify the main garment against, flattened and linked by parentCode: 1 to 2000 nodes of { code, name, parentCode? }. A node with no parentCode is a root. Required when features includes mainGarmentCategory, and rejected without it. Codes must be unique and are returned verbatim.<br/>
+        /// Example: [{"code":"TOPS","name":"Tops"},{"code":"TEE","name":"T-Shirts","parentCode":"TOPS"}]
+        /// </summary>
+        /// <example>[{"code":"TOPS","name":"Tops"},{"code":"TEE","name":"T-Shirts","parentCode":"TOPS"}]</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("categoryTaxonomy")]
+        public string? CategoryTaxonomy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -91,6 +107,14 @@ namespace Photoroom
         /// URL of the reference image to compare against, required when features includes fashionFidelity or foodFidelity. Provide exactly one of referenceImageFile or referenceImageUrl.<br/>
         /// Example: https://example.com/reference.jpg
         /// </param>
+        /// <param name="colorTaxonomy">
+        /// JSON array of the colour taxonomy to classify the main garment against: 1 to 1000 entries of { code, name?, hex }, where hex is a 6-digit colour with or without the leading "#". Required when features includes mainGarmentColor, and rejected without it. Codes must be unique and are returned verbatim.<br/>
+        /// Example: [{"code":"COLOR-027","name":"Navy","hex":"#002062"}]
+        /// </param>
+        /// <param name="categoryTaxonomy">
+        /// JSON array of the category taxonomy to classify the main garment against, flattened and linked by parentCode: 1 to 2000 nodes of { code, name, parentCode? }. A node with no parentCode is a root. Required when features includes mainGarmentCategory, and rejected without it. Codes must be unique and are returned verbatim.<br/>
+        /// Example: [{"code":"TOPS","name":"Tops"},{"code":"TEE","name":"T-Shirts","parentCode":"TOPS"}]
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -101,7 +125,9 @@ namespace Photoroom
             string? imageUrl,
             byte[]? referenceImageFile,
             string? referenceImageFilename,
-            string? referenceImageUrl)
+            string? referenceImageUrl,
+            string? colorTaxonomy,
+            string? categoryTaxonomy)
         {
             this.ImageFile = imageFile;
             this.ImageFilename = imageFilename;
@@ -110,6 +136,8 @@ namespace Photoroom
             this.ReferenceImageFilename = referenceImageFilename;
             this.ReferenceImageUrl = referenceImageUrl;
             this.Features = features;
+            this.ColorTaxonomy = colorTaxonomy;
+            this.CategoryTaxonomy = categoryTaxonomy;
         }
 
         /// <summary>

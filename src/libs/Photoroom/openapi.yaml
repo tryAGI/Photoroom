@@ -2802,7 +2802,7 @@
       "post": {
         "operationId": "visual-qa-v3",
         "summary": "Visual QA v3",
-        "description": "Analyze an image and return the results of the requested features (see the `features` enum).\n\nRequires an Enterprise plan: requests authenticated with a non-Enterprise API key receive a 403 with a link to contact our sales team.",
+        "description": "Analyze an image and return the results of the requested features (see the `features` enum).\n\nThe `mainGarmentColor` and `mainGarmentCategory` features classify the main garment against a taxonomy you supply per request, in `colorTaxonomy` and `categoryTaxonomy` respectively. Each feature and its taxonomy must be sent together — one without the other is a 400. Both classifications ride on the same model call as `clothingItemDetection`, so asking for any combination of the three costs a single call.\n\nRequires an Enterprise plan: requests authenticated with a non-Enterprise API key receive a 403 with a link to contact our sales team.",
         "servers": [
           {
             "url": "https://image-api.photoroom.com",
@@ -2851,6 +2851,8 @@
                             "caption",
                             "metadata",
                             "clothingItemDetection",
+                            "mainGarmentColor",
+                            "mainGarmentCategory",
                             "aiGenerated",
                             "hate",
                             "violence",
@@ -2873,6 +2875,16 @@
                       "caption",
                       "aiGenerated"
                     ]
+                  },
+                  "colorTaxonomy": {
+                    "type": "string",
+                    "description": "JSON array of the colour taxonomy to classify the main garment against: 1 to 1000 entries of { code, name?, hex }, where hex is a 6-digit colour with or without the leading \"#\". Required when features includes mainGarmentColor, and rejected without it. Codes must be unique and are returned verbatim.",
+                    "example": "[{\"code\":\"COLOR-027\",\"name\":\"Navy\",\"hex\":\"#002062\"}]"
+                  },
+                  "categoryTaxonomy": {
+                    "type": "string",
+                    "description": "JSON array of the category taxonomy to classify the main garment against, flattened and linked by parentCode: 1 to 2000 nodes of { code, name, parentCode? }. A node with no parentCode is a root. Required when features includes mainGarmentCategory, and rejected without it. Codes must be unique and are returned verbatim.",
+                    "example": "[{\"code\":\"TOPS\",\"name\":\"Tops\"},{\"code\":\"TEE\",\"name\":\"T-Shirts\",\"parentCode\":\"TOPS\"}]"
                   }
                 },
                 "required": [
@@ -2941,6 +2953,108 @@
                         "items"
                       ],
                       "description": "Distinct clothing, footwear, and accessory items detected in the image. Only present when clothingItemDetection is requested."
+                    },
+                    "mainGarment": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string",
+                          "description": "Short name of the garment that was classified (e.g. \"rust blouse\"), naming which item mainGarmentColor and mainGarmentCategory describe.",
+                          "example": "rust blouse"
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "top",
+                            "t-shirt",
+                            "shirt",
+                            "blouse",
+                            "sweater",
+                            "dress",
+                            "skirt",
+                            "shorts",
+                            "trousers",
+                            "jacket",
+                            "coat",
+                            "shoes",
+                            "accessory",
+                            "other"
+                          ],
+                          "description": "Photoroom's own fixed category for that garment, from the same list as clothingItemDetection items and independent of the supplied categoryTaxonomy."
+                        }
+                      },
+                      "required": [
+                        "description",
+                        "type"
+                      ],
+                      "description": "The garment mainGarmentColor and mainGarmentCategory describe. Only present when at least one of those two features is requested and a garment was found. It can be present without either classification, when the garment matched no entry of the supplied taxonomies."
+                    },
+                    "mainGarmentColor": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string",
+                          "description": "Code of the matched colorTaxonomy entry, returned verbatim."
+                        },
+                        "name": {
+                          "type": "string",
+                          "description": "Name of the matched entry, present only if the supplied entry carried one."
+                        },
+                        "hex": {
+                          "type": "string",
+                          "description": "Hex colour of the matched entry."
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "hex"
+                      ],
+                      "description": "The colorTaxonomy entry matched to the main garment. Only present when the mainGarmentColor feature is requested and a garment was matched.",
+                      "example": {
+                        "code": "COLOR-042",
+                        "name": "Brick",
+                        "hex": "#AF4942"
+                      }
+                    },
+                    "mainGarmentCategory": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string",
+                          "description": "Code of the matched categoryTaxonomy node, returned verbatim."
+                        },
+                        "name": {
+                          "type": "string",
+                          "description": "Name of the matched node."
+                        },
+                        "path": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "code": {
+                                "type": "string",
+                                "description": "Code of this ancestor, as supplied in categoryTaxonomy."
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "Name of this ancestor, as supplied in categoryTaxonomy."
+                              }
+                            },
+                            "required": [
+                              "code",
+                              "name"
+                            ]
+                          },
+                          "description": "Root-first ancestry of the matched node, ending with the node itself. Accuracy is highest at the shallower levels, so read the depth your catalogue actually distinguishes rather than always taking the leaf."
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "name",
+                        "path"
+                      ],
+                      "description": "The categoryTaxonomy node matched to the main garment, with its full ancestry. Only present when the mainGarmentCategory feature is requested and a garment was matched."
                     },
                     "metadata": {
                       "type": "object",
@@ -3152,7 +3266,7 @@
             }
           },
           "400": {
-            "description": "Bad Request",
+            "description": "Bad Request — returned when neither or both of imageFile / imageUrl are given, when no feature or an unknown feature is requested, when a reference image is missing for or supplied outside fashionFidelity / foodFidelity, when a taxonomy is not valid JSON or breaks its size or entry-shape bounds, or when mainGarmentColor / mainGarmentCategory and its taxonomy are not sent together.",
             "content": {
               "application/json": {
                 "schema": {
