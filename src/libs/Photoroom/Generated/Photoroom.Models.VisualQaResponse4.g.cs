@@ -13,7 +13,7 @@ namespace Photoroom
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Photoroom.VisualQaResponseError3 Error { get; set; }
+        public required global::Photoroom.VisualQaResponseError Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Photoroom
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VisualQaResponse4(
-            global::Photoroom.VisualQaResponseError3 error)
+            global::Photoroom.VisualQaResponseError error)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }
