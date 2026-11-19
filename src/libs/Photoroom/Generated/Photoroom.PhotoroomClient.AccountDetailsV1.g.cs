@@ -49,7 +49,7 @@ namespace Photoroom
 
         /// <summary>
         /// Account Details v1<br/>
-        /// Get current account details, including remaining credits balance and monthly quota
+        /// Get current account details, including remaining credits balance and monthly quota. Not available on usage-based Enterprise plans, which use Account Details v2.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -67,7 +67,7 @@ namespace Photoroom
         }
         /// <summary>
         /// Account Details v1<br/>
-        /// Get current account details, including remaining credits balance and monthly quota
+        /// Get current account details, including remaining credits balance and monthly quota. Not available on usage-based Enterprise plans, which use Account Details v2.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

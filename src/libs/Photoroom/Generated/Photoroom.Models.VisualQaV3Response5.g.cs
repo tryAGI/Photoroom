@@ -6,14 +6,14 @@ namespace Photoroom
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class EditImageGetResponse2
+    public sealed partial class VisualQaV3Response5
     {
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Photoroom.EditImageGetResponseError2 Error { get; set; }
+        public required global::Photoroom.VisualQaV3ResponseError Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -22,22 +22,22 @@ namespace Photoroom
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EditImageGetResponse2" /> class.
+        /// Initializes a new instance of the <see cref="VisualQaV3Response5" /> class.
         /// </summary>
         /// <param name="error"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public EditImageGetResponse2(
-            global::Photoroom.EditImageGetResponseError2 error)
+        public VisualQaV3Response5(
+            global::Photoroom.VisualQaV3ResponseError error)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EditImageGetResponse2" /> class.
+        /// Initializes a new instance of the <see cref="VisualQaV3Response5" /> class.
         /// </summary>
-        public EditImageGetResponse2()
+        public VisualQaV3Response5()
         {
         }
 

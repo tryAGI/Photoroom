@@ -38,15 +38,15 @@
           "error": {
             "type": "object",
             "properties": {
-              "detail": {
+              "message": {
                 "type": "string",
-                "description": "The details of the error",
-                "title": "Details",
+                "description": "The message describing the error. It depends on how the team is billed:\n\n- API credits: `API credits exhausted. Visit https://app.photoroom.com/api-dashboard to purchase more API credits`\n- Usage-based: `Your wallet balance is too low for this request. Contact our sales team at https://www.photoroom.com/contact-sales to add funds.`",
+                "title": "Message",
                 "example": "API credits exhausted. Visit https://app.photoroom.com/api-dashboard to purchase more API credits"
               }
             },
             "required": [
-              "detail"
+              "message"
             ]
           }
         },
@@ -346,7 +346,7 @@
       "get": {
         "operationId": "account-details-v1",
         "summary": "Account Details v1",
-        "description": "Get current account details, including remaining credits balance and monthly quota",
+        "description": "Get current account details, including remaining credits balance and monthly quota. Not available on usage-based Enterprise plans, which use Account Details v2.",
         "servers": [
           {
             "url": "https://image-api.photoroom.com",
@@ -431,7 +431,7 @@
       "get": {
         "operationId": "account-details-v2",
         "summary": "Account Details v2",
-        "description": "Get current account details, including remaining image edits and monthly quota",
+        "description": "Get current account details, including remaining image edits and monthly quota. Usage-based Enterprise plans get their remaining balance instead.",
         "servers": [
           {
             "url": "https://image-api.photoroom.com",
@@ -444,40 +444,89 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "images": {
+                  "anyOf": [
+                    {
                       "type": "object",
                       "properties": {
-                        "available": {
-                          "type": "number",
-                          "description": "The number of images available",
-                          "title": "Available",
-                          "example": 100
+                        "images": {
+                          "type": "object",
+                          "properties": {
+                            "available": {
+                              "type": "number",
+                              "description": "The number of images available",
+                              "title": "Available",
+                              "example": 100
+                            },
+                            "subscription": {
+                              "type": "number",
+                              "description": "The total number of image available in the subscription",
+                              "title": "Subscription",
+                              "example": 100,
+                              "minimum": 0
+                            }
+                          },
+                          "required": [
+                            "available",
+                            "subscription"
+                          ]
                         },
-                        "subscription": {
-                          "type": "number",
-                          "description": "The total number of image available in the subscription",
-                          "title": "Subscription",
-                          "example": 100,
-                          "minimum": 0
+                        "plan": {
+                          "type": "string",
+                          "description": "The name of the pricing plan",
+                          "title": "Plan",
+                          "example": "basic"
                         }
                       },
                       "required": [
-                        "available",
-                        "subscription"
+                        "images",
+                        "plan"
                       ]
                     },
-                    "plan": {
-                      "type": "string",
-                      "description": "The name of the pricing plan",
-                      "title": "Plan",
-                      "example": "basic"
+                    {
+                      "type": "object",
+                      "properties": {
+                        "balance": {
+                          "type": "object",
+                          "properties": {
+                            "amount": {
+                              "type": "string",
+                              "description": "The remaining balance as a decimal string in the contract currency, truncated to cents. Negative when the account is overdrawn.",
+                              "title": "Amount",
+                              "example": "1234.56"
+                            },
+                            "amountHundredths": {
+                              "type": "integer",
+                              "description": "The same balance as an integer number of hundredths of the contract currency, for arithmetic without rounding errors.",
+                              "title": "Amount in hundredths",
+                              "example": 123456
+                            },
+                            "currency": {
+                              "type": "string",
+                              "nullable": true,
+                              "description": "The lowercase ISO 4217 code of the contract currency",
+                              "title": "Currency",
+                              "example": "usd"
+                            }
+                          },
+                          "required": [
+                            "amount",
+                            "amountHundredths",
+                            "currency"
+                          ]
+                        },
+                        "plan": {
+                          "type": "string",
+                          "description": "The name of the pricing plan",
+                          "title": "Plan",
+                          "example": "enterprise_usage_based"
+                        }
+                      },
+                      "required": [
+                        "balance",
+                        "plan"
+                      ],
+                      "title": "Usage-based Enterprise plan"
                     }
-                  },
-                  "required": [
-                    "images",
-                    "plan"
                   ]
                 }
               }
@@ -1464,6 +1513,7 @@
               "examples": [
                 "200"
               ],
+              "minimum": 3,
               "type": "number"
             }
           },
@@ -1475,6 +1525,7 @@
               "examples": [
                 "200"
               ],
+              "minimum": 3,
               "type": "number"
             }
           },
@@ -3295,6 +3346,36 @@
               }
             }
           },
+          "402": {
+            "description": "Payment Required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "description": "The message describing the error. It depends on how the team is billed:\n\n- API credits: `API credits exhausted. Visit https://app.photoroom.com/api-dashboard to purchase more API credits`\n- Usage-based: `Your wallet balance is too low for this request. Contact our sales team at https://www.photoroom.com/contact-sales to add funds.`",
+                          "title": "Message",
+                          "example": "API credits exhausted. Visit https://app.photoroom.com/api-dashboard to purchase more API credits"
+                        }
+                      },
+                      "required": [
+                        "message"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "error"
+                  ],
+                  "title": "Payment Error"
+                }
+              }
+            }
+          },
           "403": {
             "description": "Forbidden",
             "content": {
@@ -3741,6 +3822,36 @@
               }
             }
           },
+          "402": {
+            "description": "Payment Required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "description": "The message describing the error. It depends on how the team is billed:\n\n- API credits: `API credits exhausted. Visit https://app.photoroom.com/api-dashboard to purchase more API credits`\n- Usage-based: `Your wallet balance is too low for this request. Contact our sales team at https://www.photoroom.com/contact-sales to add funds.`",
+                          "title": "Message",
+                          "example": "API credits exhausted. Visit https://app.photoroom.com/api-dashboard to purchase more API credits"
+                        }
+                      },
+                      "required": [
+                        "message"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "error"
+                  ],
+                  "title": "Payment Error"
+                }
+              }
+            }
+          },
           "403": {
             "description": "Forbidden",
             "content": {
@@ -3922,15 +4033,15 @@
                     "error": {
                       "type": "object",
                       "properties": {
-                        "detail": {
+                        "message": {
                           "type": "string",
-                          "description": "The details of the error",
-                          "title": "Details",
+                          "description": "The message describing the error. It depends on how the team is billed:\n\n- API credits: `API credits exhausted. Visit https://app.photoroom.com/api-dashboard to purchase more API credits`\n- Usage-based: `Your wallet balance is too low for this request. Contact our sales team at https://www.photoroom.com/contact-sales to add funds.`",
+                          "title": "Message",
                           "example": "API credits exhausted. Visit https://app.photoroom.com/api-dashboard to purchase more API credits"
                         }
                       },
                       "required": [
-                        "detail"
+                        "message"
                       ]
                     }
                   },
@@ -4050,15 +4161,15 @@
                     "error": {
                       "type": "object",
                       "properties": {
-                        "detail": {
+                        "message": {
                           "type": "string",
-                          "description": "The details of the error",
-                          "title": "Details",
+                          "description": "The message describing the error. It depends on how the team is billed:\n\n- API credits: `API credits exhausted. Visit https://app.photoroom.com/api-dashboard to purchase more API credits`\n- Usage-based: `Your wallet balance is too low for this request. Contact our sales team at https://www.photoroom.com/contact-sales to add funds.`",
+                          "title": "Message",
                           "example": "API credits exhausted. Visit https://app.photoroom.com/api-dashboard to purchase more API credits"
                         }
                       },
                       "required": [
-                        "detail"
+                        "message"
                       ]
                     }
                   },

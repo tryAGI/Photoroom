@@ -6,7 +6,7 @@ namespace Photoroom
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class AccountDetailsV2ResponseImages
+    public sealed partial class AccountDetailsV2ResponseVariant1Images
     {
         /// <summary>
         /// The number of images available<br/>
@@ -33,7 +33,7 @@ namespace Photoroom
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountDetailsV2ResponseImages" /> class.
+        /// Initializes a new instance of the <see cref="AccountDetailsV2ResponseVariant1Images" /> class.
         /// </summary>
         /// <param name="available">
         /// The number of images available<br/>
@@ -46,7 +46,7 @@ namespace Photoroom
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public AccountDetailsV2ResponseImages(
+        public AccountDetailsV2ResponseVariant1Images(
             double available,
             double subscription)
         {
@@ -55,9 +55,9 @@ namespace Photoroom
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountDetailsV2ResponseImages" /> class.
+        /// Initializes a new instance of the <see cref="AccountDetailsV2ResponseVariant1Images" /> class.
         /// </summary>
-        public AccountDetailsV2ResponseImages()
+        public AccountDetailsV2ResponseVariant1Images()
         {
         }
 

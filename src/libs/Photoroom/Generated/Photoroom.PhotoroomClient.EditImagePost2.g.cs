@@ -448,19 +448,19 @@ namespace Photoroom
                             {
                                 string? __content_402 = null;
                                 global::System.Exception? __exception_402 = null;
-                                global::Photoroom.EditImagePostResponse2? __value_402 = null;
+                                global::Photoroom.EditImagePostResponse? __value_402 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::Photoroom.EditImagePostResponse2.FromJson(__content_402, JsonSerializerContext);
+                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::Photoroom.EditImagePostResponse.FromJson(__content_402, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::Photoroom.EditImagePostResponse2.FromJson(__content_402, JsonSerializerContext);
+                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::Photoroom.EditImagePostResponse.FromJson(__content_402, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -469,7 +469,7 @@ namespace Photoroom
                                 }
 
 
-                                throw global::Photoroom.ApiException<global::Photoroom.EditImagePostResponse2>.Create(
+                                throw global::Photoroom.ApiException<global::Photoroom.EditImagePostResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_402 is { Length: > 0 } ? __content_402 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_402,
@@ -977,19 +977,19 @@ namespace Photoroom
                             {
                                 string? __content_402 = null;
                                 global::System.Exception? __exception_402 = null;
-                                global::Photoroom.EditImagePostResponse2? __value_402 = null;
+                                global::Photoroom.EditImagePostResponse? __value_402 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::Photoroom.EditImagePostResponse2.FromJson(__content_402, JsonSerializerContext);
+                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::Photoroom.EditImagePostResponse.FromJson(__content_402, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::Photoroom.EditImagePostResponse2.FromJson(__content_402, JsonSerializerContext);
+                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::Photoroom.EditImagePostResponse.FromJson(__content_402, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -998,7 +998,7 @@ namespace Photoroom
                                 }
 
 
-                                throw global::Photoroom.ApiException<global::Photoroom.EditImagePostResponse2>.Create(
+                                throw global::Photoroom.ApiException<global::Photoroom.EditImagePostResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_402 is { Length: > 0 } ? __content_402 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_402,
@@ -1509,19 +1509,19 @@ namespace Photoroom
                             {
                                 string? __content_402 = null;
                                 global::System.Exception? __exception_402 = null;
-                                global::Photoroom.EditImagePostResponse2? __value_402 = null;
+                                global::Photoroom.EditImagePostResponse? __value_402 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::Photoroom.EditImagePostResponse2.FromJson(__content_402, JsonSerializerContext);
+                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::Photoroom.EditImagePostResponse.FromJson(__content_402, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::Photoroom.EditImagePostResponse2.FromJson(__content_402, JsonSerializerContext);
+                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::Photoroom.EditImagePostResponse.FromJson(__content_402, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1530,7 +1530,7 @@ namespace Photoroom
                                 }
 
 
-                                throw global::Photoroom.ApiException<global::Photoroom.EditImagePostResponse2>.Create(
+                                throw global::Photoroom.ApiException<global::Photoroom.EditImagePostResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_402 is { Length: > 0 } ? __content_402 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_402,

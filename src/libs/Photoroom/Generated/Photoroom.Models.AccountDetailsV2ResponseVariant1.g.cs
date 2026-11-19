@@ -6,14 +6,14 @@ namespace Photoroom
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class AccountDetailsV2Response
+    public sealed partial class AccountDetailsV2ResponseVariant1
     {
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("images")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Photoroom.AccountDetailsV2ResponseImages Images { get; set; }
+        public required global::Photoroom.AccountDetailsV2ResponseVariant1Images Images { get; set; }
 
         /// <summary>
         /// The name of the pricing plan<br/>
@@ -31,7 +31,7 @@ namespace Photoroom
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountDetailsV2Response" /> class.
+        /// Initializes a new instance of the <see cref="AccountDetailsV2ResponseVariant1" /> class.
         /// </summary>
         /// <param name="images"></param>
         /// <param name="plan">
@@ -41,8 +41,8 @@ namespace Photoroom
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public AccountDetailsV2Response(
-            global::Photoroom.AccountDetailsV2ResponseImages images,
+        public AccountDetailsV2ResponseVariant1(
+            global::Photoroom.AccountDetailsV2ResponseVariant1Images images,
             string plan)
         {
             this.Images = images ?? throw new global::System.ArgumentNullException(nameof(images));
@@ -50,9 +50,9 @@ namespace Photoroom
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountDetailsV2Response" /> class.
+        /// Initializes a new instance of the <see cref="AccountDetailsV2ResponseVariant1" /> class.
         /// </summary>
-        public AccountDetailsV2Response()
+        public AccountDetailsV2ResponseVariant1()
         {
         }
 
