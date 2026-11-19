@@ -410,263 +410,271 @@ namespace Photoroom
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.AccountDetailsV2Response? Type93 { get; set; }
+        public global::Photoroom.AnyOf<global::Photoroom.AccountDetailsV2ResponseVariant1, global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlan>? Type93 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.AccountDetailsV2ResponseImages? Type94 { get; set; }
+        public global::Photoroom.AccountDetailsV2ResponseVariant1? Type94 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.AccountDetailsV2Response2? Type95 { get; set; }
+        public global::Photoroom.AccountDetailsV2ResponseVariant1Images? Type95 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.AccountDetailsV2ResponseError? Type96 { get; set; }
+        public global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlan? Type96 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3Response? Type97 { get; set; }
+        public global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlanBalance? Type97 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseClothingItemDetection? Type98 { get; set; }
+        public int? Type98 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Photoroom.VisualQaV3ResponseClothingItemDetectionItem>? Type99 { get; set; }
+        public global::Photoroom.AccountDetailsV2Response2? Type99 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseClothingItemDetectionItem? Type100 { get; set; }
+        public global::Photoroom.AccountDetailsV2ResponseError? Type100 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseClothingItemDetectionItemCategory? Type101 { get; set; }
+        public global::Photoroom.VisualQaV3Response? Type101 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseMainGarment? Type102 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseClothingItemDetection? Type102 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseMainGarmentType? Type103 { get; set; }
+        public global::System.Collections.Generic.IList<global::Photoroom.VisualQaV3ResponseClothingItemDetectionItem>? Type103 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseMainGarmentColor? Type104 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseClothingItemDetectionItem? Type104 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseMainGarmentCategory? Type105 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseClothingItemDetectionItemCategory? Type105 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Photoroom.VisualQaV3ResponseMainGarmentCategoryPathItem>? Type106 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseMainGarment? Type106 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseMainGarmentCategoryPathItem? Type107 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseMainGarmentType? Type107 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseMetadata? Type108 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseMainGarmentColor? Type108 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseAiGenerated? Type109 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseMainGarmentCategory? Type109 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseHate? Type110 { get; set; }
+        public global::System.Collections.Generic.IList<global::Photoroom.VisualQaV3ResponseMainGarmentCategoryPathItem>? Type110 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseViolence? Type111 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseMainGarmentCategoryPathItem? Type111 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseText? Type112 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseMetadata? Type112 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseOverallImageQuality? Type113 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseAiGenerated? Type113 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseHumanElements? Type114 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseHate? Type114 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseIsEcommerceProduct? Type115 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseViolence? Type115 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseIsFoodOrBeverage? Type116 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseText? Type116 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseCropped? Type117 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseOverallImageQuality? Type117 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseCroppedSubjectBoundingBox? Type118 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseHumanElements? Type118 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseShadowCastOverProduct? Type119 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseIsEcommerceProduct? Type119 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseFashionFidelity? Type120 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseIsFoodOrBeverage? Type120 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseFoodFidelity? Type121 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseCropped? Type121 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3Response2? Type122 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseCroppedSubjectBoundingBox? Type122 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3ResponseError? Type123 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseShadowCastOverProduct? Type123 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3Response3? Type124 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseFashionFidelity? Type124 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaV3Response4? Type125 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseFoodFidelity? Type125 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponse? Type126 { get; set; }
+        public global::Photoroom.VisualQaV3Response2? Type126 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseClothingItemDetection? Type127 { get; set; }
+        public global::Photoroom.VisualQaV3ResponseError? Type127 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Photoroom.VisualQaResponseClothingItemDetectionItem>? Type128 { get; set; }
+        public global::Photoroom.VisualQaV3Response3? Type128 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseClothingItemDetectionItem? Type129 { get; set; }
+        public global::Photoroom.VisualQaV3Response4? Type129 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseClothingItemDetectionItemCategory? Type130 { get; set; }
+        public global::Photoroom.VisualQaV3Response5? Type130 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseMetadata? Type131 { get; set; }
+        public global::Photoroom.VisualQaResponse? Type131 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseFeatures? Type132 { get; set; }
+        public global::Photoroom.VisualQaResponseClothingItemDetection? Type132 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseFeaturesAiGenerated? Type133 { get; set; }
+        public global::System.Collections.Generic.IList<global::Photoroom.VisualQaResponseClothingItemDetectionItem>? Type133 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseFeaturesHate? Type134 { get; set; }
+        public global::Photoroom.VisualQaResponseClothingItemDetectionItem? Type134 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseFeaturesViolence? Type135 { get; set; }
+        public global::Photoroom.VisualQaResponseClothingItemDetectionItemCategory? Type135 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseFeaturesText? Type136 { get; set; }
+        public global::Photoroom.VisualQaResponseMetadata? Type136 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseFeaturesOverallImageQuality? Type137 { get; set; }
+        public global::Photoroom.VisualQaResponseFeatures? Type137 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseFeaturesHumanElements? Type138 { get; set; }
+        public global::Photoroom.VisualQaResponseFeaturesAiGenerated? Type138 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseFeaturesIsEcommerceProduct? Type139 { get; set; }
+        public global::Photoroom.VisualQaResponseFeaturesHate? Type139 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseFeaturesIsFoodOrBeverage? Type140 { get; set; }
+        public global::Photoroom.VisualQaResponseFeaturesViolence? Type140 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseFeaturesCropped? Type141 { get; set; }
+        public global::Photoroom.VisualQaResponseFeaturesText? Type141 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseFeaturesCroppedSubjectBoundingBox? Type142 { get; set; }
+        public global::Photoroom.VisualQaResponseFeaturesOverallImageQuality? Type142 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseFeaturesShadowCastOverProduct? Type143 { get; set; }
+        public global::Photoroom.VisualQaResponseFeaturesHumanElements? Type143 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseFeaturesFashionFidelity? Type144 { get; set; }
+        public global::Photoroom.VisualQaResponseFeaturesIsEcommerceProduct? Type144 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseFeaturesFoodFidelity? Type145 { get; set; }
+        public global::Photoroom.VisualQaResponseFeaturesIsFoodOrBeverage? Type145 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponse2? Type146 { get; set; }
+        public global::Photoroom.VisualQaResponseFeaturesCropped? Type146 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponseError? Type147 { get; set; }
+        public global::Photoroom.VisualQaResponseFeaturesCroppedSubjectBoundingBox? Type147 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponse3? Type148 { get; set; }
+        public global::Photoroom.VisualQaResponseFeaturesShadowCastOverProduct? Type148 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.VisualQaResponse4? Type149 { get; set; }
+        public global::Photoroom.VisualQaResponseFeaturesFashionFidelity? Type149 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.EditImageGetResponse? Type150 { get; set; }
+        public global::Photoroom.VisualQaResponseFeaturesFoodFidelity? Type150 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.EditImageGetResponseError? Type151 { get; set; }
+        public global::Photoroom.VisualQaResponse2? Type151 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.EditImageGetResponse2? Type152 { get; set; }
+        public global::Photoroom.VisualQaResponseError? Type152 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.EditImageGetResponseError2? Type153 { get; set; }
+        public global::Photoroom.VisualQaResponse3? Type153 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.EditImagePostResponse? Type154 { get; set; }
+        public global::Photoroom.VisualQaResponse4? Type154 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.EditImagePostResponseError? Type155 { get; set; }
+        public global::Photoroom.VisualQaResponse5? Type155 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.EditImagePostResponse2? Type156 { get; set; }
+        public global::Photoroom.EditImageGetResponse? Type156 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Photoroom.EditImagePostResponseError2? Type157 { get; set; }
+        public global::Photoroom.EditImageGetResponseError? Type157 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Photoroom.EditImagePostResponse? Type158 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Photoroom.EditImagePostResponseError? Type159 { get; set; }
 
         /// <summary>
         ///

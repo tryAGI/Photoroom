@@ -49,12 +49,12 @@ namespace Photoroom
 
         /// <summary>
         /// Account Details v2<br/>
-        /// Get current account details, including remaining image edits and monthly quota
+        /// Get current account details, including remaining image edits and monthly quota. Usage-based Enterprise plans get their remaining balance instead.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Photoroom.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Photoroom.AccountDetailsV2Response> AccountDetailsV2Async(
+        public async global::System.Threading.Tasks.Task<global::Photoroom.AnyOf<global::Photoroom.AccountDetailsV2ResponseVariant1, global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlan>> AccountDetailsV2Async(
             global::Photoroom.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -67,12 +67,12 @@ namespace Photoroom
         }
         /// <summary>
         /// Account Details v2<br/>
-        /// Get current account details, including remaining image edits and monthly quota
+        /// Get current account details, including remaining image edits and monthly quota. Usage-based Enterprise plans get their remaining balance instead.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Photoroom.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Photoroom.AutoSDKHttpResponse<global::Photoroom.AccountDetailsV2Response>> AccountDetailsV2AsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Photoroom.AutoSDKHttpResponse<global::Photoroom.AnyOf<global::Photoroom.AccountDetailsV2ResponseVariant1, global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlan>>> AccountDetailsV2AsResponseAsync(
             global::Photoroom.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -418,9 +418,9 @@ namespace Photoroom
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Photoroom.AccountDetailsV2Response.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Photoroom.AnyOf<global::Photoroom.AccountDetailsV2ResponseVariant1, global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlan>.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Photoroom.AutoSDKHttpResponse<global::Photoroom.AccountDetailsV2Response>(
+                                    return new global::Photoroom.AutoSDKHttpResponse<global::Photoroom.AnyOf<global::Photoroom.AccountDetailsV2ResponseVariant1, global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlan>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Photoroom.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -450,9 +450,9 @@ namespace Photoroom
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Photoroom.AccountDetailsV2Response.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Photoroom.AnyOf<global::Photoroom.AccountDetailsV2ResponseVariant1, global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlan>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Photoroom.AutoSDKHttpResponse<global::Photoroom.AccountDetailsV2Response>(
+                                    return new global::Photoroom.AutoSDKHttpResponse<global::Photoroom.AnyOf<global::Photoroom.AccountDetailsV2ResponseVariant1, global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlan>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Photoroom.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

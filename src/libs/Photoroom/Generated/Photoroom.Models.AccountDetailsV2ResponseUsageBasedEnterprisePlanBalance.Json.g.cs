@@ -2,7 +2,7 @@
 
 namespace Photoroom
 {
-    public sealed partial class EditImagePostResponse2
+    public sealed partial class AccountDetailsV2ResponseUsageBasedEnterprisePlanBalance
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace Photoroom
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Photoroom.EditImagePostResponse2? FromJson(
+        public static global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlanBalance? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Photoroom.EditImagePostResponse2),
-                jsonSerializerContext) as global::Photoroom.EditImagePostResponse2;
+                typeof(global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlanBalance),
+                jsonSerializerContext) as global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlanBalance;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::Photoroom.EditImagePostResponse2? FromJson(
+        public static global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlanBalance? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace Photoroom
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Photoroom.EditImagePostResponse2? FromJson(
+        public static global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlanBalance? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace Photoroom
                     global::Photoroom.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Photoroom.EditImagePostResponse2>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlanBalance>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace Photoroom
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Photoroom.EditImagePostResponse2?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlanBalance?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Photoroom.EditImagePostResponse2),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Photoroom.EditImagePostResponse2;
+                typeof(global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlanBalance),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlanBalance;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::Photoroom.EditImagePostResponse2?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlanBalance?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace Photoroom
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Photoroom.EditImagePostResponse2?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlanBalance?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace Photoroom
                     global::Photoroom.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Photoroom.EditImagePostResponse2?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Photoroom.AccountDetailsV2ResponseUsageBasedEnterprisePlanBalance?>(
                 jsonStream,
                 jsonSerializerOptions);
         }
