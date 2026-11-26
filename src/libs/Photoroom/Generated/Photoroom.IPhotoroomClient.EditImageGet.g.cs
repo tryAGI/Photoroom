@@ -63,6 +63,9 @@ namespace Photoroom
         /// <param name="colorSpace">
         /// Default Value: sRGB
         /// </param>
+        /// <param name="contentCredentialsMode">
+        /// Default Value: auto
+        /// </param>
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
         /// <param name="describeAnyChangeSeed"></param>
@@ -194,6 +197,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             global::Photoroom.EditImageGetColorSpace? colorSpace = default,
+            global::Photoroom.EditImageGetContentCredentialsMode? contentCredentialsMode = default,
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
@@ -325,6 +329,9 @@ namespace Photoroom
         /// <param name="beautifySeed"></param>
         /// <param name="colorSpace">
         /// Default Value: sRGB
+        /// </param>
+        /// <param name="contentCredentialsMode">
+        /// Default Value: auto
         /// </param>
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
@@ -457,6 +464,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             global::Photoroom.EditImageGetColorSpace? colorSpace = default,
+            global::Photoroom.EditImageGetContentCredentialsMode? contentCredentialsMode = default,
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
@@ -588,6 +596,9 @@ namespace Photoroom
         /// <param name="beautifySeed"></param>
         /// <param name="colorSpace">
         /// Default Value: sRGB
+        /// </param>
+        /// <param name="contentCredentialsMode">
+        /// Default Value: auto
         /// </param>
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
@@ -721,6 +732,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             global::Photoroom.EditImageGetColorSpace? colorSpace = default,
+            global::Photoroom.EditImageGetContentCredentialsMode? contentCredentialsMode = default,
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
@@ -853,6 +865,9 @@ namespace Photoroom
         /// <param name="colorSpace">
         /// Default Value: sRGB
         /// </param>
+        /// <param name="contentCredentialsMode">
+        /// Default Value: auto
+        /// </param>
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
         /// <param name="describeAnyChangeSeed"></param>
@@ -984,6 +999,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             global::Photoroom.EditImageGetColorSpace? colorSpace = default,
+            global::Photoroom.EditImageGetContentCredentialsMode? contentCredentialsMode = default,
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
