@@ -821,6 +821,23 @@
             }
           },
           {
+            "name": "contentCredentials.mode",
+            "in": "query",
+            "description": "Controls when the output image carries a C2PA Content Credential signed by Photoroom.\n\n- `auto` (default): the output is signed when an AI operation generated part or all of it.\n- `always`: the output is also signed when no AI operation ran, for example a background   removal or a layout-only edit.\n\nWhen the output is signed and the input image carries a C2PA record, the input's record is kept as an ingredient of the new one, except for AVIF outputs or when the input's record cannot be validated.",
+            "schema": {
+              "default": "auto",
+              "enum": [
+                "auto",
+                "always"
+              ],
+              "examples": [
+                "auto",
+                "always"
+              ],
+              "type": "string"
+            }
+          },
+          {
             "name": "describeAnyChange.mode",
             "in": "query",
             "description": "(DEPRECATED) Use `editWithAI.mode` instead.\n\nDescribe any change mode to use on the main image used by the API.\n\nCurrently, only `ai.auto` is supported.",
@@ -2346,6 +2363,12 @@
                   "description": "[Temporary] If the request contains attributes that are not supported by the API, this header will be returned with a list of the unsupported attributes. Soon to be replaced by a 400 Bad Request response."
                 }
               },
+              "pr-content-credentials-result": {
+                "schema": {
+                  "summary": "Whether the output image carries a C2PA Content Credential",
+                  "description": "`signed`: the output image carries a C2PA Content Credential signed by Photoroom. `not-needed`: the request did not need one, so the image is not signed. `failed`: the request needed one but the image could not be signed (signing unavailable, or the image is too large), so the image is returned unsigned."
+                }
+              },
               "pr-edit-further-url": {
                 "schema": {
                   "summary": "A URL to open the result of the API call in the Photoroom webapp and edit it further",
@@ -2462,6 +2485,10 @@
                   "colorSpace": {
                     "type": "string",
                     "description": "Controls the colour space of the output image.\n\n- `sRGB` (default): the output is encoded in sRGB (current behaviour).\n- `original`: the input's embedded ICC profile is preserved in the output. Only valid when   the request is a background removal with PNG output, optionally positioned relative to   the original image box: `referenceBox: \"originalImage\"` combined with `padding` (and its   side-specific variants) and/or an explicit `outputSize` (\"widthxheight\"). Note that a   non-zero padding or a size-changing outputSize resamples the pixels (never a colour   conversion — the ICC profile and gamut are untouched). Combining `original` with any   other operation (background, shadow, other geometry changes, non-PNG export,   `export.dpi`, `keepExistingAlphaChannel: \"auto\"`, EXIF-subset `preserveMetadata` modes,   ...) returns a 400 error naming the conflicting parameter."
+                  },
+                  "contentCredentials.mode": {
+                    "type": "string",
+                    "description": "Controls when the output image carries a C2PA Content Credential signed by Photoroom.\n\n- `auto` (default): the output is signed when an AI operation generated part or all of it.\n- `always`: the output is also signed when no AI operation ran, for example a background   removal or a layout-only edit.\n\nWhen the output is signed and the input image carries a C2PA record, the input's record is kept as an ingredient of the new one, except for AVIF outputs or when the input's record cannot be validated."
                   },
                   "describeAnyChange.mode": {
                     "type": "string",
@@ -2812,6 +2839,12 @@
                 "schema": {
                   "summary": "Unsupported Attributes (example: pr-unsupported-attributes='Unsupported attributes: background.inner')",
                   "description": "[Temporary] If the request contains attributes that are not supported by the API, this header will be returned with a list of the unsupported attributes. Soon to be replaced by a 400 Bad Request response."
+                }
+              },
+              "pr-content-credentials-result": {
+                "schema": {
+                  "summary": "Whether the output image carries a C2PA Content Credential",
+                  "description": "`signed`: the output image carries a C2PA Content Credential signed by Photoroom. `not-needed`: the request did not need one, so the image is not signed. `failed`: the request needed one but the image could not be signed (signing unavailable, or the image is too large), so the image is returned unsigned."
                 }
               }
             }

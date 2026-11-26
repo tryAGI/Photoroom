@@ -51,6 +51,7 @@ namespace Photoroom
             ref global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch,
             ref double? beautifySeed,
             ref global::Photoroom.EditImageGetColorSpace? colorSpace,
+            ref global::Photoroom.EditImageGetContentCredentialsMode? contentCredentialsMode,
             ref string? describeAnyChangeMode,
             ref string? describeAnyChangePrompt,
             ref double? describeAnyChangeSeed,
@@ -141,6 +142,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch,
             double? beautifySeed,
             global::Photoroom.EditImageGetColorSpace? colorSpace,
+            global::Photoroom.EditImageGetContentCredentialsMode? contentCredentialsMode,
             string? describeAnyChangeMode,
             string? describeAnyChangePrompt,
             double? describeAnyChangeSeed,
@@ -280,6 +282,9 @@ namespace Photoroom
         /// <param name="colorSpace">
         /// Default Value: sRGB
         /// </param>
+        /// <param name="contentCredentialsMode">
+        /// Default Value: auto
+        /// </param>
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
         /// <param name="describeAnyChangeSeed"></param>
@@ -411,6 +416,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             global::Photoroom.EditImageGetColorSpace? colorSpace = default,
+            global::Photoroom.EditImageGetContentCredentialsMode? contentCredentialsMode = default,
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
@@ -502,6 +508,7 @@ namespace Photoroom
                 beautifyOnSubjectMismatch: beautifyOnSubjectMismatch,
                 beautifySeed: beautifySeed,
                 colorSpace: colorSpace,
+                contentCredentialsMode: contentCredentialsMode,
                 describeAnyChangeMode: describeAnyChangeMode,
                 describeAnyChangePrompt: describeAnyChangePrompt,
                 describeAnyChangeSeed: describeAnyChangeSeed,
@@ -638,6 +645,9 @@ namespace Photoroom
         /// <param name="colorSpace">
         /// Default Value: sRGB
         /// </param>
+        /// <param name="contentCredentialsMode">
+        /// Default Value: auto
+        /// </param>
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
         /// <param name="describeAnyChangeSeed"></param>
@@ -769,6 +779,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             global::Photoroom.EditImageGetColorSpace? colorSpace = default,
+            global::Photoroom.EditImageGetContentCredentialsMode? contentCredentialsMode = default,
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
@@ -863,6 +874,7 @@ namespace Photoroom
                 beautifyOnSubjectMismatch: ref beautifyOnSubjectMismatch,
                 beautifySeed: ref beautifySeed,
                 colorSpace: ref colorSpace,
+                contentCredentialsMode: ref contentCredentialsMode,
                 describeAnyChangeMode: ref describeAnyChangeMode,
                 describeAnyChangePrompt: ref describeAnyChangePrompt,
                 describeAnyChangeSeed: ref describeAnyChangeSeed,
@@ -980,6 +992,7 @@ namespace Photoroom
                                 .AddOptionalParameter("beautify.onSubjectMismatch", beautifyOnSubjectMismatch?.ToValueString())
                                 .AddOptionalParameter("beautify.seed", beautifySeed?.ToString())
                                 .AddOptionalParameter("colorSpace", colorSpace?.ToValueString())
+                                .AddOptionalParameter("contentCredentials.mode", contentCredentialsMode?.ToValueString())
                                 .AddOptionalParameter("describeAnyChange.mode", describeAnyChangeMode)
                                 .AddOptionalParameter("describeAnyChange.prompt", describeAnyChangePrompt)
                                 .AddOptionalParameter("describeAnyChange.seed", describeAnyChangeSeed?.ToString())
@@ -1108,6 +1121,7 @@ namespace Photoroom
                     beautifyOnSubjectMismatch: beautifyOnSubjectMismatch,
                     beautifySeed: beautifySeed,
                     colorSpace: colorSpace,
+                    contentCredentialsMode: contentCredentialsMode,
                     describeAnyChangeMode: describeAnyChangeMode,
                     describeAnyChangePrompt: describeAnyChangePrompt,
                     describeAnyChangeSeed: describeAnyChangeSeed,
@@ -1582,6 +1596,9 @@ namespace Photoroom
         /// <param name="colorSpace">
         /// Default Value: sRGB
         /// </param>
+        /// <param name="contentCredentialsMode">
+        /// Default Value: auto
+        /// </param>
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
         /// <param name="describeAnyChangeSeed"></param>
@@ -1714,6 +1731,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             global::Photoroom.EditImageGetColorSpace? colorSpace = default,
+            global::Photoroom.EditImageGetContentCredentialsMode? contentCredentialsMode = default,
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
@@ -1808,6 +1826,7 @@ namespace Photoroom
                 beautifyOnSubjectMismatch: ref beautifyOnSubjectMismatch,
                 beautifySeed: ref beautifySeed,
                 colorSpace: ref colorSpace,
+                contentCredentialsMode: ref contentCredentialsMode,
                 describeAnyChangeMode: ref describeAnyChangeMode,
                 describeAnyChangePrompt: ref describeAnyChangePrompt,
                 describeAnyChangeSeed: ref describeAnyChangeSeed,
@@ -1925,6 +1944,7 @@ namespace Photoroom
                                 .AddOptionalParameter("beautify.onSubjectMismatch", beautifyOnSubjectMismatch?.ToValueString())
                                 .AddOptionalParameter("beautify.seed", beautifySeed?.ToString())
                                 .AddOptionalParameter("colorSpace", colorSpace?.ToValueString())
+                                .AddOptionalParameter("contentCredentials.mode", contentCredentialsMode?.ToValueString())
                                 .AddOptionalParameter("describeAnyChange.mode", describeAnyChangeMode)
                                 .AddOptionalParameter("describeAnyChange.prompt", describeAnyChangePrompt)
                                 .AddOptionalParameter("describeAnyChange.seed", describeAnyChangeSeed?.ToString())
@@ -2053,6 +2073,7 @@ namespace Photoroom
                     beautifyOnSubjectMismatch: beautifyOnSubjectMismatch,
                     beautifySeed: beautifySeed,
                     colorSpace: colorSpace,
+                    contentCredentialsMode: contentCredentialsMode,
                     describeAnyChangeMode: describeAnyChangeMode,
                     describeAnyChangePrompt: describeAnyChangePrompt,
                     describeAnyChangeSeed: describeAnyChangeSeed,
@@ -2531,6 +2552,9 @@ namespace Photoroom
         /// <param name="colorSpace">
         /// Default Value: sRGB
         /// </param>
+        /// <param name="contentCredentialsMode">
+        /// Default Value: auto
+        /// </param>
         /// <param name="describeAnyChangeMode"></param>
         /// <param name="describeAnyChangePrompt"></param>
         /// <param name="describeAnyChangeSeed"></param>
@@ -2662,6 +2686,7 @@ namespace Photoroom
             global::Photoroom.EditImageGetBeautifyOnSubjectMismatch? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             global::Photoroom.EditImageGetColorSpace? colorSpace = default,
+            global::Photoroom.EditImageGetContentCredentialsMode? contentCredentialsMode = default,
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
@@ -2756,6 +2781,7 @@ namespace Photoroom
                 beautifyOnSubjectMismatch: ref beautifyOnSubjectMismatch,
                 beautifySeed: ref beautifySeed,
                 colorSpace: ref colorSpace,
+                contentCredentialsMode: ref contentCredentialsMode,
                 describeAnyChangeMode: ref describeAnyChangeMode,
                 describeAnyChangePrompt: ref describeAnyChangePrompt,
                 describeAnyChangeSeed: ref describeAnyChangeSeed,
@@ -2873,6 +2899,7 @@ namespace Photoroom
                                 .AddOptionalParameter("beautify.onSubjectMismatch", beautifyOnSubjectMismatch?.ToValueString())
                                 .AddOptionalParameter("beautify.seed", beautifySeed?.ToString())
                                 .AddOptionalParameter("colorSpace", colorSpace?.ToValueString())
+                                .AddOptionalParameter("contentCredentials.mode", contentCredentialsMode?.ToValueString())
                                 .AddOptionalParameter("describeAnyChange.mode", describeAnyChangeMode)
                                 .AddOptionalParameter("describeAnyChange.prompt", describeAnyChangePrompt)
                                 .AddOptionalParameter("describeAnyChange.seed", describeAnyChangeSeed?.ToString())
@@ -3001,6 +3028,7 @@ namespace Photoroom
                     beautifyOnSubjectMismatch: beautifyOnSubjectMismatch,
                     beautifySeed: beautifySeed,
                     colorSpace: colorSpace,
+                    contentCredentialsMode: contentCredentialsMode,
                     describeAnyChangeMode: describeAnyChangeMode,
                     describeAnyChangePrompt: describeAnyChangePrompt,
                     describeAnyChangeSeed: describeAnyChangeSeed,

@@ -284,6 +284,12 @@ namespace Photoroom
         /// - `sRGB` (default): the output is encoded in sRGB (current behaviour).<br/>
         /// - `original`: the input's embedded ICC profile is preserved in the output. Only valid when   the request is a background removal with PNG output, optionally positioned relative to   the original image box: `referenceBox: "originalImage"` combined with `padding` (and its   side-specific variants) and/or an explicit `outputSize` ("widthxheight"). Note that a   non-zero padding or a size-changing outputSize resamples the pixels (never a colour   conversion — the ICC profile and gamut are untouched). Combining `original` with any   other operation (background, shadow, other geometry changes, non-PNG export,   `export.dpi`, `keepExistingAlphaChannel: "auto"`, EXIF-subset `preserveMetadata` modes,   ...) returns a 400 error naming the conflicting parameter.
         /// </param>
+        /// <param name="contentCredentialsMode">
+        /// Controls when the output image carries a C2PA Content Credential signed by Photoroom.<br/>
+        /// - `auto` (default): the output is signed when an AI operation generated part or all of it.<br/>
+        /// - `always`: the output is also signed when no AI operation ran, for example a background   removal or a layout-only edit.<br/>
+        /// When the output is signed and the input image carries a C2PA record, the input's record is kept as an ingredient of the new one, except for AVIF outputs or when the input's record cannot be validated.
+        /// </param>
         /// <param name="describeAnyChangeMode">
         /// (DEPRECATED) Use `editWithAI.mode` instead.<br/>
         /// Describe any change mode to use on the main image used by the API.<br/>
@@ -600,6 +606,7 @@ namespace Photoroom
             string? beautifyOnSubjectMismatch = default,
             double? beautifySeed = default,
             string? colorSpace = default,
+            string? contentCredentialsMode = default,
             string? describeAnyChangeMode = default,
             string? describeAnyChangePrompt = default,
             double? describeAnyChangeSeed = default,
